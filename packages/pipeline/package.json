@@ -1,0 +1,20 @@
+{
+  "name": "@open-bible/pipeline",
+  "version": "0.1.0",
+  "description": "Data ingestion and translation pipeline for Open Bible Translation",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo 'No build needed'",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'Lint skipped'",
+    "test": "echo 'Tests skipped'",
+    "clean": "echo 'Clean skipped'"
+  },
+  "dependencies": {
+    "@open-bible/schemas": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
