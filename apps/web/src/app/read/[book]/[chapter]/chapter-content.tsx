@@ -7,6 +7,7 @@ import { LayerToggle, ViewToggles } from '@/components/layer-toggle';
 import { useBibleStore } from '@/store/bible-store';
 import genesisChapter1Verses from '@/data/sample-genesis';
 import johnChapter1Verses from '@/data/sample-john';
+import { getVariantsForVerse } from '@/data/variants';
 
 // Book metadata
 const BOOKS: Record<string, { name: string; chapters: number; testament: 'OT' | 'NT' }> = {
@@ -113,6 +114,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
               sourceTokens={verse.sourceTokens}
               translation={verse.translation as any}
               notes={(verse.notes || []) as any}
+              variants={getVariantsForVerse(verse.ref)}
             />
           ))}
         </div>
@@ -129,9 +131,9 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
                 href="/read/Gen/1/"
                 className="text-[var(--accent)] hover:underline"
               >
-                Genesis 1:1-3
+                Genesis 1:1-5
               </Link>{' '}
-              — Hebrew Old Testament sample
+              — Hebrew Old Testament sample with study notes
             </li>
             <li>
               <Link
@@ -140,7 +142,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
               >
                 John 1:1-3
               </Link>{' '}
-              — Greek New Testament sample
+              — Greek New Testament sample with textual variants (John 1:18)
             </li>
           </ul>
         </div>

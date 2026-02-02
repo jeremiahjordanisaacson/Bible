@@ -3,7 +3,8 @@
 import * as React from 'react';
 import { TokenPopover } from './token-popover';
 import { useBibleStore } from '@/store/bible-store';
-import type { SourceToken, VerseTranslation, StudyNote, TranslatedSpan } from '@open-bible/schemas';
+import type { SourceToken, VerseTranslation, StudyNote, TranslatedSpan, VerseVariants } from '@open-bible/schemas';
+import { VariantDisplay } from './variant-display';
 
 interface VerseDisplayProps {
   verseRef: string;
@@ -11,6 +12,7 @@ interface VerseDisplayProps {
   sourceTokens: SourceToken[];
   translation: VerseTranslation;
   notes?: StudyNote[];
+  variants?: VerseVariants | null;
   showSource?: boolean;
 }
 
@@ -20,6 +22,7 @@ export function VerseDisplay({
   sourceTokens,
   translation,
   notes = [],
+  variants = null,
   showSource = false,
 }: VerseDisplayProps) {
   const { selectedLayer, showStudyMode, showNotes, highlightedTokenId, setHighlightedToken } =
@@ -235,6 +238,11 @@ export function VerseDisplay({
 
           {/* Notes */}
           {renderNotes()}
+
+          {/* Variants */}
+          {showStudyMode && variants && variants.variantCount > 0 && (
+            <VariantDisplay variants={variants} />
+          )}
         </div>
       </div>
     </article>

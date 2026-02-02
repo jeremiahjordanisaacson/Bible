@@ -4,6 +4,7 @@
  */
 
 import type { SourceToken, Verse, VerseTranslation, VerseAlignment, StudyNote, VariantUnit } from '@open-bible/schemas';
+import { extendedGenesisVerses } from './sample-genesis-extended';
 
 // Genesis 1:1 Source Tokens
 export const genesis1_1_tokens: SourceToken[] = [
@@ -535,8 +536,8 @@ Various interpretations:
   },
 ];
 
-// Sample verse data structure
-export const genesisChapter1Verses = [
+// Sample verse data structure (verses 1-3)
+const baseGenesisVerses = [
   {
     ref: 'Gen.1.1',
     sourceTokens: genesis1_1_tokens,
@@ -633,5 +634,8 @@ export const genesisChapter1Verses = [
     notes: [],
   },
 ];
+
+// Combine base verses with extended verses (1:4-5)
+export const genesisChapter1Verses = [...baseGenesisVerses, ...extendedGenesisVerses];
 
 export default genesisChapter1Verses;

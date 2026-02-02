@@ -12,9 +12,11 @@
     "clean": "echo 'Clean skipped'"
   },
   "dependencies": {
-    "@open-bible/schemas": "workspace:*"
+    "@open-bible/schemas": "workspace:*",
+    "commander": "^12.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.11.0",
     "typescript": "^5.4.0"
   }
 }
