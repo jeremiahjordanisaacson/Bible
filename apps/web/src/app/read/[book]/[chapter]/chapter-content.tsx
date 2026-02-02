@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { VerseDisplay } from '@/components/verse-display';
 import { LayerToggle, ViewToggles } from '@/components/layer-toggle';
 import { useBibleStore } from '@/store/bible-store';
+import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
 import genesisChapter1Verses from '@/data/sample-genesis';
 import johnChapter1Verses from '@/data/sample-john';
 import { getVariantsForVerse } from '@/data/variants';
@@ -35,6 +36,9 @@ interface ChapterContentProps {
 
 export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const { navigateTo, setCurrentBook, setCurrentChapter } = useBibleStore();
+
+  // Enable keyboard navigation
+  useKeyboardNavigation();
 
   // Update store on mount
   React.useEffect(() => {

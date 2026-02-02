@@ -33,6 +33,8 @@ interface BibleState {
   toggleStudyMode: () => void;
   toggleVariants: () => void;
   toggleNotes: () => void;
+  setShowStudyMode: (show: boolean) => void;
+  setShowNotes: (show: boolean) => void;
   setHighlightedToken: (tokenId: string | null) => void;
   setHighlightedSpan: (spanId: string | null) => void;
   setSearchQuery: (query: string) => void;
@@ -64,6 +66,8 @@ export const useBibleStore = create<BibleState>((set) => ({
   toggleStudyMode: () => set((state) => ({ showStudyMode: !state.showStudyMode })),
   toggleVariants: () => set((state) => ({ showVariants: !state.showVariants })),
   toggleNotes: () => set((state) => ({ showNotes: !state.showNotes })),
+  setShowStudyMode: (show) => set({ showStudyMode: show }),
+  setShowNotes: (show) => set({ showNotes: show }),
   setHighlightedToken: (tokenId) => set({ highlightedTokenId: tokenId }),
   setHighlightedSpan: (spanId) => set({ highlightedSpanId: spanId }),
   setSearchQuery: (query) => set({ searchQuery: query }),

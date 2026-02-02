@@ -14,12 +14,18 @@ export default function HomePage() {
           An open source, AI-assisted Bible translation platform. Every word traceable
           to the original Hebrew, Aramaic, and Greek sources.
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center flex-wrap">
           <Link
             href="/read/Gen/1/"
             className="px-6 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-lg font-medium hover:opacity-90 transition"
           >
             Start Reading
+          </Link>
+          <Link
+            href="/demo/"
+            className="px-6 py-3 border border-[var(--border)] rounded-lg font-medium hover:bg-[var(--muted)] transition"
+          >
+            Component Demo
           </Link>
           <Link
             href="/about/"
