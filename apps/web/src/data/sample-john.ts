@@ -1,9 +1,10 @@
 /**
- * Sample data for John 1:1-5 (Greek)
+ * Sample data for John 1:1-5, 18 (Greek)
  * Source: SBLGNT (Society of Biblical Literature Greek New Testament) - CC BY 4.0
  */
 
 import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
+import { extendedJohnVerses } from './sample-john-extended';
 
 // John 1:1 Source Tokens
 export const john1_1_tokens: SourceToken[] = [
@@ -973,6 +974,8 @@ export const johnChapter1Verses = [
     },
     notes: [],
   },
+  // Add verses 4-5 from extended data
+  ...extendedJohnVerses,
   // Skip to verse 18 for the famous textual variant
   {
     ref: 'John.1.18',
