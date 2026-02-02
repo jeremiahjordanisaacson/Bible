@@ -7,6 +7,7 @@ const nextConfig = {
   },
   // For GitHub Pages deployment
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
   transpilePackages: ['@open-bible/schemas'],
 };
 
