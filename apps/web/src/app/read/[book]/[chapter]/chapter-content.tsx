@@ -17,6 +17,7 @@ import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-to
 import { ReadingProgress } from '@/components/reading-progress';
 import { PrintButton } from '@/components/print-button';
 import { ScrollToTop } from '@/components/scroll-to-top';
+import { ChapterInfo } from '@/components/chapter-info';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 import { addToReadingHistory } from '@/lib/reading-history';
 
@@ -169,6 +170,14 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
         <h1 className="text-3xl font-bold">
           {book.name} {chapterNum}
         </h1>
+        <div className="mt-2">
+          <ChapterInfo
+            bookCode={bookCode}
+            chapter={chapterNum}
+            verseCount={richVerses?.length || simpleVerses?.length || 0}
+            wordCount={simpleVerses?.reduce((count, v) => count + v.text.split(/\s+/).length, 0)}
+          />
+        </div>
       </header>
 
       {/* Controls - only show full controls for rich data */}
