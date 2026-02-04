@@ -3,6 +3,7 @@
 import { CopyVerseButton } from './copy-verse-button';
 import { ShareVerseButton } from './share-verse-button';
 import { BookmarkButton } from './bookmark-button';
+import { VerseNoteButton } from './verse-note-button';
 
 interface SimpleVerseDisplayProps {
   verseRef: string;
@@ -39,6 +40,11 @@ export function SimpleVerseDisplay({ verseRef, verseNumber, text, bookCode, chap
               chapter={chapter}
               verse={verseNumber}
               text={text}
+            />
+            <VerseNoteButton
+              bookCode={bookCode}
+              chapter={chapter}
+              verse={verseNumber}
             />
           </>
         )}
