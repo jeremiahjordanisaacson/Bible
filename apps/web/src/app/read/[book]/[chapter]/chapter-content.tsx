@@ -13,6 +13,7 @@ import { getVariantsForVerse } from '@/data/variants';
 import { getBook } from '@/data/books-metadata';
 import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal';
 import { FontSizeControl, useFontSize } from '@/components/font-size-control';
+import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-toggle';
 import { ReadingProgress } from '@/components/reading-progress';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 
@@ -41,6 +42,7 @@ interface ChapterContentProps {
 export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const { navigateTo, setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts } = useBibleStore();
   const { fontSize, setFontSize } = useFontSize();
+  const { showVerseNumbers, toggleVerseNumbers } = useVerseNumbers();
 
   // State for fetched verses
   const [simpleVerses, setSimpleVerses] = React.useState<SimpleVerse[] | null>(null);
@@ -168,8 +170,9 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           <div className="flex flex-wrap items-center gap-6">
             <LayerToggle />
             <ViewToggles />
-            <div className="border-l border-[var(--border)] pl-4">
+            <div className="border-l border-[var(--border)] pl-4 flex items-center gap-3">
               <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
+              <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />
             </div>
           </div>
           <div className="mt-4 text-sm text-[var(--muted-foreground)] border-t border-[var(--border)] pt-4">
@@ -195,7 +198,10 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
                 <Link href="/read/John/1/" className="text-[var(--accent)] hover:underline">John 1</Link>.
               </div>
             </div>
-            <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
+            <div className="flex items-center gap-3">
+              <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
+              <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />
+            </div>
           </div>
         </div>
       )}
@@ -248,6 +254,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           className={fontSize}
           bookCode={bookCode}
           chapter={chapterNum}
+          showVerseNumbers={showVerseNumbers}
         />
       )}
 

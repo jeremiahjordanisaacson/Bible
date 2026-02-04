@@ -9,15 +9,18 @@ interface SimpleVerseDisplayProps {
   text: string;
   bookCode?: string;
   chapter?: number;
+  showVerseNumbers?: boolean;
 }
 
-export function SimpleVerseDisplay({ verseRef, verseNumber, text, bookCode, chapter }: SimpleVerseDisplayProps) {
+export function SimpleVerseDisplay({ verseRef, verseNumber, text, bookCode, chapter, showVerseNumbers = true }: SimpleVerseDisplayProps) {
   return (
-    <div id={`v${verseNumber}`} className="mb-4 leading-relaxed group flex items-start gap-2">
+    <div id={`v${verseNumber}`} className="mb-4 leading-relaxed group flex items-start gap-2 transition-colors rounded-sm px-1 -mx-1">
       <div className="flex-1">
-        <sup className="text-[var(--muted-foreground)] mr-1 font-medium">
-          {verseNumber}
-        </sup>
+        {showVerseNumbers && (
+          <sup className="text-[var(--muted-foreground)] mr-1 font-medium">
+            {verseNumber}
+          </sup>
+        )}
         <span className="text-[var(--foreground)]">{text}</span>
       </div>
       <div className="opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
@@ -41,9 +44,10 @@ interface SimpleVerseListProps {
   className?: string;
   bookCode?: string;
   chapter?: number;
+  showVerseNumbers?: boolean;
 }
 
-export function SimpleVerseList({ verses, translationName, className, bookCode, chapter }: SimpleVerseListProps) {
+export function SimpleVerseList({ verses, translationName, className, bookCode, chapter, showVerseNumbers = true }: SimpleVerseListProps) {
   return (
     <div className={`max-w-3xl ${className || ''}`}>
       {translationName && (
@@ -59,6 +63,7 @@ export function SimpleVerseList({ verses, translationName, className, bookCode, 
           text={verse.text}
           bookCode={bookCode}
           chapter={chapter}
+          showVerseNumbers={showVerseNumbers}
         />
       ))}
     </div>
