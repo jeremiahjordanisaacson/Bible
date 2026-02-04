@@ -15,6 +15,7 @@ import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal';
 import { FontSizeControl, useFontSize } from '@/components/font-size-control';
 import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-toggle';
 import { ReadingProgress } from '@/components/reading-progress';
+import { PrintButton } from '@/components/print-button';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 
 // Sample data mapping - rich data with morphology
@@ -148,16 +149,19 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Header */}
       <header className="mb-8">
-        <div className="flex items-center gap-2 text-sm text-[var(--muted-foreground)] mb-2">
-          <Link href="/" className="hover:text-[var(--accent)]">
-            Home
-          </Link>
-          <span>/</span>
-          <Link href={`/read/${bookCode}/1/`} className="hover:text-[var(--accent)]">
-            {book.name}
-          </Link>
-          <span>/</span>
-          <span>Chapter {chapterNum}</span>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm text-[var(--muted-foreground)] mb-2">
+            <Link href="/" className="hover:text-[var(--accent)]">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href={`/read/${bookCode}/1/`} className="hover:text-[var(--accent)]">
+              {book.name}
+            </Link>
+            <span>/</span>
+            <span>Chapter {chapterNum}</span>
+          </div>
+          <PrintButton />
         </div>
         <h1 className="text-3xl font-bold">
           {book.name} {chapterNum}

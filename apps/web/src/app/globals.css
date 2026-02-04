@@ -155,11 +155,76 @@ body {
 
 /* Print styles */
 @media print {
-  .no-print {
+  .no-print,
+  header,
+  nav,
+  button,
+  select,
+  .reading-progress,
+  .keyboard-shortcuts-modal,
+  .popover-content {
     display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+    background: #fff;
   }
 
   .verse-ref {
     font-weight: bold;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Verse display */
+  [id^="v"] {
+    page-break-inside: avoid;
+    margin-bottom: 6pt;
+  }
+
+  sup {
+    font-size: 8pt;
+    font-weight: bold;
+  }
+
+  /* Remove decorative elements */
+  .bg-blue-50,
+  .bg-amber-50,
+  .bg-red-50,
+  .bg-green-50,
+  [class*="dark:bg-"] {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Page margins and breaks */
+  @page {
+    margin: 1in;
+  }
+
+  h1 {
+    page-break-after: avoid;
+  }
+
+  .max-w-3xl {
+    max-width: 100%;
   }
 }
