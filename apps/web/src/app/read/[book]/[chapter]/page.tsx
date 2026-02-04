@@ -1,11 +1,20 @@
 import { ChapterContent } from './chapter-content';
+import { allBooks } from '@/data/books-metadata';
 
-// Generate static params for static export
+// Generate static params for all 1,189 chapters in the Bible
 export function generateStaticParams() {
-  return [
-    { book: 'Gen', chapter: '1' },
-    { book: 'John', chapter: '1' },
-  ];
+  const params: { book: string; chapter: string }[] = [];
+
+  for (const book of allBooks) {
+    for (let chapter = 1; chapter <= book.chapters; chapter++) {
+      params.push({
+        book: book.code,
+        chapter: String(chapter),
+      });
+    }
+  }
+
+  return params;
 }
 
 interface PageProps {
