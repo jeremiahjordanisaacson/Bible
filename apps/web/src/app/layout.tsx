@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,32 +34,7 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
           </main>
-          <footer className="border-t border-[var(--border)] py-8 mt-auto">
-            <div className="container mx-auto px-4">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div className="text-sm text-[var(--muted-foreground)]">
-                  <p>
-                    Open Bible Translation Project - AI-assisted translation drafts for human review.
-                  </p>
-                  <p className="mt-1">
-                    All translations are drafts and should be verified against the original sources.
-                  </p>
-                </div>
-                <div className="flex gap-4 text-sm">
-                  <a href="/about/" className="hover:text-[var(--accent)]">About</a>
-                  <a href="/licenses/" className="hover:text-[var(--accent)]">Licenses</a>
-                  <a
-                    href="https://github.com/jeremiahjordanisaacson/Bible"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[var(--accent)]"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </div>
       </body>
     </html>
