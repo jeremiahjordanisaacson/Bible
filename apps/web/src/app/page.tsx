@@ -130,8 +130,33 @@ export default function HomePage() {
         />
       </section>
 
+      {/* Keyboard Shortcuts */}
+      <section className="max-w-4xl mx-auto mb-16">
+        <div className="bg-[var(--muted)] rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Keyboard Shortcuts</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="flex items-center gap-2">
+              <kbd className="px-2 py-1 bg-[var(--background)] border border-[var(--border)] rounded">G</kbd>
+              <span className="text-[var(--muted-foreground)]">Quick jump</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <kbd className="px-2 py-1 bg-[var(--background)] border border-[var(--border)] rounded">1/2/3</kbd>
+              <span className="text-[var(--muted-foreground)]">Switch layer</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <kbd className="px-2 py-1 bg-[var(--background)] border border-[var(--border)] rounded">S</kbd>
+              <span className="text-[var(--muted-foreground)]">Study mode</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <kbd className="px-2 py-1 bg-[var(--background)] border border-[var(--border)] rounded">?</kbd>
+              <span className="text-[var(--muted-foreground)]">Help</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Navigation */}
-      <section className="max-w-4xl mx-auto">
+      <section className="max-w-4xl mx-auto mb-16">
         <h2 className="text-2xl font-bold mb-6">Quick Navigation</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="border border-[var(--border)] rounded-lg p-6">
@@ -158,6 +183,55 @@ export default function HomePage() {
               Sample: John 1 (Greek with full morphology)
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Popular Starting Points */}
+      <section className="max-w-4xl mx-auto">
+        <h2 className="text-2xl font-bold mb-6">Popular Starting Points</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <Link
+            href="/read/Gen/1/"
+            className="border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition group"
+          >
+            <div className="text-sm text-[var(--muted-foreground)] mb-1">Genesis 1</div>
+            <div className="font-medium group-hover:text-[var(--accent)]">The Creation</div>
+          </Link>
+          <Link
+            href="/read/John/1/"
+            className="border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition group"
+          >
+            <div className="text-sm text-[var(--muted-foreground)] mb-1">John 1</div>
+            <div className="font-medium group-hover:text-[var(--accent)]">The Word</div>
+          </Link>
+          <Link
+            href="/read/Ps/23/"
+            className="border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition group"
+          >
+            <div className="text-sm text-[var(--muted-foreground)] mb-1">Psalm 23</div>
+            <div className="font-medium group-hover:text-[var(--accent)]">The Lord is My Shepherd</div>
+          </Link>
+          <Link
+            href="/read/Matt/5/"
+            className="border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition group"
+          >
+            <div className="text-sm text-[var(--muted-foreground)] mb-1">Matthew 5</div>
+            <div className="font-medium group-hover:text-[var(--accent)]">Sermon on the Mount</div>
+          </Link>
+          <Link
+            href="/read/Rom/8/"
+            className="border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition group"
+          >
+            <div className="text-sm text-[var(--muted-foreground)] mb-1">Romans 8</div>
+            <div className="font-medium group-hover:text-[var(--accent)]">Life in the Spirit</div>
+          </Link>
+          <Link
+            href="/read/1Cor/13/"
+            className="border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition group"
+          >
+            <div className="text-sm text-[var(--muted-foreground)] mb-1">1 Corinthians 13</div>
+            <div className="font-medium group-hover:text-[var(--accent)]">The Love Chapter</div>
+          </Link>
         </div>
       </section>
     </div>
