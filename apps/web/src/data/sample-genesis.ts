@@ -7,6 +7,7 @@ import type { SourceToken, Verse, VerseTranslation, VerseAlignment, StudyNote, V
 import { extendedGenesisVerses } from './sample-genesis-extended';
 import { genesis1_6_10_verses } from './genesis/gen-1-6-10';
 import { genesis1_9_13_verses } from './genesis/gen-1-9-13';
+import { genesis1_14_19_verses } from './genesis/gen-1-14-19';
 
 // Genesis 1:1 Source Tokens
 export const genesis1_1_tokens: SourceToken[] = [
@@ -637,7 +638,13 @@ const baseGenesisVerses = [
   },
 ];
 
-// Combine base verses (1:1-3) with extended verses (1:4-5), verses 6-8, and verses 9-13
-export const genesisChapter1Verses = [...baseGenesisVerses, ...extendedGenesisVerses, ...genesis1_6_10_verses, ...genesis1_9_13_verses];
+// Combine all Genesis 1 verses (1:1-19)
+export const genesisChapter1Verses = [
+  ...baseGenesisVerses,      // 1:1-3
+  ...extendedGenesisVerses,  // 1:4-5
+  ...genesis1_6_10_verses,   // 1:6-8
+  ...genesis1_9_13_verses,   // 1:9-13
+  ...genesis1_14_19_verses,  // 1:14-19
+];
 
 export default genesisChapter1Verses;
