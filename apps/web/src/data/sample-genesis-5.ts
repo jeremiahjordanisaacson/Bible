@@ -6,11 +6,15 @@
 
 import { genesis5_1_8_verses } from './genesis/gen-5-1-8';
 import { genesis5_9_17_verses } from './genesis/gen-5-9-17';
+import { genesis5_18_27_verses } from './genesis/gen-5-18-27';
+import { genesis5_28_32_verses } from './genesis/gen-5-28-32';
 
-// Genesis chapter 5 verses (5:1-17 so far, more to come)
+// Genesis chapter 5 verses (5:1-32) - COMPLETE CHAPTER
 export const genesisChapter5Verses = [
   ...genesis5_1_8_verses,    // 5:1-8: Adam and Seth
   ...genesis5_9_17_verses,   // 5:9-17: Enosh to Mahalalel
+  ...genesis5_18_27_verses,  // 5:18-27: Jared, Enoch, Methuselah
+  ...genesis5_28_32_verses,  // 5:28-32: Lamech, Noah, sons
 ];
 
 export default genesisChapter5Verses;
