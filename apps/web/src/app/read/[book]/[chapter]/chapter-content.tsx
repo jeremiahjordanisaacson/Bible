@@ -18,6 +18,7 @@ import { ReadingProgress } from '@/components/reading-progress';
 import { PrintButton } from '@/components/print-button';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
+import { TextSelectionMenu } from '@/components/text-selection-menu';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 import { addToReadingHistory } from '@/lib/reading-history';
 
@@ -392,6 +393,9 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Scroll to top button */}
       <ScrollToTop />
+
+      {/* Text selection copy menu */}
+      <TextSelectionMenu />
     </div>
   );
 }
