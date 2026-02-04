@@ -4,7 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { VerseDisplay } from '@/components/verse-display';
-import { SimpleVerseList } from '@/components/simple-verse-display';
+import { SimpleVerseDisplay } from '@/components/simple-verse-display';
 import { LayerToggle, ViewToggles } from '@/components/layer-toggle';
 import { useBibleStore } from '@/store/bible-store';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
@@ -29,15 +29,35 @@ import { TextSelectionMenu } from '@/components/text-selection-menu';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 import { addToReadingHistory } from '@/lib/reading-history';
 
-// Sample data mapping - rich data with morphology
-function getRichChapterData(book: string, chapter: number) {
+// Sample data mapping - rich data with morphology (partial chapters)
+function getRichVerseData(book: string, chapter: number, verseNum: number) {
   if (book === 'Gen' && chapter === 1) {
-    return genesisChapter1Verses;
+    const verse = genesisChapter1Verses.find((v, i) => i + 1 === verseNum);
+    return verse || null;
   }
   if (book === 'John' && chapter === 1) {
-    return johnChapter1Verses;
+    const verse = johnChapter1Verses.find((v, i) => i + 1 === verseNum);
+    return verse || null;
   }
   return null;
+}
+
+// Check if a chapter has any rich data
+function hasRichChapterData(book: string, chapter: number) {
+  if (book === 'Gen' && chapter === 1) return true;
+  if (book === 'John' && chapter === 1) return true;
+  return false;
+}
+
+// Get list of verse numbers with rich data
+function getRichVerseNumbers(book: string, chapter: number): number[] {
+  if (book === 'Gen' && chapter === 1) {
+    return genesisChapter1Verses.map((_, i) => i + 1);
+  }
+  if (book === 'John' && chapter === 1) {
+    return johnChapter1Verses.map((_, i) => i + 1);
+  }
+  return [];
 }
 
 interface SimpleVerse {
@@ -59,9 +79,11 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const { theme, setTheme } = useReadingTheme();
   const { spacing, setSpacing } = useLineSpacing();
 
-  // State for fetched verses
+  // State for fetched verses (always fetch for full chapter coverage)
   const [simpleVerses, setSimpleVerses] = React.useState<SimpleVerse[] | null>(null);
   const [loading, setLoading] = React.useState(false);
+  const hasRichData = hasRichChapterData(bookCode, chapterNum);
+  const richVerseNumbers = getRichVerseNumbers(bookCode, chapterNum);
   const [error, setError] = React.useState<string | null>(null);
   const [translationName, setTranslationName] = React.useState<string>('');
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -77,7 +99,6 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   }, [bookCode, chapterNum, setCurrentBook, setCurrentChapter]);
 
   const book = getBook(bookCode);
-  const richVerses = getRichChapterData(bookCode, chapterNum);
 
   // Scroll to verse if URL has hash (e.g., #v5)
   React.useEffect(() => {
@@ -95,11 +116,11 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
         }, 500);
       }
     }
-  }, [simpleVerses, richVerses]);
+  }, [simpleVerses]);
 
-  // Fetch verses from API if no rich data available
+  // Always fetch API verses for full chapter coverage
   React.useEffect(() => {
-    if (richVerses || !book) {
+    if (!book) {
       setSimpleVerses(null);
       setLoading(false);
       setError(null);
@@ -134,7 +155,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
     return () => {
       cancelled = true;
     };
-  }, [bookCode, chapterNum, richVerses, book]);
+  }, [bookCode, chapterNum, book]);
 
   // Navigation helpers
   const hasPrevChapter = chapterNum > 1;
@@ -181,17 +202,12 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             <ChapterSearch
               onSearch={setSearchQuery}
               resultCount={searchQuery.length >= 2 ? (
-                (simpleVerses || richVerses?.map((v, i) => ({
-                  text: v.translation?.layers?.idiomatic?.text || v.translation?.layers?.literal?.text || ''
-                })) || []).filter(v => v.text.toLowerCase().includes(searchQuery.toLowerCase())).length
+                (simpleVerses || []).filter(v => v.text.toLowerCase().includes(searchQuery.toLowerCase())).length
               ) : undefined}
             />
             <TextToSpeech
               getText={() => {
-                const verses = simpleVerses || richVerses?.map((v, i) => ({
-                  verseNumber: i + 1,
-                  text: v.translation?.layers?.idiomatic?.text || v.translation?.layers?.literal?.text || ''
-                })) || [];
+                const verses = simpleVerses || [];
                 return verses.map(v => `Verse ${v.verseNumber}. ${v.text}`).join(' ');
               }}
             />
@@ -200,10 +216,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
               bookName={book.name}
               chapter={chapterNum}
               getContent={() => {
-                const verses = simpleVerses || richVerses?.map((v, i) => ({
-                  verseNumber: i + 1,
-                  text: v.translation?.layers?.idiomatic?.text || v.translation?.layers?.literal?.text || ''
-                })) || [];
+                const verses = simpleVerses || [];
                 const header = `${book.name} ${chapterNum}\n${'='.repeat(book.name.length + String(chapterNum).length + 1)}\n\n`;
                 const content = verses.map(v => `${v.verseNumber}. ${v.text}`).join('\n\n');
                 return header + content;
@@ -219,47 +232,40 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           <ChapterInfo
             bookCode={bookCode}
             chapter={chapterNum}
-            verseCount={richVerses?.length || simpleVerses?.length || 0}
+            verseCount={simpleVerses?.length || 0}
             wordCount={simpleVerses?.reduce((count, v) => count + v.text.split(/\s+/).length, 0)}
           />
         </div>
       </header>
 
-      {/* Controls - only show full controls for rich data */}
-      {richVerses && (
-        <div className="bg-[var(--muted)] rounded-lg p-4 mb-8">
-          <div className="flex flex-wrap items-center gap-6">
-            <LayerToggle />
-            <ViewToggles />
-            <div className="border-l border-[var(--border)] pl-4 flex items-center gap-3">
-              <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
-              <LineSpacingControl spacing={spacing} onSpacingChange={setSpacing} />
-              <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />
-              <ReadingThemeSelector theme={theme} onThemeChange={setTheme} />
-            </div>
-          </div>
-          <div className="mt-4 text-sm text-[var(--muted-foreground)] border-t border-[var(--border)] pt-4">
-            <strong>Note:</strong> This is an AI-assisted draft translation. All translations should
-            be verified against the original sources. Hover over words to see the underlying Hebrew or
-            Greek text.
-          </div>
-        </div>
-      )}
-
-      {/* Simple controls for API-fetched content */}
-      {!richVerses && simpleVerses && (
-        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-8">
+      {/* Controls */}
+      {simpleVerses && (
+        <div className={`rounded-lg p-4 mb-8 ${hasRichData ? 'bg-[var(--muted)]' : 'bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800'}`}>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <div className="text-sm">
-                <strong>Public Domain Text:</strong> {translationName}
-              </div>
-              <div className="text-xs text-[var(--muted-foreground)] mt-1">
-                Enhanced morphological data and study tools are available for{' '}
-                <Link href="/read/Gen/1/" className="text-[var(--accent)] hover:underline">Genesis 1</Link>
-                {' '}and{' '}
-                <Link href="/read/John/1/" className="text-[var(--accent)] hover:underline">John 1</Link>.
-              </div>
+              {hasRichData ? (
+                <>
+                  <div className="flex items-center gap-4 mb-2">
+                    <LayerToggle />
+                    <ViewToggles />
+                  </div>
+                  <div className="text-xs text-[var(--muted-foreground)]">
+                    {richVerseNumbers.length} verses with morphological study data
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-sm">
+                    <strong>Source:</strong> {translationName}
+                  </div>
+                  <div className="text-xs text-[var(--muted-foreground)] mt-1">
+                    Morphological study data available for{' '}
+                    <Link href="/read/Gen/1/" className="text-[var(--accent)] hover:underline">Genesis 1</Link>
+                    {' '}and{' '}
+                    <Link href="/read/John/1/" className="text-[var(--accent)] hover:underline">John 1</Link>.
+                  </div>
+                </>
+              )}
             </div>
             <div className="flex items-center gap-3">
               <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
@@ -269,25 +275,6 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             </div>
           </div>
         </div>
-      )}
-
-      {/* Rich verse display with full features */}
-      {richVerses && (
-        <ReadingThemeWrapper theme={theme}>
-          <div className={`max-w-3xl ${fontSize} ${getSpacingClass(spacing)} p-4`}>
-          {richVerses.map((verse, index) => (
-            <VerseDisplay
-              key={verse.ref}
-              verseRef={verse.ref}
-              verseNumber={index + 1}
-              sourceTokens={verse.sourceTokens}
-              translation={verse.translation as any}
-              notes={(verse.notes || []) as any}
-              variants={getVariantsForVerse(verse.ref)}
-            />
-          ))}
-          </div>
-        </ReadingThemeWrapper>
       )}
 
       {/* Loading state */}
@@ -314,17 +301,37 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
         </div>
       )}
 
-      {/* Simple verse display for API-fetched content */}
-      {!richVerses && simpleVerses && !loading && (
+      {/* Verse display - combines rich data where available with API data */}
+      {simpleVerses && !loading && (
         <ReadingThemeWrapper theme={theme}>
-          <div className="p-4">
-            <SimpleVerseList
-              verses={simpleVerses}
-              className={`${fontSize} ${getSpacingClass(spacing)}`}
-              bookCode={bookCode}
-              chapter={chapterNum}
-              showVerseNumbers={showVerseNumbers}
-            />
+          <div className={`max-w-3xl ${fontSize} ${getSpacingClass(spacing)} p-4`}>
+            {simpleVerses.map((verse) => {
+              const richVerse = getRichVerseData(bookCode, chapterNum, verse.verseNumber);
+              if (richVerse) {
+                return (
+                  <VerseDisplay
+                    key={verse.ref}
+                    verseRef={richVerse.ref}
+                    verseNumber={verse.verseNumber}
+                    sourceTokens={richVerse.sourceTokens}
+                    translation={richVerse.translation as any}
+                    notes={(richVerse.notes || []) as any}
+                    variants={getVariantsForVerse(richVerse.ref)}
+                  />
+                );
+              }
+              return (
+                <SimpleVerseDisplay
+                  key={verse.ref}
+                  verseRef={verse.ref}
+                  verseNumber={verse.verseNumber}
+                  text={verse.text}
+                  bookCode={bookCode}
+                  chapter={chapterNum}
+                  showVerseNumbers={showVerseNumbers}
+                />
+              );
+            })}
           </div>
         </ReadingThemeWrapper>
       )}
