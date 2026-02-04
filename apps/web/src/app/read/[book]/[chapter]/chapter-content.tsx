@@ -20,6 +20,7 @@ import { FullscreenButton } from '@/components/fullscreen-button';
 import { ExportButton } from '@/components/export-button';
 import { ReadingThemeSelector, ReadingThemeWrapper, useReadingTheme } from '@/components/reading-theme';
 import { TextToSpeech } from '@/components/text-to-speech';
+import { LineSpacingControl, useLineSpacing, getSpacingClass } from '@/components/line-spacing-control';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
 import { TextSelectionMenu } from '@/components/text-selection-menu';
@@ -53,6 +54,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const { fontSize, setFontSize } = useFontSize();
   const { showVerseNumbers, toggleVerseNumbers } = useVerseNumbers();
   const { theme, setTheme } = useReadingTheme();
+  const { spacing, setSpacing } = useLineSpacing();
 
   // State for fetched verses
   const [simpleVerses, setSimpleVerses] = React.useState<SimpleVerse[] | null>(null);
@@ -219,6 +221,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             <ViewToggles />
             <div className="border-l border-[var(--border)] pl-4 flex items-center gap-3">
               <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
+              <LineSpacingControl spacing={spacing} onSpacingChange={setSpacing} />
               <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />
               <ReadingThemeSelector theme={theme} onThemeChange={setTheme} />
             </div>
@@ -248,6 +251,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             </div>
             <div className="flex items-center gap-3">
               <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
+              <LineSpacingControl spacing={spacing} onSpacingChange={setSpacing} />
               <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />
               <ReadingThemeSelector theme={theme} onThemeChange={setTheme} />
             </div>
@@ -258,7 +262,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
       {/* Rich verse display with full features */}
       {richVerses && (
         <ReadingThemeWrapper theme={theme}>
-          <div className={`max-w-3xl ${fontSize} p-4`}>
+          <div className={`max-w-3xl ${fontSize} ${getSpacingClass(spacing)} p-4`}>
           {richVerses.map((verse, index) => (
             <VerseDisplay
               key={verse.ref}
@@ -304,7 +308,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           <div className="p-4">
             <SimpleVerseList
               verses={simpleVerses}
-              className={fontSize}
+              className={`${fontSize} ${getSpacingClass(spacing)}`}
               bookCode={bookCode}
               chapter={chapterNum}
               showVerseNumbers={showVerseNumbers}
