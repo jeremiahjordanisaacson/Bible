@@ -9,6 +9,7 @@ import { LayerToggle, ViewToggles } from '@/components/layer-toggle';
 import { useBibleStore } from '@/store/bible-store';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
 import genesisChapter1Verses from '@/data/sample-genesis';
+import genesisChapter2Verses from '@/data/sample-genesis-2';
 import johnChapter1Verses from '@/data/sample-john';
 import { getVariantsForVerse } from '@/data/variants';
 import { getBook, getNextBook, getPrevBook } from '@/data/books-metadata';
@@ -29,10 +30,14 @@ import { TextSelectionMenu } from '@/components/text-selection-menu';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 import { addToReadingHistory } from '@/lib/reading-history';
 
-// Sample data mapping - rich data with morphology (partial chapters)
+// Sample data mapping - rich data with morphology
 function getRichVerseData(book: string, chapter: number, verseNum: number) {
   if (book === 'Gen' && chapter === 1) {
     const verse = genesisChapter1Verses.find((v, i) => i + 1 === verseNum);
+    return verse || null;
+  }
+  if (book === 'Gen' && chapter === 2) {
+    const verse = genesisChapter2Verses.find((v, i) => i + 1 === verseNum);
     return verse || null;
   }
   if (book === 'John' && chapter === 1) {
@@ -45,6 +50,7 @@ function getRichVerseData(book: string, chapter: number, verseNum: number) {
 // Check if a chapter has any rich data
 function hasRichChapterData(book: string, chapter: number) {
   if (book === 'Gen' && chapter === 1) return true;
+  if (book === 'Gen' && chapter === 2) return true;
   if (book === 'John' && chapter === 1) return true;
   return false;
 }
@@ -53,6 +59,9 @@ function hasRichChapterData(book: string, chapter: number) {
 function getRichVerseNumbers(book: string, chapter: number): number[] {
   if (book === 'Gen' && chapter === 1) {
     return genesisChapter1Verses.map((_, i) => i + 1);
+  }
+  if (book === 'Gen' && chapter === 2) {
+    return genesisChapter2Verses.map((_, i) => i + 1);
   }
   if (book === 'John' && chapter === 1) {
     return johnChapter1Verses.map((_, i) => i + 1);
