@@ -36,8 +36,8 @@ export function Header() {
           <Link href="/search/" className="text-sm hover:text-[var(--accent)]">
             Search
           </Link>
-          <Link href="/demo/" className="text-sm hover:text-[var(--accent)]">
-            Demo
+          <Link href="/stats/" className="text-sm hover:text-[var(--accent)]">
+            Stats
           </Link>
           <Link href="/about/" className="text-sm hover:text-[var(--accent)]">
             About
