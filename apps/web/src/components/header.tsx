@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ThemeToggle } from './theme-toggle';
+import { BookNav } from './book-nav';
 
 export function Header() {
   return (
@@ -23,9 +24,7 @@ export function Header() {
           Open Bible
         </Link>
         <nav className="flex items-center gap-4">
-          <Link href="/read/Gen/1/" className="text-sm hover:text-[var(--accent)]">
-            Read
-          </Link>
+          <BookNav />
           <Link href="/search/" className="text-sm hover:text-[var(--accent)]">
             Search
           </Link>

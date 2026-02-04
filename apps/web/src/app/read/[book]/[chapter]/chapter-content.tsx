@@ -9,14 +9,7 @@ import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
 import genesisChapter1Verses from '@/data/sample-genesis';
 import johnChapter1Verses from '@/data/sample-john';
 import { getVariantsForVerse } from '@/data/variants';
-
-// Book metadata
-const BOOKS: Record<string, { name: string; chapters: number; testament: 'OT' | 'NT' }> = {
-  Gen: { name: 'Genesis', chapters: 50, testament: 'OT' },
-  Exod: { name: 'Exodus', chapters: 40, testament: 'OT' },
-  John: { name: 'John', chapters: 21, testament: 'NT' },
-  Rom: { name: 'Romans', chapters: 16, testament: 'NT' },
-};
+import { getBook } from '@/data/books-metadata';
 
 // Sample data mapping
 function getChapterData(book: string, chapter: number) {
@@ -46,7 +39,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
     setCurrentChapter(chapterNum);
   }, [bookCode, chapterNum, setCurrentBook, setCurrentChapter]);
 
-  const book = BOOKS[bookCode];
+  const book = getBook(bookCode);
   const verses = getChapterData(bookCode, chapterNum);
 
   // Navigation helpers
