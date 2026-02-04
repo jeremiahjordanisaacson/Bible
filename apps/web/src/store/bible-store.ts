@@ -25,6 +25,9 @@ interface BibleState {
   searchQuery: string;
   searchResults: Array<{ verseRef: string; text: string; highlights: string[] }>;
 
+  // UI modals
+  showKeyboardShortcuts: boolean;
+
   // Actions
   setCurrentBook: (book: string) => void;
   setCurrentChapter: (chapter: number) => void;
@@ -39,6 +42,7 @@ interface BibleState {
   setHighlightedSpan: (spanId: string | null) => void;
   setSearchQuery: (query: string) => void;
   navigateTo: (book: string, chapter: number, verse?: number) => void;
+  setShowKeyboardShortcuts: (show: boolean) => void;
 }
 
 export const useBibleStore = create<BibleState>((set) => ({
@@ -58,6 +62,8 @@ export const useBibleStore = create<BibleState>((set) => ({
   searchQuery: '',
   searchResults: [],
 
+  showKeyboardShortcuts: false,
+
   // Actions
   setCurrentBook: (book) => set({ currentBook: book, currentChapter: 1, currentVerse: null }),
   setCurrentChapter: (chapter) => set({ currentChapter: chapter, currentVerse: null }),
@@ -73,4 +79,5 @@ export const useBibleStore = create<BibleState>((set) => ({
   setSearchQuery: (query) => set({ searchQuery: query }),
   navigateTo: (book, chapter, verse) =>
     set({ currentBook: book, currentChapter: chapter, currentVerse: verse ?? null }),
+  setShowKeyboardShortcuts: (show) => set({ showKeyboardShortcuts: show }),
 }));

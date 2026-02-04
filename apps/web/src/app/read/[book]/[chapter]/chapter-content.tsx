@@ -10,6 +10,7 @@ import genesisChapter1Verses from '@/data/sample-genesis';
 import johnChapter1Verses from '@/data/sample-john';
 import { getVariantsForVerse } from '@/data/variants';
 import { getBook } from '@/data/books-metadata';
+import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal';
 
 // Sample data mapping
 function getChapterData(book: string, chapter: number) {
@@ -28,7 +29,7 @@ interface ChapterContentProps {
 }
 
 export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
-  const { navigateTo, setCurrentBook, setCurrentChapter } = useBibleStore();
+  const { navigateTo, setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts } = useBibleStore();
 
   // Enable keyboard navigation
   useKeyboardNavigation();
@@ -212,6 +213,12 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           <div />
         )}
       </nav>
+
+      {/* Keyboard shortcuts modal */}
+      <KeyboardShortcutsModal
+        open={showKeyboardShortcuts}
+        onOpenChange={setShowKeyboardShortcuts}
+      />
     </div>
   );
 }

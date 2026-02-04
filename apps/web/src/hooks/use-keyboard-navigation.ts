@@ -14,6 +14,7 @@ export function useKeyboardNavigation() {
     setShowStudyMode,
     showNotes,
     setShowNotes,
+    setShowKeyboardShortcuts,
   } = useBibleStore();
 
   const handleKeyDown = useCallback(
@@ -47,18 +48,11 @@ export function useKeyboardNavigation() {
           setShowNotes(!showNotes);
           break;
         case '?':
-          // Could open a help modal in the future
-          console.log('Keyboard shortcuts:', {
-            '1': 'Literal layer',
-            '2': 'Idiomatic layer',
-            '3': 'Literary layer',
-            'S': 'Toggle study mode',
-            'N': 'Toggle notes',
-          });
+          setShowKeyboardShortcuts(true);
           break;
       }
     },
-    [setSelectedLayer, showStudyMode, setShowStudyMode, showNotes, setShowNotes]
+    [setSelectedLayer, showStudyMode, setShowStudyMode, showNotes, setShowNotes, setShowKeyboardShortcuts]
   );
 
   useEffect(() => {
