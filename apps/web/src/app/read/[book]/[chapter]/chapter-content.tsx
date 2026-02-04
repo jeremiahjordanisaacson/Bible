@@ -16,6 +16,7 @@ import { FontSizeControl, useFontSize } from '@/components/font-size-control';
 import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-toggle';
 import { ReadingProgress } from '@/components/reading-progress';
 import { PrintButton } from '@/components/print-button';
+import { ScrollToTop } from '@/components/scroll-to-top';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 import { addToReadingHistory } from '@/lib/reading-history';
 
@@ -379,6 +380,9 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
         open={showKeyboardShortcuts}
         onOpenChange={setShowKeyboardShortcuts}
       />
+
+      {/* Scroll to top button */}
+      <ScrollToTop />
     </div>
   );
 }
