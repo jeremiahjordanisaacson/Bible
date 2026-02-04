@@ -10,11 +10,11 @@ import {
   type BookMetadata,
 } from '@/data/books-metadata';
 
-// Books with sample data currently available
-const AVAILABLE_BOOKS = new Set(['Gen', 'John']);
+// Books with rich morphological data (sample data)
+const RICH_DATA_BOOKS = new Set(['Gen', 'John']);
 
-function hasData(bookCode: string): boolean {
-  return AVAILABLE_BOOKS.has(bookCode);
+function hasRichData(bookCode: string): boolean {
+  return RICH_DATA_BOOKS.has(bookCode);
 }
 
 interface BookNavProps {
@@ -110,7 +110,7 @@ export function BookNav({ currentBook }: BookNavProps) {
                         key={book.code}
                         book={book}
                         isActive={book.code === currentBook}
-                        hasData={hasData(book.code)}
+                        hasRichData={hasRichData(book.code)}
                         onClick={() => setOpen(false)}
                       />
                     ))}
@@ -124,8 +124,9 @@ export function BookNav({ currentBook }: BookNavProps) {
           <div className="border-t border-[var(--border)] px-4 py-2 text-xs text-[var(--muted-foreground)]">
             <span className="inline-flex items-center gap-1">
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              Sample data available
+              Rich study data (Genesis, John)
             </span>
+            <span className="ml-3">All 66 books available</span>
           </div>
 
           <Popover.Arrow className="fill-[var(--border)]" />
@@ -138,11 +139,11 @@ export function BookNav({ currentBook }: BookNavProps) {
 interface BookLinkProps {
   book: BookMetadata;
   isActive: boolean;
-  hasData: boolean;
+  hasRichData: boolean;
   onClick: () => void;
 }
 
-function BookLink({ book, isActive, hasData, onClick }: BookLinkProps) {
+function BookLink({ book, isActive, hasRichData, onClick }: BookLinkProps) {
   return (
     <Link
       href={`/read/${book.code}/1/`}
@@ -151,15 +152,15 @@ function BookLink({ book, isActive, hasData, onClick }: BookLinkProps) {
         px-2 py-1.5 rounded text-sm transition-colors relative
         ${isActive
           ? 'bg-[var(--accent)] text-[var(--accent-foreground)]'
-          : hasData
+          : hasRichData
             ? 'bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/30 text-[var(--foreground)]'
-            : 'hover:bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)]'
+            : 'hover:bg-[var(--muted)] text-[var(--foreground)]'
         }
       `}
-      title={`${book.name} (${book.chapters} chapters)`}
+      title={`${book.name} (${book.chapters} chapters)${hasRichData ? ' - Rich study data' : ''}`}
     >
       <span className="truncate block">{book.name}</span>
-      {hasData && !isActive && (
+      {hasRichData && !isActive && (
         <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-green-500" />
       )}
     </Link>

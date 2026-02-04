@@ -33,6 +33,9 @@ export function Header() {
         </Link>
         <nav className="flex items-center gap-4">
           <BookNav />
+          <Link href="/books/" className="text-sm hover:text-[var(--accent)]">
+            All Books
+          </Link>
           <Link href="/search/" className="text-sm hover:text-[var(--accent)]">
             Search
           </Link>

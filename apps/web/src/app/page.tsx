@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ReadingHistoryList } from '@/components/reading-history';
 import { RandomChapterButton } from '@/components/random-chapter-button';
 import { VerseOfDay } from '@/components/verse-of-day';
+import { allBooks, categories, getBooksByCategory, bibleStats } from '@/data/books-metadata';
 
 export default function HomePage() {
   return (
@@ -168,34 +169,98 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quick Navigation */}
-      <section className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-2xl font-bold mb-6">Quick Navigation</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="border border-[var(--border)] rounded-lg p-6">
-            <h3 className="font-semibold mb-4">Old Testament</h3>
-            <div className="flex flex-wrap gap-2">
-              <BookLink code="Gen" name="Genesis" />
-              <BookLink code="Exod" name="Exodus" />
-              <BookLink code="Ps" name="Psalms" />
-              <BookLink code="Isa" name="Isaiah" />
-            </div>
-            <p className="text-sm text-[var(--muted-foreground)] mt-4">
-              Sample: Genesis 1 (Hebrew with full morphology)
-            </p>
+      {/* Complete Bible Browser */}
+      <section className="max-w-6xl mx-auto mb-16">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold">Browse All Books</h2>
+          <div className="text-sm text-[var(--muted-foreground)]">
+            {bibleStats.totalBooks} books &middot; {bibleStats.totalChapters.toLocaleString()} chapters
           </div>
-          <div className="border border-[var(--border)] rounded-lg p-6">
-            <h3 className="font-semibold mb-4">New Testament</h3>
-            <div className="flex flex-wrap gap-2">
-              <BookLink code="John" name="John" />
-              <BookLink code="Rom" name="Romans" />
-              <BookLink code="Gal" name="Galatians" />
-              <BookLink code="Rev" name="Revelation" />
-            </div>
-            <p className="text-sm text-[var(--muted-foreground)] mt-4">
-              Sample: John 1 (Greek with full morphology)
-            </p>
+        </div>
+
+        {/* Old Testament */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+            <span className="px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 rounded text-xs">
+              OT
+            </span>
+            Old Testament
+            <span className="text-sm font-normal text-[var(--muted-foreground)]">
+              ({bibleStats.oldTestamentBooks} books)
+            </span>
+          </h3>
+          <div className="grid gap-4">
+            {categories.filter(cat => getBooksByCategory(cat).some(b => b.testament === 'OT')).map(category => (
+              <div key={category} className="border border-[var(--border)] rounded-lg p-4">
+                <h4 className="text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide mb-3">
+                  {category}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {getBooksByCategory(category).filter(b => b.testament === 'OT').map(book => (
+                    <Link
+                      key={book.code}
+                      href={`/read/${book.code}/1/`}
+                      className={`px-3 py-1.5 rounded text-sm transition-colors ${
+                        book.code === 'Gen'
+                          ? 'bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 text-green-800 dark:text-green-200'
+                          : 'bg-[var(--muted)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]'
+                      }`}
+                      title={`${book.name} (${book.chapters} chapters)`}
+                    >
+                      {book.name}
+                      {book.code === 'Gen' && <span className="ml-1 text-xs">✦</span>}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+
+        {/* New Testament */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+            <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded text-xs">
+              NT
+            </span>
+            New Testament
+            <span className="text-sm font-normal text-[var(--muted-foreground)]">
+              ({bibleStats.newTestamentBooks} books)
+            </span>
+          </h3>
+          <div className="grid gap-4">
+            {categories.filter(cat => getBooksByCategory(cat).some(b => b.testament === 'NT')).map(category => (
+              <div key={category} className="border border-[var(--border)] rounded-lg p-4">
+                <h4 className="text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide mb-3">
+                  {category}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {getBooksByCategory(category).filter(b => b.testament === 'NT').map(book => (
+                    <Link
+                      key={book.code}
+                      href={`/read/${book.code}/1/`}
+                      className={`px-3 py-1.5 rounded text-sm transition-colors ${
+                        book.code === 'John'
+                          ? 'bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 text-green-800 dark:text-green-200'
+                          : 'bg-[var(--muted)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]'
+                      }`}
+                      title={`${book.name} (${book.chapters} chapters)`}
+                    >
+                      {book.name}
+                      {book.code === 'John' && <span className="ml-1 text-xs">✦</span>}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-4 text-sm text-[var(--muted-foreground)] flex items-center gap-4">
+          <span className="inline-flex items-center gap-1">
+            <span className="text-xs">✦</span> Rich morphological study data
+          </span>
+          <span>All books available in World English Bible (public domain)</span>
         </div>
       </section>
 
@@ -271,13 +336,3 @@ function FeatureCard({
   );
 }
 
-function BookLink({ code, name }: { code: string; name: string }) {
-  return (
-    <Link
-      href={`/read/${code}/1/`}
-      className="px-3 py-1.5 bg-[var(--muted)] rounded text-sm hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] transition"
-    >
-      {name}
-    </Link>
-  );
-}
