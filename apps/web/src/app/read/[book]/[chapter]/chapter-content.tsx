@@ -18,6 +18,7 @@ import { ReadingProgress } from '@/components/reading-progress';
 import { PrintButton } from '@/components/print-button';
 import { FullscreenButton } from '@/components/fullscreen-button';
 import { ExportButton } from '@/components/export-button';
+import { ReadingThemeSelector, ReadingThemeWrapper, useReadingTheme } from '@/components/reading-theme';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
 import { TextSelectionMenu } from '@/components/text-selection-menu';
@@ -50,6 +51,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const { navigateTo, setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts } = useBibleStore();
   const { fontSize, setFontSize } = useFontSize();
   const { showVerseNumbers, toggleVerseNumbers } = useVerseNumbers();
+  const { theme, setTheme } = useReadingTheme();
 
   // State for fetched verses
   const [simpleVerses, setSimpleVerses] = React.useState<SimpleVerse[] | null>(null);
@@ -208,6 +210,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             <div className="border-l border-[var(--border)] pl-4 flex items-center gap-3">
               <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
               <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />
+              <ReadingThemeSelector theme={theme} onThemeChange={setTheme} />
             </div>
           </div>
           <div className="mt-4 text-sm text-[var(--muted-foreground)] border-t border-[var(--border)] pt-4">
@@ -236,6 +239,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             <div className="flex items-center gap-3">
               <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
               <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />
+              <ReadingThemeSelector theme={theme} onThemeChange={setTheme} />
             </div>
           </div>
         </div>
@@ -243,7 +247,8 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Rich verse display with full features */}
       {richVerses && (
-        <div className={`max-w-3xl ${fontSize}`}>
+        <ReadingThemeWrapper theme={theme}>
+          <div className={`max-w-3xl ${fontSize} p-4`}>
           {richVerses.map((verse, index) => (
             <VerseDisplay
               key={verse.ref}
@@ -255,7 +260,8 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
               variants={getVariantsForVerse(verse.ref)}
             />
           ))}
-        </div>
+          </div>
+        </ReadingThemeWrapper>
       )}
 
       {/* Loading state */}
@@ -284,13 +290,17 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Simple verse display for API-fetched content */}
       {!richVerses && simpleVerses && !loading && (
-        <SimpleVerseList
-          verses={simpleVerses}
-          className={fontSize}
-          bookCode={bookCode}
-          chapter={chapterNum}
-          showVerseNumbers={showVerseNumbers}
-        />
+        <ReadingThemeWrapper theme={theme}>
+          <div className="p-4">
+            <SimpleVerseList
+              verses={simpleVerses}
+              className={fontSize}
+              bookCode={bookCode}
+              chapter={chapterNum}
+              showVerseNumbers={showVerseNumbers}
+            />
+          </div>
+        </ReadingThemeWrapper>
       )}
 
       {/* Navigation */}
