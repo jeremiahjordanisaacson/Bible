@@ -17,6 +17,7 @@ import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-to
 import { ReadingProgress } from '@/components/reading-progress';
 import { PrintButton } from '@/components/print-button';
 import { FullscreenButton } from '@/components/fullscreen-button';
+import { ExportButton } from '@/components/export-button';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
 import { TextSelectionMenu } from '@/components/text-selection-menu';
@@ -169,6 +170,19 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           </div>
           <div className="flex items-center gap-1">
             <FullscreenButton />
+            <ExportButton
+              bookName={book.name}
+              chapter={chapterNum}
+              getContent={() => {
+                const verses = simpleVerses || richVerses?.map((v, i) => ({
+                  verseNumber: i + 1,
+                  text: v.translation?.layers?.idiomatic?.text || v.translation?.layers?.literal?.text || ''
+                })) || [];
+                const header = `${book.name} ${chapterNum}\n${'='.repeat(book.name.length + String(chapterNum).length + 1)}\n\n`;
+                const content = verses.map(v => `${v.verseNumber}. ${v.text}`).join('\n\n');
+                return header + content;
+              }}
+            />
             <PrintButton />
           </div>
         </div>
