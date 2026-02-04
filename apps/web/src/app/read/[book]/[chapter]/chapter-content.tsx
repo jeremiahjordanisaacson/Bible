@@ -60,6 +60,24 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const book = getBook(bookCode);
   const richVerses = getRichChapterData(bookCode, chapterNum);
 
+  // Scroll to verse if URL has hash (e.g., #v5)
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#v')) {
+      const verseId = hash.slice(1);
+      const element = document.getElementById(verseId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.classList.add('bg-yellow-100', 'dark:bg-yellow-900/30');
+          setTimeout(() => {
+            element.classList.remove('bg-yellow-100', 'dark:bg-yellow-900/30');
+          }, 2000);
+        }, 500);
+      }
+    }
+  }, [simpleVerses, richVerses]);
+
   // Fetch verses from API if no rich data available
   React.useEffect(() => {
     if (richVerses || !book) {
@@ -225,7 +243,12 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Simple verse display for API-fetched content */}
       {!richVerses && simpleVerses && !loading && (
-        <SimpleVerseList verses={simpleVerses} className={fontSize} />
+        <SimpleVerseList
+          verses={simpleVerses}
+          className={fontSize}
+          bookCode={bookCode}
+          chapter={chapterNum}
+        />
       )}
 
       {/* Navigation */}

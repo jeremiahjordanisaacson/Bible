@@ -1,24 +1,35 @@
 'use client';
 
 import { CopyVerseButton } from './copy-verse-button';
+import { ShareVerseButton } from './share-verse-button';
 
 interface SimpleVerseDisplayProps {
   verseRef: string;
   verseNumber: number;
   text: string;
+  bookCode?: string;
+  chapter?: number;
 }
 
-export function SimpleVerseDisplay({ verseRef, verseNumber, text }: SimpleVerseDisplayProps) {
+export function SimpleVerseDisplay({ verseRef, verseNumber, text, bookCode, chapter }: SimpleVerseDisplayProps) {
   return (
-    <div className="mb-4 leading-relaxed group flex items-start gap-2">
+    <div id={`v${verseNumber}`} className="mb-4 leading-relaxed group flex items-start gap-2">
       <div className="flex-1">
         <sup className="text-[var(--muted-foreground)] mr-1 font-medium">
           {verseNumber}
         </sup>
         <span className="text-[var(--foreground)]">{text}</span>
       </div>
-      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
         <CopyVerseButton verseRef={verseRef} text={text} />
+        {bookCode && chapter && (
+          <ShareVerseButton
+            verseRef={verseRef}
+            bookCode={bookCode}
+            chapter={chapter}
+            verse={verseNumber}
+          />
+        )}
       </div>
     </div>
   );
@@ -28,9 +39,11 @@ interface SimpleVerseListProps {
   verses: Array<{ ref: string; verseNumber: number; text: string }>;
   translationName?: string;
   className?: string;
+  bookCode?: string;
+  chapter?: number;
 }
 
-export function SimpleVerseList({ verses, translationName, className }: SimpleVerseListProps) {
+export function SimpleVerseList({ verses, translationName, className, bookCode, chapter }: SimpleVerseListProps) {
   return (
     <div className={`max-w-3xl ${className || ''}`}>
       {translationName && (
@@ -44,6 +57,8 @@ export function SimpleVerseList({ verses, translationName, className }: SimpleVe
           verseRef={verse.ref}
           verseNumber={verse.verseNumber}
           text={verse.text}
+          bookCode={bookCode}
+          chapter={chapter}
         />
       ))}
     </div>
