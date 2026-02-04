@@ -19,6 +19,7 @@ import { PrintButton } from '@/components/print-button';
 import { FullscreenButton } from '@/components/fullscreen-button';
 import { ExportButton } from '@/components/export-button';
 import { ReadingThemeSelector, ReadingThemeWrapper, useReadingTheme } from '@/components/reading-theme';
+import { TextToSpeech } from '@/components/text-to-speech';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
 import { TextSelectionMenu } from '@/components/text-selection-menu';
@@ -171,6 +172,15 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             <span>Chapter {chapterNum}</span>
           </div>
           <div className="flex items-center gap-1">
+            <TextToSpeech
+              getText={() => {
+                const verses = simpleVerses || richVerses?.map((v, i) => ({
+                  verseNumber: i + 1,
+                  text: v.translation?.layers?.idiomatic?.text || v.translation?.layers?.literal?.text || ''
+                })) || [];
+                return verses.map(v => `Verse ${v.verseNumber}. ${v.text}`).join(' ');
+              }}
+            />
             <FullscreenButton />
             <ExportButton
               bookName={book.name}
