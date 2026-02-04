@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { ReadingHistoryList } from '@/components/reading-history';
 
 export default function HomePage() {
   return (
@@ -128,6 +129,14 @@ export default function HomePage() {
           title="Open Source"
           description="Fully open source with a GitHub-based review workflow. Contribute translations, notes, or code."
         />
+      </section>
+
+      {/* Recent Reading */}
+      <section className="max-w-4xl mx-auto mb-12">
+        <div className="border border-[var(--border)] rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">Continue Reading</h2>
+          <ReadingHistoryList />
+        </div>
       </section>
 
       {/* Keyboard Shortcuts */}

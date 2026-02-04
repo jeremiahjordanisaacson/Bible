@@ -17,6 +17,7 @@ import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-to
 import { ReadingProgress } from '@/components/reading-progress';
 import { PrintButton } from '@/components/print-button';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
+import { addToReadingHistory } from '@/lib/reading-history';
 
 // Sample data mapping - rich data with morphology
 function getRichChapterData(book: string, chapter: number) {
@@ -58,6 +59,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   React.useEffect(() => {
     setCurrentBook(bookCode);
     setCurrentChapter(chapterNum);
+    addToReadingHistory(bookCode, chapterNum);
   }, [bookCode, chapterNum, setCurrentBook, setCurrentChapter]);
 
   const book = getBook(bookCode);
