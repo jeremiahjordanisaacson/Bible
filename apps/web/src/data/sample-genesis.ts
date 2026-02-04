@@ -9,6 +9,7 @@ import { genesis1_6_10_verses } from './genesis/gen-1-6-10';
 import { genesis1_9_13_verses } from './genesis/gen-1-9-13';
 import { genesis1_14_19_verses } from './genesis/gen-1-14-19';
 import { genesis1_20_25_verses } from './genesis/gen-1-20-25';
+import { genesis1_26_31_verses } from './genesis/gen-1-26-31';
 
 // Genesis 1:1 Source Tokens
 export const genesis1_1_tokens: SourceToken[] = [
@@ -639,7 +640,7 @@ const baseGenesisVerses = [
   },
 ];
 
-// Combine all Genesis 1 verses (1:1-25)
+// Combine all Genesis 1 verses (1:1-31) - COMPLETE CHAPTER
 export const genesisChapter1Verses = [
   ...baseGenesisVerses,      // 1:1-3
   ...extendedGenesisVerses,  // 1:4-5
@@ -647,6 +648,7 @@ export const genesisChapter1Verses = [
   ...genesis1_9_13_verses,   // 1:9-13
   ...genesis1_14_19_verses,  // 1:14-19
   ...genesis1_20_25_verses,  // 1:20-25
+  ...genesis1_26_31_verses,  // 1:26-31
 ];
 
 export default genesisChapter1Verses;
