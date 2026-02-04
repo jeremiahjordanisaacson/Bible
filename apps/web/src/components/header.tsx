@@ -1,10 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ThemeToggle } from './theme-toggle';
 import { BookNav } from './book-nav';
+import { QuickJump } from './quick-jump';
 
 export function Header() {
+  const router = useRouter();
+
+  const handleQuickJump = (bookCode: string, chapter: number) => {
+    router.push(`/read/${bookCode}/${chapter}/`);
+  };
+
   return (
     <header className="border-b border-[var(--border)] sticky top-0 bg-[var(--background)] z-50">
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
@@ -34,7 +42,8 @@ export function Header() {
           <Link href="/about/" className="text-sm hover:text-[var(--accent)]">
             About
           </Link>
-          <div className="ml-2 border-l border-[var(--border)] pl-4">
+          <div className="ml-2 border-l border-[var(--border)] pl-4 flex items-center gap-2">
+            <QuickJump onNavigate={handleQuickJump} />
             <ThemeToggle />
           </div>
         </nav>
