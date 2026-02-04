@@ -16,6 +16,7 @@ import { FontSizeControl, useFontSize } from '@/components/font-size-control';
 import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-toggle';
 import { ReadingProgress } from '@/components/reading-progress';
 import { PrintButton } from '@/components/print-button';
+import { FullscreenButton } from '@/components/fullscreen-button';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
 import { TextSelectionMenu } from '@/components/text-selection-menu';
@@ -166,7 +167,10 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             <span>/</span>
             <span>Chapter {chapterNum}</span>
           </div>
-          <PrintButton />
+          <div className="flex items-center gap-1">
+            <FullscreenButton />
+            <PrintButton />
+          </div>
         </div>
         <h1 className="text-3xl font-bold">
           {book.name} {chapterNum}
