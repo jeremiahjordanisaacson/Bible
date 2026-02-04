@@ -19,11 +19,12 @@ export function SimpleVerseDisplay({ verseNumber, text }: SimpleVerseDisplayProp
 interface SimpleVerseListProps {
   verses: Array<{ ref: string; verseNumber: number; text: string }>;
   translationName?: string;
+  className?: string;
 }
 
-export function SimpleVerseList({ verses, translationName }: SimpleVerseListProps) {
+export function SimpleVerseList({ verses, translationName, className }: SimpleVerseListProps) {
   return (
-    <div className="max-w-3xl">
+    <div className={`max-w-3xl ${className || ''}`}>
       {translationName && (
         <div className="mb-4 text-sm text-[var(--muted-foreground)] italic">
           {translationName}

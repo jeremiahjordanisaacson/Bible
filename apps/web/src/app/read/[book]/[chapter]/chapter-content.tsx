@@ -12,6 +12,7 @@ import johnChapter1Verses from '@/data/sample-john';
 import { getVariantsForVerse } from '@/data/variants';
 import { getBook } from '@/data/books-metadata';
 import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal';
+import { FontSizeControl, useFontSize } from '@/components/font-size-control';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 
 // Sample data mapping - rich data with morphology
@@ -38,6 +39,7 @@ interface ChapterContentProps {
 
 export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const { navigateTo, setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts } = useBibleStore();
+  const { fontSize, setFontSize } = useFontSize();
 
   // State for fetched verses
   const [simpleVerses, setSimpleVerses] = React.useState<SimpleVerse[] | null>(null);
@@ -142,9 +144,12 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
       {/* Controls - only show full controls for rich data */}
       {richVerses && (
         <div className="bg-[var(--muted)] rounded-lg p-4 mb-8">
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap items-center gap-6">
             <LayerToggle />
             <ViewToggles />
+            <div className="border-l border-[var(--border)] pl-4">
+              <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
+            </div>
           </div>
           <div className="mt-4 text-sm text-[var(--muted-foreground)] border-t border-[var(--border)] pt-4">
             <strong>Note:</strong> This is an AI-assisted draft translation. All translations should
@@ -157,21 +162,26 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
       {/* Simple controls for API-fetched content */}
       {!richVerses && simpleVerses && (
         <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-8">
-          <div className="text-sm">
-            <strong>Public Domain Text:</strong> {translationName}
-          </div>
-          <div className="text-xs text-[var(--muted-foreground)] mt-1">
-            Enhanced morphological data and study tools are available for{' '}
-            <Link href="/read/Gen/1/" className="text-[var(--accent)] hover:underline">Genesis 1</Link>
-            {' '}and{' '}
-            <Link href="/read/John/1/" className="text-[var(--accent)] hover:underline">John 1</Link>.
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <div className="text-sm">
+                <strong>Public Domain Text:</strong> {translationName}
+              </div>
+              <div className="text-xs text-[var(--muted-foreground)] mt-1">
+                Enhanced morphological data and study tools are available for{' '}
+                <Link href="/read/Gen/1/" className="text-[var(--accent)] hover:underline">Genesis 1</Link>
+                {' '}and{' '}
+                <Link href="/read/John/1/" className="text-[var(--accent)] hover:underline">John 1</Link>.
+              </div>
+            </div>
+            <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
           </div>
         </div>
       )}
 
       {/* Rich verse display with full features */}
       {richVerses && (
-        <div className="max-w-3xl">
+        <div className={`max-w-3xl ${fontSize}`}>
           {richVerses.map((verse, index) => (
             <VerseDisplay
               key={verse.ref}
@@ -212,7 +222,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Simple verse display for API-fetched content */}
       {!richVerses && simpleVerses && !loading && (
-        <SimpleVerseList verses={simpleVerses} />
+        <SimpleVerseList verses={simpleVerses} className={fontSize} />
       )}
 
       {/* Navigation */}
