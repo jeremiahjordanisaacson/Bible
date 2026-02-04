@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { VerseDisplay } from '@/components/verse-display';
 import { SimpleVerseList } from '@/components/simple-verse-display';
 import { LayerToggle, ViewToggles } from '@/components/layer-toggle';
@@ -51,7 +52,8 @@ interface ChapterContentProps {
 }
 
 export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
-  const { navigateTo, setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts } = useBibleStore();
+  const router = useRouter();
+  const { setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts } = useBibleStore();
   const { fontSize, setFontSize } = useFontSize();
   const { showVerseNumbers, toggleVerseNumbers } = useVerseNumbers();
   const { theme, setTheme } = useReadingTheme();
@@ -381,7 +383,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           <select
             id="chapter-select"
             value={chapterNum}
-            onChange={(e) => navigateTo(bookCode, parseInt(e.target.value, 10))}
+            onChange={(e) => router.push(`/read/${bookCode}/${e.target.value}/`)}
             className="px-3 py-1 border border-[var(--border)] rounded bg-[var(--background)]"
           >
             {Array.from({ length: book.chapters }, (_, i) => i + 1).map((ch) => (
