@@ -21,6 +21,7 @@ import { ExportButton } from '@/components/export-button';
 import { ReadingThemeSelector, ReadingThemeWrapper, useReadingTheme } from '@/components/reading-theme';
 import { TextToSpeech } from '@/components/text-to-speech';
 import { LineSpacingControl, useLineSpacing, getSpacingClass } from '@/components/line-spacing-control';
+import { ChapterSearch } from '@/components/chapter-search';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
 import { TextSelectionMenu } from '@/components/text-selection-menu';
@@ -61,6 +62,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [translationName, setTranslationName] = React.useState<string>('');
+  const [searchQuery, setSearchQuery] = React.useState('');
 
   // Enable keyboard navigation
   useKeyboardNavigation();
@@ -174,6 +176,14 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             <span>Chapter {chapterNum}</span>
           </div>
           <div className="flex items-center gap-1">
+            <ChapterSearch
+              onSearch={setSearchQuery}
+              resultCount={searchQuery.length >= 2 ? (
+                (simpleVerses || richVerses?.map((v, i) => ({
+                  text: v.translation?.layers?.idiomatic?.text || v.translation?.layers?.literal?.text || ''
+                })) || []).filter(v => v.text.toLowerCase().includes(searchQuery.toLowerCase())).length
+              ) : undefined}
+            />
             <TextToSpeech
               getText={() => {
                 const verses = simpleVerses || richVerses?.map((v, i) => ({
