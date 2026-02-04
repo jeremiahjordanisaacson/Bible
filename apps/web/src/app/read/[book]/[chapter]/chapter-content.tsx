@@ -13,6 +13,7 @@ import { getVariantsForVerse } from '@/data/variants';
 import { getBook } from '@/data/books-metadata';
 import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal';
 import { FontSizeControl, useFontSize } from '@/components/font-size-control';
+import { ReadingProgress } from '@/components/reading-progress';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 
 // Sample data mapping - rich data with morphology
@@ -123,6 +124,8 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <ReadingProgress />
+
       {/* Header */}
       <header className="mb-8">
         <div className="flex items-center gap-2 text-sm text-[var(--muted-foreground)] mb-2">
