@@ -2,6 +2,7 @@
 
 import { CopyVerseButton } from './copy-verse-button';
 import { ShareVerseButton } from './share-verse-button';
+import { BookmarkButton } from './bookmark-button';
 
 interface SimpleVerseDisplayProps {
   verseRef: string;
@@ -26,12 +27,20 @@ export function SimpleVerseDisplay({ verseRef, verseNumber, text, bookCode, chap
       <div className="opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
         <CopyVerseButton verseRef={verseRef} text={text} />
         {bookCode && chapter && (
-          <ShareVerseButton
-            verseRef={verseRef}
-            bookCode={bookCode}
-            chapter={chapter}
-            verse={verseNumber}
-          />
+          <>
+            <ShareVerseButton
+              verseRef={verseRef}
+              bookCode={bookCode}
+              chapter={chapter}
+              verse={verseNumber}
+            />
+            <BookmarkButton
+              bookCode={bookCode}
+              chapter={chapter}
+              verse={verseNumber}
+              text={text}
+            />
+          </>
         )}
       </div>
     </div>
