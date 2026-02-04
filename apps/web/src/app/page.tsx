@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ReadingHistoryList } from '@/components/reading-history';
 import { RandomChapterButton } from '@/components/random-chapter-button';
+import { VerseOfDay } from '@/components/verse-of-day';
 
 export default function HomePage() {
   return (
@@ -133,10 +134,11 @@ export default function HomePage() {
         />
       </section>
 
-      {/* Recent Reading */}
-      <section className="max-w-4xl mx-auto mb-12">
+      {/* Verse of the Day and Recent Reading */}
+      <section className="max-w-4xl mx-auto mb-12 grid md:grid-cols-2 gap-6">
+        <VerseOfDay />
         <div className="border border-[var(--border)] rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Continue Reading</h2>
+          <h2 className="text-lg font-semibold mb-4">Continue Reading</h2>
           <ReadingHistoryList />
         </div>
       </section>
