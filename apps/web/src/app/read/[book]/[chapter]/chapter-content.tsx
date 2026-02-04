@@ -10,7 +10,7 @@ import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
 import genesisChapter1Verses from '@/data/sample-genesis';
 import johnChapter1Verses from '@/data/sample-john';
 import { getVariantsForVerse } from '@/data/variants';
-import { getBook } from '@/data/books-metadata';
+import { getBook, getNextBook, getPrevBook } from '@/data/books-metadata';
 import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal';
 import { FontSizeControl, useFontSize } from '@/components/font-size-control';
 import { VerseNumberToggle, useVerseNumbers } from '@/components/verse-number-toggle';
@@ -260,28 +260,49 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Navigation */}
       <nav className="flex justify-between items-center mt-8 pt-8 border-t border-[var(--border)]">
-        {hasPrevChapter ? (
-          <Link
-            href={`/read/${bookCode}/${chapterNum - 1}/`}
-            className="flex items-center gap-2 text-[var(--accent)] hover:underline"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4"
+        <div className="flex flex-col gap-1">
+          {hasPrevChapter ? (
+            <Link
+              href={`/read/${bookCode}/${chapterNum - 1}/`}
+              className="flex items-center gap-2 text-[var(--accent)] hover:underline"
             >
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-            Chapter {chapterNum - 1}
-          </Link>
-        ) : (
-          <div />
-        )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+              Chapter {chapterNum - 1}
+            </Link>
+          ) : getPrevBook(bookCode) ? (
+            <Link
+              href={`/read/${getPrevBook(bookCode)!.code}/${getPrevBook(bookCode)!.chapters}/`}
+              className="flex items-center gap-2 text-[var(--accent)] hover:underline"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+              <span className="text-sm">{getPrevBook(bookCode)!.name} {getPrevBook(bookCode)!.chapters}</span>
+            </Link>
+          ) : (
+            <div />
+          )}
+        </div>
 
         {/* Chapter selector */}
         <div className="flex items-center gap-2">
@@ -302,28 +323,49 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
           </select>
         </div>
 
-        {hasNextChapter ? (
-          <Link
-            href={`/read/${bookCode}/${chapterNum + 1}/`}
-            className="flex items-center gap-2 text-[var(--accent)] hover:underline"
-          >
-            Chapter {chapterNum + 1}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4"
+        <div className="flex flex-col gap-1 items-end">
+          {hasNextChapter ? (
+            <Link
+              href={`/read/${bookCode}/${chapterNum + 1}/`}
+              className="flex items-center gap-2 text-[var(--accent)] hover:underline"
             >
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </Link>
-        ) : (
-          <div />
-        )}
+              Chapter {chapterNum + 1}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </Link>
+          ) : getNextBook(bookCode) ? (
+            <Link
+              href={`/read/${getNextBook(bookCode)!.code}/1/`}
+              className="flex items-center gap-2 text-[var(--accent)] hover:underline"
+            >
+              <span className="text-sm">{getNextBook(bookCode)!.name} 1</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </Link>
+          ) : (
+            <div />
+          )}
+        </div>
       </nav>
 
       {/* Keyboard shortcuts modal */}

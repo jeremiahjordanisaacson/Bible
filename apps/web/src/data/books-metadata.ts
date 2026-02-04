@@ -128,6 +128,20 @@ export function getBooksByTestament(testament: 'OT' | 'NT'): BookMetadata[] {
   return allBooks.filter(book => book.testament === testament);
 }
 
+// Get next book in canonical order
+export function getNextBook(code: string): BookMetadata | undefined {
+  const current = getBook(code);
+  if (!current) return undefined;
+  return allBooks.find(book => book.order === current.order + 1);
+}
+
+// Get previous book in canonical order
+export function getPrevBook(code: string): BookMetadata | undefined {
+  const current = getBook(code);
+  if (!current) return undefined;
+  return allBooks.find(book => book.order === current.order - 1);
+}
+
 // Categories in order
 export const categories = [
   'Pentateuch',
