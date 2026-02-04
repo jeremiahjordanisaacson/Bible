@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ReadingHistoryList } from '@/components/reading-history';
+import { RandomChapterButton } from '@/components/random-chapter-button';
 
 export default function HomePage() {
   return (
@@ -34,6 +35,7 @@ export default function HomePage() {
           >
             Learn More
           </Link>
+          <RandomChapterButton />
         </div>
       </section>
 
