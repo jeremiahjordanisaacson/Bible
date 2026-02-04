@@ -6,6 +6,7 @@
 import type { SourceToken, Verse, VerseTranslation, VerseAlignment, StudyNote, VariantUnit } from '@open-bible/schemas';
 import { extendedGenesisVerses } from './sample-genesis-extended';
 import { genesis1_6_10_verses } from './genesis/gen-1-6-10';
+import { genesis1_9_13_verses } from './genesis/gen-1-9-13';
 
 // Genesis 1:1 Source Tokens
 export const genesis1_1_tokens: SourceToken[] = [
@@ -636,7 +637,7 @@ const baseGenesisVerses = [
   },
 ];
 
-// Combine base verses (1:1-3) with extended verses (1:4-5) and verses 6-8
-export const genesisChapter1Verses = [...baseGenesisVerses, ...extendedGenesisVerses, ...genesis1_6_10_verses];
+// Combine base verses (1:1-3) with extended verses (1:4-5), verses 6-8, and verses 9-13
+export const genesisChapter1Verses = [...baseGenesisVerses, ...extendedGenesisVerses, ...genesis1_6_10_verses, ...genesis1_9_13_verses];
 
 export default genesisChapter1Verses;
