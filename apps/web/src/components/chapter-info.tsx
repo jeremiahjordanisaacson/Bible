@@ -1,6 +1,7 @@
 'use client';
 
 import { getBook } from '@/data/books-metadata';
+import { ReadingTime } from './reading-time';
 
 interface ChapterInfoProps {
   bookCode: string;
@@ -17,6 +18,7 @@ export function ChapterInfo({ bookCode, chapter, verseCount, wordCount }: Chapte
     <div className="flex flex-wrap gap-4 text-xs text-[var(--muted-foreground)]">
       <span>{verseCount} verses</span>
       {wordCount && <span>{wordCount.toLocaleString()} words</span>}
+      {wordCount && <ReadingTime wordCount={wordCount} />}
       <span>
         Chapter {chapter} of {book.chapters}
       </span>
