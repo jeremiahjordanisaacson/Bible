@@ -10,6 +10,7 @@ import { useBibleStore } from '@/store/bible-store';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
 import genesisChapter1Verses from '@/data/sample-genesis';
 import genesisChapter2Verses from '@/data/sample-genesis-2';
+import genesisChapter3Verses from '@/data/sample-genesis-3';
 import johnChapter1Verses from '@/data/sample-john';
 import { getVariantsForVerse } from '@/data/variants';
 import { getBook, getNextBook, getPrevBook } from '@/data/books-metadata';
@@ -40,6 +41,10 @@ function getRichVerseData(book: string, chapter: number, verseNum: number) {
     const verse = genesisChapter2Verses.find((v, i) => i + 1 === verseNum);
     return verse || null;
   }
+  if (book === 'Gen' && chapter === 3) {
+    const verse = genesisChapter3Verses.find((v, i) => i + 1 === verseNum);
+    return verse || null;
+  }
   if (book === 'John' && chapter === 1) {
     const verse = johnChapter1Verses.find((v, i) => i + 1 === verseNum);
     return verse || null;
@@ -51,6 +56,7 @@ function getRichVerseData(book: string, chapter: number, verseNum: number) {
 function hasRichChapterData(book: string, chapter: number) {
   if (book === 'Gen' && chapter === 1) return true;
   if (book === 'Gen' && chapter === 2) return true;
+  if (book === 'Gen' && chapter === 3) return true;
   if (book === 'John' && chapter === 1) return true;
   return false;
 }
@@ -62,6 +68,9 @@ function getRichVerseNumbers(book: string, chapter: number): number[] {
   }
   if (book === 'Gen' && chapter === 2) {
     return genesisChapter2Verses.map((_, i) => i + 1);
+  }
+  if (book === 'Gen' && chapter === 3) {
+    return genesisChapter3Verses.map((_, i) => i + 1);
   }
   if (book === 'John' && chapter === 1) {
     return johnChapter1Verses.map((_, i) => i + 1);
