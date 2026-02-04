@@ -14,6 +14,7 @@ const shortcuts: ShortcutItem[] = [
   { key: '3', description: 'Switch to Literary translation' },
   { key: 'S', description: 'Toggle Study Mode' },
   { key: 'N', description: 'Toggle Notes' },
+  { key: 'G', description: 'Quick jump to reference' },
   { key: '?', description: 'Show this help' },
 ];
 
