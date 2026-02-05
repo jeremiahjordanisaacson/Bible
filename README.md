@@ -2,110 +2,146 @@
 
 An open source, AI-assisted Bible translation platform with radical transparency. Every word is traceable to the original Hebrew, Aramaic, and Greek sources.
 
-**Status: MVP / Proof of Concept**
+**Status: MVP / Working Prototype**
 
-## What This Project Does
+## What Works Now
 
-Open Bible Translation provides:
+- Full Next.js web application with 1,199 statically generated chapter pages (all 66 books)
+- **Genesis 1-14** with complete Hebrew morphological data (tokens, transliteration, lemma, gloss, Strong's numbers, lexicon refs)
+- **John 1** with complete Greek morphological data
+- Hover/click popovers on every word showing original text, morphology, and lexicon links
+- Three translation layers: literal, idiomatic, literary
+- Compare view showing all translation layers side-by-side
+- Study mode with alignment highlighting between source tokens and translated spans
+- Cross-reference panel with linked related passages
+- Textual variant display for known manuscript differences
+- Data provenance panel showing pipeline version, engine, source data, timestamps
+- Keyboard navigation (1/2/3 for layers, S=study, N=notes, C=compare, P=provenance, V=variants, arrows for chapters)
+- Export to Text and JSON formats
+- Dark mode, adjustable font sizes, reading themes, line spacing
+- Search within chapters, text-to-speech, print view, bookmarks
+- 52 automated tests (37 schema validation + 15 pipeline)
+- GitHub Actions CI: typecheck, test, build, deploy to GitHub Pages
+- Multilingual pipeline architecture with sample Spanish, French, and German translations
 
-1. **Source Transparency**: Hover over any translated word to see the original Hebrew/Greek text, transliteration, morphology, and lexicon references.
+## What Data is Included
 
-2. **Multiple Translation Layers**:
-   - **Literal**: Word-for-word, preserving source language word order
-   - **Idiomatic**: Meaning-based, natural English
-   - **Literary**: Poetic/stylistic rendering
+| Content | Scope | Detail Level |
+|---------|-------|-------------|
+| Genesis 1-8 | Complete chapters | Full morphology, study notes, alignment |
+| Genesis 9-14 | Complete chapters | Full morphology, tokens, translations |
+| John 1 | Complete chapter | Full Greek morphology, study notes |
+| All 66 books | All chapters | World English Bible text (public domain) |
+| Cross-references | Gen 1-3, 12; John 1 | Linked related passages |
+| Textual variants | Sample entries | Manuscript tradition data |
 
-3. **Honest Uncertainty**: Confidence indicators show where translation choices were made. Alternative readings are displayed, not hidden.
-
-4. **Variant Awareness**: Textual variants between manuscript traditions are explicitly shown.
-
-5. **Open Source**: All code, data, and translations are open source with permissive licenses.
-
-## Important Disclaimer
-
-**This is a draft translation project, not an authoritative text.**
-
-All translations are AI-assisted drafts intended for study and human review. They have not been approved by qualified biblical scholars or translation committees. For authoritative translations, use established translations like NASB, ESV, NIV, NRSV, etc.
-
-## Quick Start
+## How to Run
 
 ### Prerequisites
-
 - Node.js 20+
 - pnpm 9+
 
 ### Installation
-
 ```bash
-# Clone the repository
 git clone https://github.com/jeremiahjordanisaacson/Bible.git
 cd Bible
-
-# Install dependencies
 pnpm install
-
-# Build all packages
-pnpm build
-
-# Start development server
-pnpm dev
 ```
 
-The web app will be available at `http://localhost:3000`.
+### Development
+```bash
+pnpm dev          # Start dev server at http://localhost:3000
+pnpm build        # Production build (static export)
+pnpm test         # Run all 52 tests
+pnpm typecheck    # TypeScript type checking
+```
 
-### Sample Data
+### Single Command Experience
+```bash
+pnpm install && pnpm dev
+```
 
-The MVP includes sample data for:
-- **Genesis 1:1-3** (Hebrew with morphology)
-- **John 1:1-3** (Greek with morphology)
+## How to Contribute
 
-This demonstrates the full token-level alignment and hover functionality.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
+
+### Quick Start
+1. Fork the repository
+2. Create a feature branch
+3. Make changes following the existing patterns
+4. Run `pnpm test && pnpm typecheck` to verify
+5. Submit a pull request
+
+### Ways to Contribute
+- **Review translations**: Check AI-generated drafts against original texts
+- **Add study notes**: Contribute scholarly explanations for verses
+- **Expand data**: Add morphological data for more chapters
+- **Add languages**: Implement new target language translations
+- **Improve the pipeline**: Enhance data processing stages
+- **Report issues**: File bugs or suggest improvements
+
+### Adding a New Language
+1. Add language config in `packages/pipeline/src/stages/multilingual.ts`
+2. Add sample translations for Genesis 1:1 and John 1:1
+3. Create alignment mappings back to source tokens
+4. Generate language pack metadata
+5. Test with `pnpm test`
 
 ## Project Structure
 
 ```
 Bible/
 ├── apps/
-│   └── web/                 # Next.js web application
+│   └── web/                   # Next.js 14 web application
+│       ├── src/app/           # Pages (read, about, books, search, etc.)
+│       ├── src/components/    # 33 React components
+│       ├── src/data/          # Verse data (Genesis, John, metadata)
+│       ├── src/hooks/         # Keyboard navigation
+│       └── src/store/         # Zustand state management
 ├── packages/
-│   ├── schemas/             # TypeScript types and JSON schemas
-│   └── pipeline/            # Data processing pipeline
-├── data/
-│   ├── sources/             # Source text files (Hebrew, Greek)
-│   └── output/              # Generated output
-└── docs/                    # Documentation
+│   ├── schemas/               # Zod schemas & TypeScript types
+│   │   └── src/types/         # SourceToken, Verse, Translation, etc.
+│   └── pipeline/              # Data processing pipeline
+│       ├── src/stages/        # Ingest, tokenize, translate, align, notes
+│       ├── src/engines/       # Translation engine interface & stub
+│       └── src/cli/           # Command-line pipeline runner
+├── docs/
+│   └── ADDITIONAL_FEATURES.md # 25 proposed features, top 5 selected
+├── .github/workflows/ci.yml  # CI: typecheck, test, build, deploy
+└── vitest.config.ts           # Test configuration
 ```
 
-## Features
+## Architecture
 
-### Currently Working
+### Schemas (`packages/schemas`)
+Comprehensive Zod-validated types:
+- `SourceToken` - Original words with morphology, transliteration, lemma, gloss, Strong's
+- `VerseTranslation` - Three translation layers with confidence and review status
+- `VerseAlignment` - Token-to-span mappings with quality scoring
+- `StudyNote` - 17 categories including historical, theological, grammatical
+- `VariantUnit` - Manuscript variant support for 13 traditions
+- `Morphology` - POS, person, gender, number, tense, voice, mood, case, state, stem, suffix
 
-- [x] Monorepo structure with pnpm workspaces
-- [x] TypeScript schemas for all data types
-- [x] Next.js web application with:
-  - [x] Verse reading view
-  - [x] Translation layer toggle (literal/idiomatic/literary)
-  - [x] Hover popovers showing source text, transliteration, morphology
-  - [x] Study notes display
-  - [x] Confidence indicators
-  - [x] Basic search
-- [x] Sample data for Genesis 1 and John 1
-- [x] Pipeline scaffolding
-- [x] Static export for GitHub Pages deployment
+### Pipeline (`packages/pipeline`)
+Staged processing:
+1. **Ingest** - Load and validate source datasets
+2. **Tokenize** - Hebrew/Greek tokenization with transliteration
+3. **Translate** - Generate literal, idiomatic, literary layers (plugin engine)
+4. **Align** - Map translation spans to source tokens
+5. **Notes** - Generate study notes for significant terms
+6. **Index** - Build search indexes (translation, lemma, Strong's)
+7. **Multilingual** - Generate language packs (es, fr, de sample)
 
-### Roadmap
-
-- [ ] Full pipeline implementation with real source data
-- [ ] Complete Genesis and John books
-- [ ] Textual variant display
-- [ ] Multilingual translations (Spanish, French, German)
-- [ ] GitHub Actions CI/CD
-- [ ] Community contribution workflow
-- [ ] Full canon coverage
+### Web App (`apps/web`)
+- Next.js 14 with static export (1,199 pages)
+- Radix UI for accessible components (popovers, dialogs, tabs)
+- Tailwind CSS for styling
+- Zustand for state management
+- World English Bible API fallback for chapters without morphological data
 
 ## Data Sources & Licenses
 
-This project only uses permissive or public domain resources:
+Only permissive or public domain resources:
 
 | Source | Content | License |
 |--------|---------|---------|
@@ -113,103 +149,24 @@ This project only uses permissive or public domain resources:
 | SBLGNT | Greek NT text | CC BY 4.0 |
 | Open Scriptures Hebrew Bible | Hebrew morphology | CC BY 4.0 |
 | MorphGNT | Greek morphology | CC BY-SA 3.0 |
+| World English Bible | English fallback text | Public Domain |
 
-See [Licenses](/apps/web/src/app/licenses/page.tsx) for full details.
+## Roadmap
 
-## Contributing
+### Next Steps
+- [ ] Load real Westminster Leningrad Codex and SBLGNT source texts
+- [ ] Complete Genesis and John with full morphological data
+- [ ] Implement real translation engine (beyond stub)
+- [ ] Full textual variant coverage for key passages
+- [ ] Per-verse change history from git log
 
-Contributions are welcome! You can help by:
-
-1. **Reviewing translations**: Check AI-generated drafts for accuracy
-2. **Adding study notes**: Contribute explanatory notes
-3. **Improving the pipeline**: Enhance data processing
-4. **Adding languages**: Implement new target languages
-5. **Reporting issues**: File bugs or suggest improvements
-
-### Contribution Workflow
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-5. Await review
-
-All contributions go through code review. Translation changes require scholarly review.
-
-## Architecture
-
-### Schemas (`packages/schemas`)
-
-Defines canonical data structures:
-- `SourceToken`: Original language words with morphology
-- `Verse`: Complete verse with segments
-- `VerseTranslation`: Multi-layer translations
-- `VerseAlignment`: Token-to-span mappings
-- `StudyNote`: Explanatory notes
-- `VariantUnit`: Textual variants
-
-### Pipeline (`packages/pipeline`)
-
-Staged data processing:
-1. **Ingest**: Load source texts
-2. **Tokenize**: Break into words, attach morphology
-3. **Translate**: Generate translation layers
-4. **Align**: Map translations to source tokens
-5. **Notes**: Generate study notes
-6. **Index**: Build search indexes
-
-### Web App (`apps/web`)
-
-Next.js application with:
-- Server-side rendering
-- Static export support
-- Radix UI components
-- Tailwind CSS styling
-- Zustand state management
-
-## Additional Features Considered
-
-Per the spec, here are 20+ features that could improve the platform:
-
-1. Per-verse change history and blame view
-2. Citations panel linking to lexicons
-3. Community annotations (separate from canonical translation)
-4. Interpretive choice highlighting
-5. Export to JSON/offline bundles
-6. Reading plans
-7. Compare translation profiles side-by-side
-8. Accessibility (ARIA, keyboard navigation, screen readers)
-9. Performance metrics and caching
-10. Data provenance view per verse
-11. Cross-reference linking
-12. Parallel passage display
-13. Audio pronunciation guides
-14. Flashcard study mode
-15. Personal notes and highlights
-16. Reading progress tracking
-17. API for third-party apps
-18. Embed widgets for other sites
-19. Print-optimized views
-20. Mobile-responsive design
-21. Dark mode support
-22. Offline-first PWA
-
-**MVP implements**: #8 (basic), #10, #20, #21
-
-## Commands
-
-```bash
-# Development
-pnpm dev              # Start all services in dev mode
-pnpm build            # Build all packages
-pnpm test             # Run tests
-pnpm lint             # Lint code
-pnpm typecheck        # Type check
-
-# Pipeline
-pnpm pipeline:full    # Run full pipeline
-pnpm pipeline:ingest  # Run ingest stage only
-```
+### Future
+- [ ] Full canon coverage (all 66 books with morphology)
+- [ ] More target languages (Arabic, Chinese, and beyond)
+- [ ] Community annotation layer (separate from canonical translation)
+- [ ] Offline-first PWA with service worker
+- [ ] REST API for third-party tools
+- [ ] Audio pronunciation for original languages
 
 ## License
 
@@ -225,4 +182,4 @@ pnpm pipeline:ingest  # Run ingest stage only
 
 ---
 
-**Note**: This project is an independent effort and is not affiliated with any religious organization or publishing house.
+**Note**: This is a draft translation project. All translations are AI-assisted and require human scholarly review. For authoritative translations, use established translations.
