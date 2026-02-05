@@ -11,11 +11,12 @@
     "build": "echo 'No build needed - using TypeScript source directly'",
     "typecheck": "tsc --noEmit",
     "lint": "echo 'Lint skipped'",
-    "test": "echo 'Tests skipped'",
+    "test": "vitest run",
     "clean": "echo 'Clean skipped'"
   },
   "devDependencies": {
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "vitest": "^3.0.0"
   },
   "dependencies": {
     "zod": "^3.22.0"

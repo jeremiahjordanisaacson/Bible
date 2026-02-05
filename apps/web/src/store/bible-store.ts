@@ -16,6 +16,8 @@ interface BibleState {
   showStudyMode: boolean;
   showVariants: boolean;
   showNotes: boolean;
+  showCompareView: boolean;
+  showProvenance: boolean;
 
   // Highlighting
   highlightedTokenId: string | null;
@@ -36,6 +38,8 @@ interface BibleState {
   toggleStudyMode: () => void;
   toggleVariants: () => void;
   toggleNotes: () => void;
+  toggleCompareView: () => void;
+  toggleProvenance: () => void;
   setShowStudyMode: (show: boolean) => void;
   setShowNotes: (show: boolean) => void;
   setHighlightedToken: (tokenId: string | null) => void;
@@ -55,6 +59,8 @@ export const useBibleStore = create<BibleState>((set) => ({
   showStudyMode: false,
   showVariants: false,
   showNotes: true,
+  showCompareView: false,
+  showProvenance: false,
 
   highlightedTokenId: null,
   highlightedSpanId: null,
@@ -72,6 +78,8 @@ export const useBibleStore = create<BibleState>((set) => ({
   toggleStudyMode: () => set((state) => ({ showStudyMode: !state.showStudyMode })),
   toggleVariants: () => set((state) => ({ showVariants: !state.showVariants })),
   toggleNotes: () => set((state) => ({ showNotes: !state.showNotes })),
+  toggleCompareView: () => set((state) => ({ showCompareView: !state.showCompareView })),
+  toggleProvenance: () => set((state) => ({ showProvenance: !state.showProvenance })),
   setShowStudyMode: (show) => set({ showStudyMode: show }),
   setShowNotes: (show) => set({ showNotes: show }),
   setHighlightedToken: (tokenId) => set({ highlightedTokenId: tokenId }),

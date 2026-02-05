@@ -33,6 +33,8 @@ import { ChapterSearch } from '@/components/chapter-search';
 import { ScrollToTop } from '@/components/scroll-to-top';
 import { ChapterInfo } from '@/components/chapter-info';
 import { TextSelectionMenu } from '@/components/text-selection-menu';
+import { CompareView } from '@/components/compare-view';
+import { ProvenancePanel } from '@/components/provenance-panel';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 import { addToReadingHistory } from '@/lib/reading-history';
 
@@ -136,7 +138,7 @@ interface ChapterContentProps {
 
 export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
   const router = useRouter();
-  const { setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts } = useBibleStore();
+  const { setCurrentBook, setCurrentChapter, showKeyboardShortcuts, setShowKeyboardShortcuts, showCompareView, toggleCompareView, showProvenance, toggleProvenance } = useBibleStore();
   const { fontSize, setFontSize } = useFontSize();
   const { showVerseNumbers, toggleVerseNumbers } = useVerseNumbers();
   const { theme, setTheme } = useReadingTheme();
@@ -312,8 +314,22 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
                     <LayerToggle />
                     <ViewToggles />
                   </div>
-                  <div className="text-xs text-[var(--muted-foreground)]">
-                    {richVerseNumbers.length} verses with morphological study data
+                  <div className="flex items-center gap-2 mt-1">
+                    <button
+                      onClick={toggleCompareView}
+                      className={`text-xs px-2 py-1 rounded border transition-colors ${showCompareView ? 'bg-[var(--accent)] text-[var(--accent-foreground)] border-[var(--accent)]' : 'border-[var(--border)] hover:bg-[var(--accent)]/10'}`}
+                    >
+                      Compare Layers
+                    </button>
+                    <button
+                      onClick={toggleProvenance}
+                      className={`text-xs px-2 py-1 rounded border transition-colors ${showProvenance ? 'bg-[var(--accent)] text-[var(--accent-foreground)] border-[var(--accent)]' : 'border-[var(--border)] hover:bg-[var(--accent)]/10'}`}
+                    >
+                      Provenance
+                    </button>
+                    <span className="text-xs text-[var(--muted-foreground)]">
+                      {richVerseNumbers.length} verses with study data
+                    </span>
                   </div>
                 </>
               ) : (
@@ -371,16 +387,35 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             {simpleVerses.map((verse) => {
               const richVerse = getRichVerseData(bookCode, chapterNum, verse.verseNumber);
               if (richVerse) {
+                if (showCompareView) {
+                  return (
+                    <React.Fragment key={verse.ref}>
+                      {showProvenance && (
+                        <ProvenancePanel translation={richVerse.translation as any} verseRef={richVerse.ref} />
+                      )}
+                      <CompareView
+                        verseRef={richVerse.ref}
+                        verseNumber={verse.verseNumber}
+                        translation={richVerse.translation as any}
+                        sourceTokens={richVerse.sourceTokens}
+                      />
+                    </React.Fragment>
+                  );
+                }
                 return (
-                  <VerseDisplay
-                    key={verse.ref}
-                    verseRef={richVerse.ref}
-                    verseNumber={verse.verseNumber}
-                    sourceTokens={richVerse.sourceTokens}
-                    translation={richVerse.translation as any}
-                    notes={(richVerse.notes || []) as any}
-                    variants={getVariantsForVerse(richVerse.ref)}
-                  />
+                  <React.Fragment key={verse.ref}>
+                    {showProvenance && (
+                      <ProvenancePanel translation={richVerse.translation as any} verseRef={richVerse.ref} />
+                    )}
+                    <VerseDisplay
+                      verseRef={richVerse.ref}
+                      verseNumber={verse.verseNumber}
+                      sourceTokens={richVerse.sourceTokens}
+                      translation={richVerse.translation as any}
+                      notes={(richVerse.notes || []) as any}
+                      variants={getVariantsForVerse(richVerse.ref)}
+                    />
+                  </React.Fragment>
                 );
               }
               return (

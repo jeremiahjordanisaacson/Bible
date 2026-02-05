@@ -8,7 +8,7 @@
     "build": "echo 'No build needed'",
     "typecheck": "tsc --noEmit",
     "lint": "echo 'Lint skipped'",
-    "test": "echo 'Tests skipped'",
+    "test": "vitest run",
     "clean": "echo 'Clean skipped'"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "vitest": "^3.0.0"
   }
 }
