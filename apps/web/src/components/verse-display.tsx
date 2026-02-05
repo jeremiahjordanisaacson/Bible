@@ -5,6 +5,7 @@ import { TokenPopover } from './token-popover';
 import { useBibleStore } from '@/store/bible-store';
 import type { SourceToken, VerseTranslation, StudyNote, TranslatedSpan, VerseVariants } from '@open-bible/schemas';
 import { VariantDisplay } from './variant-display';
+import { CrossReferences } from './cross-references';
 
 interface VerseDisplayProps {
   verseRef: string;
@@ -238,6 +239,9 @@ export function VerseDisplay({
 
           {/* Notes */}
           {renderNotes()}
+
+          {/* Cross-references */}
+          {showStudyMode && <CrossReferences verseRef={verseRef} />}
 
           {/* Variants */}
           {showStudyMode && variants && variants.variantCount > 0 && (

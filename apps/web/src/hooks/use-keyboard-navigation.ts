@@ -15,6 +15,9 @@ export function useKeyboardNavigation() {
     showNotes,
     setShowNotes,
     setShowKeyboardShortcuts,
+    toggleCompareView,
+    toggleProvenance,
+    toggleVariants,
   } = useBibleStore();
 
   const handleKeyDown = useCallback(
@@ -47,12 +50,39 @@ export function useKeyboardNavigation() {
         case 'N':
           setShowNotes(!showNotes);
           break;
+        case 'c':
+        case 'C':
+          toggleCompareView();
+          break;
+        case 'p':
+        case 'P':
+          toggleProvenance();
+          break;
+        case 'v':
+        case 'V':
+          toggleVariants();
+          break;
+        case 'ArrowLeft':
+          // Navigate to previous chapter
+          {
+            const prev = document.querySelector('a[href*="/read/"][href$="/"]') as HTMLAnchorElement;
+            if (prev && prev.textContent?.includes('Chapter')) prev.click();
+          }
+          break;
+        case 'ArrowRight':
+          // Navigate to next chapter
+          {
+            const links = document.querySelectorAll('a[href*="/read/"][href$="/"]');
+            const next = links[links.length - 1] as HTMLAnchorElement;
+            if (next && next.textContent?.includes('Chapter')) next.click();
+          }
+          break;
         case '?':
           setShowKeyboardShortcuts(true);
           break;
       }
     },
-    [setSelectedLayer, showStudyMode, setShowStudyMode, showNotes, setShowNotes, setShowKeyboardShortcuts]
+    [setSelectedLayer, showStudyMode, setShowStudyMode, showNotes, setShowNotes, setShowKeyboardShortcuts, toggleCompareView, toggleProvenance, toggleVariants]
   );
 
   useEffect(() => {
