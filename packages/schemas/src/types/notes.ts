@@ -16,6 +16,12 @@ export const NoteCategory = z.enum([
   'cross-reference',      // Related passages
   'idiom',                // Idiomatic expression explanation
   'uncertain',            // Flagging uncertainty
+  'historical',           // Historical context and background
+  'structural',           // Literary/narrative structure
+  'chronological',        // Timeline and dating
+  'geographical',         // Geographic context
+  'narrative',            // Narrative analysis
+  'intertextual',         // Connections between texts
 ]);
 export type NoteCategory = z.infer<typeof NoteCategory>;
 
@@ -44,6 +50,8 @@ export const StudyNote = z.object({
   id: z.string(),
   /** Verse reference */
   verseRef: z.string(),
+  /** Verse ID (alternate key) */
+  verseId: z.string().optional(),
   /** Specific span IDs this note relates to (optional) */
   spanIds: z.array(z.string()).optional(),
   /** Source token IDs this note relates to (optional) */

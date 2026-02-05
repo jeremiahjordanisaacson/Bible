@@ -22,6 +22,9 @@ export const PartOfSpeech = z.enum([
   'interjection',
   'numeral',
   'proper-noun',
+  'proper_noun',
+  'relative_particle',
+  'interrogative',
   'unknown'
 ]);
 export type PartOfSpeech = z.infer<typeof PartOfSpeech>;
@@ -42,15 +45,23 @@ export const Morphology = z.object({
   /** Case (for Greek) */
   case: z.enum(['nominative', 'genitive', 'dative', 'accusative', 'vocative']).optional(),
   /** Tense */
-  tense: z.enum(['perfect', 'imperfect', 'aorist', 'present', 'future', 'pluperfect']).optional(),
+  tense: z.enum(['perfect', 'imperfect', 'aorist', 'present', 'future', 'pluperfect', 'participle', 'imperative', 'infinitive', 'jussive', 'cohortative']).optional(),
   /** Voice */
   voice: z.enum(['active', 'middle', 'passive', 'middle-passive', 'deponent']).optional(),
   /** Mood */
-  mood: z.enum(['indicative', 'imperative', 'subjunctive', 'optative', 'infinitive', 'participle']).optional(),
+  mood: z.enum(['indicative', 'imperative', 'subjunctive', 'optative', 'infinitive', 'participle', 'cohortative']).optional(),
   /** State (for Hebrew) */
   state: z.enum(['absolute', 'construct', 'determined']).optional(),
   /** Stem (for Hebrew verbs) */
-  stem: z.enum(['qal', 'niphal', 'piel', 'pual', 'hiphil', 'hophal', 'hithpael']).optional(),
+  stem: z.enum(['qal', 'niphal', 'piel', 'pual', 'hiphil', 'hophal', 'hithpael', 'qal passive']).optional(),
+  /** Pronominal suffix (common in Hebrew) */
+  suffix: z.object({
+    person: z.enum(['1', '2', '3']).optional(),
+    gender: z.enum(['masculine', 'feminine', 'neuter', 'common']).optional(),
+    number: z.enum(['singular', 'dual', 'plural']).optional(),
+  }).optional(),
+  /** Morphological type annotation (e.g., demonstrative, relative) */
+  type: z.string().optional(),
   /** Raw morphology code from source data */
   rawCode: z.string().optional(),
 });

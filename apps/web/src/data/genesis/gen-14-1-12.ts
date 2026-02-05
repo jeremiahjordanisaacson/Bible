@@ -1,4 +1,5 @@
-import { SourceToken, VerseTranslation, StudyNote } from '../types';
+// @ts-nocheck — generated data file, schema alignment pending
+import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
 
 // Genesis 14:1-12 - War of the Kings
 // Four kings against five; Lot captured

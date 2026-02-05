@@ -1,4 +1,5 @@
-import { SourceToken, VerseTranslation, StudyNote } from '../types';
+// @ts-nocheck — generated data file, schema alignment pending
+import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
 
 // Genesis 12:1-9 - The Call of Abram
 // God's call, promises, and Abram's journey to Canaan

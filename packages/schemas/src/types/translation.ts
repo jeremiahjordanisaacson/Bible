@@ -86,6 +86,8 @@ export type TranslationLayer = z.infer<typeof TranslationLayer>;
 export const VerseTranslation = z.object({
   /** Verse reference */
   verseRef: z.string(),
+  /** Verse ID (alternate key) */
+  verseId: z.string().optional(),
   /** Target language */
   targetLanguage: z.string(),
   /** Translation profile used */

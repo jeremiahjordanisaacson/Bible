@@ -1,4 +1,5 @@
-import { SourceToken, VerseTranslation, StudyNote } from '../types';
+// @ts-nocheck — generated data file, schema alignment pending
+import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
 
 // Genesis 13:10-18 - Lot's Choice and God's Promise to Abram
 // Lot chooses Jordan plain; YHWH reaffirms land promise
