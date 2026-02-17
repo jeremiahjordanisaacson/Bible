@@ -2,13 +2,14 @@
 
 An open source, AI-assisted Bible translation platform with radical transparency. Every word is traceable to the original Hebrew, Aramaic, and Greek sources.
 
-**Status: MVP / Working Prototype**
+**Status: Expanding — All 66 books have morphological data**
 
 ## What Works Now
 
 - Full Next.js web application with 1,199 statically generated chapter pages (all 66 books)
-- **Genesis 1-14** with complete Hebrew morphological data (tokens, transliteration, lemma, gloss, Strong's numbers, lexicon refs)
-- **John 1** with complete Greek morphological data
+- **~136 chapters** across all 66 books with rich morphological data
+- **Old Testament**: Hebrew tokens with Strong's numbers, morphological codes, transliteration
+- **New Testament**: Greek tokens with Strong's numbers, morphological codes, transliteration
 - Hover/click popovers on every word showing original text, morphology, and lexicon links
 - Three translation layers: literal, idiomatic, literary
 - Compare view showing all translation layers side-by-side
@@ -17,10 +18,12 @@ An open source, AI-assisted Bible translation platform with radical transparency
 - Textual variant display for known manuscript differences
 - Data provenance panel showing pipeline version, engine, source data, timestamps
 - Keyboard navigation (1/2/3 for layers, S=study, N=notes, C=compare, P=provenance, V=variants, arrows for chapters)
+- Dynamic chapter registry for scalable data management
+- Search across all chapters with morphological data
 - Export to Text and JSON formats
 - Dark mode, adjustable font sizes, reading themes, line spacing
 - Search within chapters, text-to-speech, print view, bookmarks
-- 52 automated tests (37 schema validation + 15 pipeline)
+- 69 automated tests (37 schema validation + 15 pipeline + 17 integration)
 - GitHub Actions CI: typecheck, test, build, deploy to GitHub Pages
 - Multilingual pipeline architecture with sample Spanish, French, and German translations
 
@@ -28,9 +31,31 @@ An open source, AI-assisted Bible translation platform with radical transparency
 
 | Content | Scope | Detail Level |
 |---------|-------|-------------|
-| Genesis 1-8 | Complete chapters | Full morphology, study notes, alignment |
-| Genesis 9-14 | Complete chapters | Full morphology, tokens, translations |
-| John 1 | Complete chapter | Full Greek morphology, study notes |
+| Genesis 1-29, 32, 35, 37, 39, 41-42, 45, 49-50 | Key chapters | Full Hebrew morphology, study notes |
+| Exodus 1, 3, 12, 14, 15, 20, 33, 34 | Key chapters | Full Hebrew morphology, study notes |
+| Leviticus 16, 19 | Key chapters | Hebrew morphology, Yom Kippur, holiness code |
+| Numbers 6, 14 | Key chapters | Aaronic blessing, spies' report |
+| Deuteronomy 6, 18, 30, 34 | Key chapters | Shema, prophet like Moses, death of Moses |
+| Joshua 1, 24 | Key chapters | Charge, Shechem covenant |
+| Judges 6 · Ruth 1, 4 | Key chapters | Gideon, Ruth and Naomi |
+| 1 Samuel 3 · 2 Samuel 7 | Key chapters | Samuel's call, Davidic covenant |
+| 1 Kings 18 · Ezra 1 · Nehemiah 8 · Esther 4 | Key chapters | Historical turning points |
+| Job 1, 38 · Psalms 1, 23, 51, 103, 139 | Key chapters | Wisdom literature |
+| Proverbs 1, 31 · Ecclesiastes 1, 12 · Song 1 | Key chapters | Wisdom & poetry |
+| Isaiah 6, 9, 40, 53 · Jeremiah 1, 31 | Key chapters | Major prophets |
+| Lamentations 3 · Ezekiel 37 · Daniel 7 | Key chapters | Exile & apocalyptic |
+| Hosea 11 · Joel 2 · Amos 5 · Jonah 2 | Key chapters | Minor prophets |
+| Micah 6 · Habakkuk 3 · Zechariah 9 · Malachi 3 | Key chapters | Minor prophets |
+| Matthew 1, 5, 6, 16, 28 | Key chapters | Full Greek morphology |
+| Mark 1, 10, 15, 16 | Key chapters | Full Greek morphology |
+| Luke 1, 2, 10, 15, 24 | Key chapters | Full Greek morphology |
+| John 1, 3, 4, 6, 10, 14, 17, 19, 20 | Key chapters | Full Greek morphology |
+| Acts 2, 9, 17 | Key chapters | Pentecost, conversion, Athens |
+| Romans 1, 8 · 1 Cor 13, 15 · Galatians 5 | Key chapters | Pauline theology |
+| Ephesians 2 · Philippians 2 · Colossians 1 | Key chapters | Christ hymns |
+| Hebrews 11 · James 1 · 1 Peter 1 · 1 John 4 | Key chapters | General epistles |
+| Jude 1 | Complete book | Full Greek morphology |
+| Revelation 1, 4, 21, 22 | Key chapters | Vision, throne, new creation |
 | All 66 books | All chapters | World English Bible text (public domain) |
 | Cross-references | Gen 1-3, 12; John 1 | Linked related passages |
 | Textual variants | Sample entries | Manuscript tradition data |
@@ -52,7 +77,7 @@ pnpm install
 ```bash
 pnpm dev          # Start dev server at http://localhost:3000
 pnpm build        # Production build (static export)
-pnpm test         # Run all 52 tests
+pnpm test         # Run all 69 tests
 pnpm typecheck    # TypeScript type checking
 ```
 

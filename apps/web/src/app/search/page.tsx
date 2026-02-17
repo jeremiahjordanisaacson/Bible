@@ -2,11 +2,25 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import genesisChapter1Verses from '@/data/sample-genesis';
-import johnChapter1Verses from '@/data/sample-john';
+import {
+  getRegisteredChapters,
+  getChapterVerses,
+} from '@/data/chapter-registry';
+import { getBook } from '@/data/books-metadata';
 
-// Combine all sample data for searching
-const allVerses = [...genesisChapter1Verses, ...johnChapter1Verses];
+// Dynamically collect all verses from the chapter registry
+function getAllVerses() {
+  const chapters = getRegisteredChapters();
+  const all: any[] = [];
+  for (const key of chapters) {
+    const [book, ch] = key.split('.');
+    const verses = getChapterVerses(book, parseInt(ch, 10));
+    all.push(...verses);
+  }
+  return all;
+}
+
+const allVerses = getAllVerses();
 
 interface SearchResult {
   verseRef: string;
@@ -24,9 +38,9 @@ export default function SearchPage() {
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = React.useState(false);
 
-  const bookNames: Record<string, string> = {
-    Gen: 'Genesis',
-    John: 'John',
+  const getBookName = (code: string): string => {
+    const book = getBook(code);
+    return book ? book.name : code;
   };
 
   const performSearch = React.useCallback((searchQuery: string, type: string) => {
@@ -50,7 +64,7 @@ export default function SearchPage() {
           if (layer?.text && layer.text.toLowerCase().includes(lowerQuery)) {
             searchResults.push({
               verseRef: verse.ref,
-              bookName: bookNames[book] || book,
+              bookName: getBookName(book),
               chapter: parseInt(chapter, 10),
               verse: parseInt(verseNum, 10),
               text: layer.text,
@@ -71,7 +85,7 @@ export default function SearchPage() {
           ) {
             searchResults.push({
               verseRef: verse.ref,
-              bookName: bookNames[book] || book,
+              bookName: getBookName(book),
               chapter: parseInt(chapter, 10),
               verse: parseInt(verseNum, 10),
               text: `${token.gloss} (${token.text} - ${token.transliteration})`,
@@ -91,7 +105,7 @@ export default function SearchPage() {
           ) {
             searchResults.push({
               verseRef: verse.ref,
-              bookName: bookNames[book] || book,
+              bookName: getBookName(book),
               chapter: parseInt(chapter, 10),
               verse: parseInt(verseNum, 10),
               text: `Lemma: ${token.lemma} (${token.lemmaTranslit || token.transliteration}) - "${token.gloss}"`,
@@ -108,7 +122,7 @@ export default function SearchPage() {
           if (token.transliteration.toLowerCase().includes(lowerQuery)) {
             searchResults.push({
               verseRef: verse.ref,
-              bookName: bookNames[book] || book,
+              bookName: getBookName(book),
               chapter: parseInt(chapter, 10),
               verse: parseInt(verseNum, 10),
               text: `${token.text} (${token.transliteration}) - "${token.gloss}"`,
@@ -208,10 +222,10 @@ export default function SearchPage() {
       {/* Sample Data Notice */}
       {results.length === 0 && query && !isSearching && (
         <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-6 mt-8">
-          <h2 className="font-semibold mb-2">Limited Sample Data</h2>
+          <h2 className="font-semibold mb-2">No Results Found</h2>
           <p className="text-[var(--muted-foreground)]">
-            The current dataset only includes sample verses from Genesis 1:1-3 and John 1:1-3.
-            Search results are limited to this sample data.
+            Search covers {getRegisteredChapters().length} chapters with morphological data across all 66 books.
+            Try different search terms or a different search type.
           </p>
         </div>
       )}
