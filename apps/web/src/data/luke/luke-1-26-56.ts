@@ -1,0 +1,1093 @@
+// @ts-nocheck — generated data file, schema alignment pending
+import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:26 – The angel Gabriel was sent from God
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_26_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.26.0',
+    language: 'greek',
+    text: 'ἀπεστάλη',
+    transliteration: 'apestalē',
+    lemma: 'ἀποστέλλω',
+    lemmaTranslit: 'apostellō',
+    gloss: 'was sent',
+    morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'aorist', voice: 'passive', mood: 'indicative' },
+    strongs: 'G649',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.26.1',
+    language: 'greek',
+    text: 'ὁ',
+    transliteration: 'ho',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'masculine', number: 'singular', case: 'nominative' },
+    strongs: 'G3588',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.26.2',
+    language: 'greek',
+    text: 'ἄγγελος',
+    transliteration: 'angelos',
+    lemma: 'ἄγγελος',
+    lemmaTranslit: 'angelos',
+    gloss: 'angel',
+    glossExtended: 'angel, messenger',
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'nominative' },
+    strongs: 'G32',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.26.3',
+    language: 'greek',
+    text: 'Γαβριὴλ',
+    transliteration: 'Gabriēl',
+    lemma: 'Γαβριήλ',
+    lemmaTranslit: 'Gabriēl',
+    gloss: 'Gabriel',
+    morphology: { pos: 'proper-noun', gender: 'masculine', number: 'singular', case: 'nominative' },
+    strongs: 'G1043',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.26.4',
+    language: 'greek',
+    text: 'ἀπὸ',
+    transliteration: 'apo',
+    lemma: 'ἀπό',
+    lemmaTranslit: 'apo',
+    gloss: 'from',
+    morphology: { pos: 'preposition' },
+    strongs: 'G575',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.26.5',
+    language: 'greek',
+    text: 'τοῦ',
+    transliteration: 'tou',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'masculine', number: 'singular', case: 'genitive' },
+    strongs: 'G3588',
+    position: 5,
+  },
+  {
+    id: 'Luke.1.26.6',
+    language: 'greek',
+    text: 'θεοῦ',
+    transliteration: 'theou',
+    lemma: 'θεός',
+    lemmaTranslit: 'theos',
+    gloss: 'God',
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'genitive' },
+    strongs: 'G2316',
+    position: 6,
+  },
+];
+
+export const luke1_26_translation: VerseTranslation = {
+  verseRef: 'Luke.1.26',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Was sent the angel Gabriel from God to a city of Galilee named Nazareth.',
+      spans: [
+        { id: 'Luke.1.26.en.lit.0', text: 'Was sent', position: 0, sourceTokenIds: ['Luke.1.26.0'], confidence: 'high' },
+        { id: 'Luke.1.26.en.lit.1', text: 'the angel Gabriel', position: 1, sourceTokenIds: ['Luke.1.26.1', 'Luke.1.26.2', 'Luke.1.26.3'], confidence: 'high' },
+        { id: 'Luke.1.26.en.lit.2', text: 'from God', position: 2, sourceTokenIds: ['Luke.1.26.4', 'Luke.1.26.5', 'Luke.1.26.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'The angel Gabriel was sent from God to a city of Galilee named Nazareth.',
+      spans: [
+        { id: 'Luke.1.26.en.idi.0', text: 'The angel Gabriel was sent', position: 0, sourceTokenIds: ['Luke.1.26.0', 'Luke.1.26.1', 'Luke.1.26.2', 'Luke.1.26.3'], confidence: 'high' },
+        { id: 'Luke.1.26.en.idi.1', text: 'from God to a city of Galilee named Nazareth.', position: 1, sourceTokenIds: ['Luke.1.26.4', 'Luke.1.26.5', 'Luke.1.26.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_26_verse = {
+  ref: 'Luke.1.26',
+  sourceTokens: luke1_26_tokens,
+  translation: luke1_26_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:28 – Greetings, you who are highly favored!
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_28_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.28.0',
+    language: 'greek',
+    text: 'χαῖρε',
+    transliteration: 'chaire',
+    lemma: 'χαίρω',
+    lemmaTranslit: 'chairō',
+    gloss: 'greetings',
+    glossExtended: 'rejoice, greetings, hail',
+    morphology: { pos: 'verb', person: '2', number: 'singular', tense: 'present', voice: 'active', mood: 'imperative' },
+    strongs: 'G5463',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.28.1',
+    language: 'greek',
+    text: 'κεχαριτωμένη',
+    transliteration: 'kecharitōmenē',
+    lemma: 'χαριτόω',
+    lemmaTranslit: 'charitoō',
+    gloss: 'highly favored one',
+    glossExtended: 'graced, highly favored, endowed with grace',
+    morphology: { pos: 'verb', gender: 'feminine', number: 'singular', tense: 'perfect', voice: 'passive', mood: 'participle', case: 'nominative' },
+    strongs: 'G5487',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.28.2',
+    language: 'greek',
+    text: 'ὁ',
+    transliteration: 'ho',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'masculine', number: 'singular', case: 'nominative' },
+    strongs: 'G3588',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.28.3',
+    language: 'greek',
+    text: 'κύριος',
+    transliteration: 'kyrios',
+    lemma: 'κύριος',
+    lemmaTranslit: 'kyrios',
+    gloss: 'Lord',
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'nominative' },
+    strongs: 'G2962',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.28.4',
+    language: 'greek',
+    text: 'μετὰ',
+    transliteration: 'meta',
+    lemma: 'μετά',
+    lemmaTranslit: 'meta',
+    gloss: 'with',
+    morphology: { pos: 'preposition' },
+    strongs: 'G3326',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.28.5',
+    language: 'greek',
+    text: 'σοῦ',
+    transliteration: 'sou',
+    lemma: 'σύ',
+    lemmaTranslit: 'sy',
+    gloss: 'you',
+    morphology: { pos: 'pronoun', person: '2', number: 'singular', case: 'genitive' },
+    strongs: 'G4771',
+    position: 5,
+  },
+];
+
+export const luke1_28_translation: VerseTranslation = {
+  verseRef: 'Luke.1.28',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Rejoice, having-been-graced-one! The Lord [is] with you.',
+      spans: [
+        { id: 'Luke.1.28.en.lit.0', text: 'Rejoice,', position: 0, sourceTokenIds: ['Luke.1.28.0'], confidence: 'high' },
+        { id: 'Luke.1.28.en.lit.1', text: 'having-been-graced-one!', position: 1, sourceTokenIds: ['Luke.1.28.1'], confidence: 'high' },
+        { id: 'Luke.1.28.en.lit.2', text: 'The Lord [is] with you.', position: 2, sourceTokenIds: ['Luke.1.28.2', 'Luke.1.28.3', 'Luke.1.28.4', 'Luke.1.28.5'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'Greetings, you who are highly favored! The Lord is with you.',
+      spans: [
+        { id: 'Luke.1.28.en.idi.0', text: 'Greetings, you who are highly favored!', position: 0, sourceTokenIds: ['Luke.1.28.0', 'Luke.1.28.1'], confidence: 'high' },
+        { id: 'Luke.1.28.en.idi.1', text: 'The Lord is with you.', position: 1, sourceTokenIds: ['Luke.1.28.2', 'Luke.1.28.3', 'Luke.1.28.4', 'Luke.1.28.5'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_28_verse = {
+  ref: 'Luke.1.28',
+  sourceTokens: luke1_28_tokens,
+  translation: luke1_28_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:30 – Do not be afraid, Mary
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_30_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.30.0',
+    language: 'greek',
+    text: 'μὴ',
+    transliteration: 'mē',
+    lemma: 'μή',
+    lemmaTranslit: 'mē',
+    gloss: 'not',
+    morphology: { pos: 'adverb' },
+    strongs: 'G3361',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.30.1',
+    language: 'greek',
+    text: 'φοβοῦ',
+    transliteration: 'phobou',
+    lemma: 'φοβέω',
+    lemmaTranslit: 'phobeō',
+    gloss: 'be afraid',
+    morphology: { pos: 'verb', person: '2', number: 'singular', tense: 'present', voice: 'middle', mood: 'imperative' },
+    strongs: 'G5399',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.30.2',
+    language: 'greek',
+    text: 'Μαριάμ',
+    transliteration: 'Mariam',
+    lemma: 'Μαριάμ',
+    lemmaTranslit: 'Mariam',
+    gloss: 'Mary',
+    morphology: { pos: 'proper-noun', gender: 'feminine', number: 'singular', case: 'vocative' },
+    strongs: 'G3137',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.30.3',
+    language: 'greek',
+    text: 'εὗρες',
+    transliteration: 'heures',
+    lemma: 'εὑρίσκω',
+    lemmaTranslit: 'heuriskō',
+    gloss: 'you have found',
+    morphology: { pos: 'verb', person: '2', number: 'singular', tense: 'aorist', voice: 'active', mood: 'indicative' },
+    strongs: 'G2147',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.30.4',
+    language: 'greek',
+    text: 'χάριν',
+    transliteration: 'charin',
+    lemma: 'χάρις',
+    lemmaTranslit: 'charis',
+    gloss: 'favor',
+    glossExtended: 'grace, favor, kindness',
+    morphology: { pos: 'noun', gender: 'feminine', number: 'singular', case: 'accusative' },
+    strongs: 'G5485',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.30.5',
+    language: 'greek',
+    text: 'παρὰ',
+    transliteration: 'para',
+    lemma: 'παρά',
+    lemmaTranslit: 'para',
+    gloss: 'with',
+    morphology: { pos: 'preposition' },
+    strongs: 'G3844',
+    position: 5,
+  },
+  {
+    id: 'Luke.1.30.6',
+    language: 'greek',
+    text: 'τῷ',
+    transliteration: 'tō',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'masculine', number: 'singular', case: 'dative' },
+    strongs: 'G3588',
+    position: 6,
+  },
+  {
+    id: 'Luke.1.30.7',
+    language: 'greek',
+    text: 'θεῷ',
+    transliteration: 'theō',
+    lemma: 'θεός',
+    lemmaTranslit: 'theos',
+    gloss: 'God',
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'dative' },
+    strongs: 'G2316',
+    position: 7,
+  },
+];
+
+export const luke1_30_translation: VerseTranslation = {
+  verseRef: 'Luke.1.30',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Do not be afraid, Mary, for you found favor with God.',
+      spans: [
+        { id: 'Luke.1.30.en.lit.0', text: 'Do not be afraid,', position: 0, sourceTokenIds: ['Luke.1.30.0', 'Luke.1.30.1'], confidence: 'high' },
+        { id: 'Luke.1.30.en.lit.1', text: 'Mary,', position: 1, sourceTokenIds: ['Luke.1.30.2'], confidence: 'high' },
+        { id: 'Luke.1.30.en.lit.2', text: 'for you found favor', position: 2, sourceTokenIds: ['Luke.1.30.3', 'Luke.1.30.4'], confidence: 'high' },
+        { id: 'Luke.1.30.en.lit.3', text: 'with God.', position: 3, sourceTokenIds: ['Luke.1.30.5', 'Luke.1.30.6', 'Luke.1.30.7'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'Do not be afraid, Mary; you have found favor with God.',
+      spans: [
+        { id: 'Luke.1.30.en.idi.0', text: 'Do not be afraid, Mary;', position: 0, sourceTokenIds: ['Luke.1.30.0', 'Luke.1.30.1', 'Luke.1.30.2'], confidence: 'high' },
+        { id: 'Luke.1.30.en.idi.1', text: 'you have found favor with God.', position: 1, sourceTokenIds: ['Luke.1.30.3', 'Luke.1.30.4', 'Luke.1.30.5', 'Luke.1.30.6', 'Luke.1.30.7'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_30_verse = {
+  ref: 'Luke.1.30',
+  sourceTokens: luke1_30_tokens,
+  translation: luke1_30_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:31 – You will conceive and give birth to a son
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_31_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.31.0',
+    language: 'greek',
+    text: 'συλλήμψῃ',
+    transliteration: 'syllēmpsē',
+    lemma: 'συλλαμβάνω',
+    lemmaTranslit: 'syllambanō',
+    gloss: 'you will conceive',
+    morphology: { pos: 'verb', person: '2', number: 'singular', tense: 'future', voice: 'middle', mood: 'indicative' },
+    strongs: 'G4815',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.31.1',
+    language: 'greek',
+    text: 'ἐν',
+    transliteration: 'en',
+    lemma: 'ἐν',
+    lemmaTranslit: 'en',
+    gloss: 'in',
+    morphology: { pos: 'preposition' },
+    strongs: 'G1722',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.31.2',
+    language: 'greek',
+    text: 'γαστρί',
+    transliteration: 'gastri',
+    lemma: 'γαστήρ',
+    lemmaTranslit: 'gastēr',
+    gloss: 'womb',
+    morphology: { pos: 'noun', gender: 'feminine', number: 'singular', case: 'dative' },
+    strongs: 'G1064',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.31.3',
+    language: 'greek',
+    text: 'τέξῃ',
+    transliteration: 'texē',
+    lemma: 'τίκτω',
+    lemmaTranslit: 'tiktō',
+    gloss: 'you will give birth to',
+    morphology: { pos: 'verb', person: '2', number: 'singular', tense: 'future', voice: 'middle', mood: 'indicative' },
+    strongs: 'G5088',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.31.4',
+    language: 'greek',
+    text: 'υἱόν',
+    transliteration: 'huion',
+    lemma: 'υἱός',
+    lemmaTranslit: 'huios',
+    gloss: 'a son',
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'accusative' },
+    strongs: 'G5207',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.31.5',
+    language: 'greek',
+    text: 'καλέσεις',
+    transliteration: 'kaleseis',
+    lemma: 'καλέω',
+    lemmaTranslit: 'kaleō',
+    gloss: 'you shall call',
+    morphology: { pos: 'verb', person: '2', number: 'singular', tense: 'future', voice: 'active', mood: 'indicative' },
+    strongs: 'G2564',
+    position: 5,
+  },
+  {
+    id: 'Luke.1.31.6',
+    language: 'greek',
+    text: 'Ἰησοῦν',
+    transliteration: 'Iēsoun',
+    lemma: 'Ἰησοῦς',
+    lemmaTranslit: 'Iēsous',
+    gloss: 'Jesus',
+    glossExtended: "Jesus (Heb. Yeshua, 'he saves')",
+    morphology: { pos: 'proper-noun', gender: 'masculine', number: 'singular', case: 'accusative' },
+    strongs: 'G2424',
+    position: 6,
+  },
+];
+
+export const luke1_31_translation: VerseTranslation = {
+  verseRef: 'Luke.1.31',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'You will conceive in womb and will bear a son, and you shall call his name Jesus.',
+      spans: [
+        { id: 'Luke.1.31.en.lit.0', text: 'You will conceive in womb', position: 0, sourceTokenIds: ['Luke.1.31.0', 'Luke.1.31.1', 'Luke.1.31.2'], confidence: 'high' },
+        { id: 'Luke.1.31.en.lit.1', text: 'and will bear a son,', position: 1, sourceTokenIds: ['Luke.1.31.3', 'Luke.1.31.4'], confidence: 'high' },
+        { id: 'Luke.1.31.en.lit.2', text: 'and you shall call his name Jesus.', position: 2, sourceTokenIds: ['Luke.1.31.5', 'Luke.1.31.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'You will conceive and give birth to a son, and you are to call him Jesus.',
+      spans: [
+        { id: 'Luke.1.31.en.idi.0', text: 'You will conceive and give birth to a son,', position: 0, sourceTokenIds: ['Luke.1.31.0', 'Luke.1.31.1', 'Luke.1.31.2', 'Luke.1.31.3', 'Luke.1.31.4'], confidence: 'high' },
+        { id: 'Luke.1.31.en.idi.1', text: 'and you are to call him Jesus.', position: 1, sourceTokenIds: ['Luke.1.31.5', 'Luke.1.31.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_31_verse = {
+  ref: 'Luke.1.31',
+  sourceTokens: luke1_31_tokens,
+  translation: luke1_31_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:35 – The Holy Spirit will come upon you
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_35_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.35.0',
+    language: 'greek',
+    text: 'πνεῦμα',
+    transliteration: 'pneuma',
+    lemma: 'πνεῦμα',
+    lemmaTranslit: 'pneuma',
+    gloss: 'Spirit',
+    glossExtended: 'Spirit, breath, wind',
+    morphology: { pos: 'noun', gender: 'neuter', number: 'singular', case: 'nominative' },
+    strongs: 'G4151',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.35.1',
+    language: 'greek',
+    text: 'ἅγιον',
+    transliteration: 'hagion',
+    lemma: 'ἅγιος',
+    lemmaTranslit: 'hagios',
+    gloss: 'Holy',
+    morphology: { pos: 'adjective', gender: 'neuter', number: 'singular', case: 'nominative' },
+    strongs: 'G40',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.35.2',
+    language: 'greek',
+    text: 'ἐπελεύσεται',
+    transliteration: 'epeleusetai',
+    lemma: 'ἐπέρχομαι',
+    lemmaTranslit: 'eperchomai',
+    gloss: 'will come upon',
+    morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'future', voice: 'middle', mood: 'indicative' },
+    strongs: 'G1904',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.35.3',
+    language: 'greek',
+    text: 'σέ',
+    transliteration: 'se',
+    lemma: 'σύ',
+    lemmaTranslit: 'sy',
+    gloss: 'you',
+    morphology: { pos: 'pronoun', person: '2', number: 'singular', case: 'accusative' },
+    strongs: 'G4771',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.35.4',
+    language: 'greek',
+    text: 'δύναμις',
+    transliteration: 'dynamis',
+    lemma: 'δύναμις',
+    lemmaTranslit: 'dynamis',
+    gloss: 'power',
+    glossExtended: 'power, might, strength',
+    morphology: { pos: 'noun', gender: 'feminine', number: 'singular', case: 'nominative' },
+    strongs: 'G1411',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.35.5',
+    language: 'greek',
+    text: 'ὑψίστου',
+    transliteration: 'hypsistou',
+    lemma: 'ὕψιστος',
+    lemmaTranslit: 'hypsistos',
+    gloss: 'of the Most High',
+    morphology: { pos: 'adjective', gender: 'masculine', number: 'singular', case: 'genitive' },
+    strongs: 'G5310',
+    position: 5,
+  },
+  {
+    id: 'Luke.1.35.6',
+    language: 'greek',
+    text: 'ἐπισκιάσει',
+    transliteration: 'episkiasei',
+    lemma: 'ἐπισκιάζω',
+    lemmaTranslit: 'episkiazō',
+    gloss: 'will overshadow',
+    morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'future', voice: 'active', mood: 'indicative' },
+    strongs: 'G1982',
+    position: 6,
+  },
+];
+
+export const luke1_35_translation: VerseTranslation = {
+  verseRef: 'Luke.1.35',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Spirit Holy will come upon you, and power of [the] Most High will overshadow you.',
+      spans: [
+        { id: 'Luke.1.35.en.lit.0', text: 'Spirit Holy', position: 0, sourceTokenIds: ['Luke.1.35.0', 'Luke.1.35.1'], confidence: 'high' },
+        { id: 'Luke.1.35.en.lit.1', text: 'will come upon you,', position: 1, sourceTokenIds: ['Luke.1.35.2', 'Luke.1.35.3'], confidence: 'high' },
+        { id: 'Luke.1.35.en.lit.2', text: 'and power of [the] Most High will overshadow you.', position: 2, sourceTokenIds: ['Luke.1.35.4', 'Luke.1.35.5', 'Luke.1.35.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'The Holy Spirit will come upon you, and the power of the Most High will overshadow you.',
+      spans: [
+        { id: 'Luke.1.35.en.idi.0', text: 'The Holy Spirit will come upon you,', position: 0, sourceTokenIds: ['Luke.1.35.0', 'Luke.1.35.1', 'Luke.1.35.2', 'Luke.1.35.3'], confidence: 'high' },
+        { id: 'Luke.1.35.en.idi.1', text: 'and the power of the Most High will overshadow you.', position: 1, sourceTokenIds: ['Luke.1.35.4', 'Luke.1.35.5', 'Luke.1.35.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_35_verse = {
+  ref: 'Luke.1.35',
+  sourceTokens: luke1_35_tokens,
+  translation: luke1_35_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:46 – My soul magnifies the Lord (Magnificat)
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_46_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.46.0',
+    language: 'greek',
+    text: 'μεγαλύνει',
+    transliteration: 'megalynei',
+    lemma: 'μεγαλύνω',
+    lemmaTranslit: 'megalynō',
+    gloss: 'magnifies',
+    morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'present', voice: 'active', mood: 'indicative' },
+    strongs: 'G3170',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.46.1',
+    language: 'greek',
+    text: 'ἡ',
+    transliteration: 'hē',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'feminine', number: 'singular', case: 'nominative' },
+    strongs: 'G3588',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.46.2',
+    language: 'greek',
+    text: 'ψυχή',
+    transliteration: 'psychē',
+    lemma: 'ψυχή',
+    lemmaTranslit: 'psychē',
+    gloss: 'soul',
+    glossExtended: 'soul, life, self',
+    morphology: { pos: 'noun', gender: 'feminine', number: 'singular', case: 'nominative' },
+    strongs: 'G5590',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.46.3',
+    language: 'greek',
+    text: 'μου',
+    transliteration: 'mou',
+    lemma: 'ἐγώ',
+    lemmaTranslit: 'egō',
+    gloss: 'my',
+    morphology: { pos: 'pronoun', person: '1', number: 'singular', case: 'genitive' },
+    strongs: 'G1473',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.46.4',
+    language: 'greek',
+    text: 'τὸν',
+    transliteration: 'ton',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'masculine', number: 'singular', case: 'accusative' },
+    strongs: 'G3588',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.46.5',
+    language: 'greek',
+    text: 'κύριον',
+    transliteration: 'kyrion',
+    lemma: 'κύριος',
+    lemmaTranslit: 'kyrios',
+    gloss: 'Lord',
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'accusative' },
+    strongs: 'G2962',
+    position: 5,
+  },
+];
+
+export const luke1_46_translation: VerseTranslation = {
+  verseRef: 'Luke.1.46',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Magnifies the soul of-me the Lord.',
+      spans: [
+        { id: 'Luke.1.46.en.lit.0', text: 'Magnifies', position: 0, sourceTokenIds: ['Luke.1.46.0'], confidence: 'high' },
+        { id: 'Luke.1.46.en.lit.1', text: 'the soul of-me', position: 1, sourceTokenIds: ['Luke.1.46.1', 'Luke.1.46.2', 'Luke.1.46.3'], confidence: 'high' },
+        { id: 'Luke.1.46.en.lit.2', text: 'the Lord.', position: 2, sourceTokenIds: ['Luke.1.46.4', 'Luke.1.46.5'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'My soul magnifies the Lord.',
+      spans: [
+        { id: 'Luke.1.46.en.idi.0', text: 'My soul', position: 0, sourceTokenIds: ['Luke.1.46.1', 'Luke.1.46.2', 'Luke.1.46.3'], confidence: 'high' },
+        { id: 'Luke.1.46.en.idi.1', text: 'magnifies the Lord.', position: 1, sourceTokenIds: ['Luke.1.46.0', 'Luke.1.46.4', 'Luke.1.46.5'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_46_verse = {
+  ref: 'Luke.1.46',
+  sourceTokens: luke1_46_tokens,
+  translation: luke1_46_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:47 – My spirit rejoices in God my Savior
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_47_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.47.0',
+    language: 'greek',
+    text: 'ἠγαλλίασεν',
+    transliteration: 'ēgalliasen',
+    lemma: 'ἀγαλλιάω',
+    lemmaTranslit: 'agalliaō',
+    gloss: 'rejoiced',
+    morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'aorist', voice: 'active', mood: 'indicative' },
+    strongs: 'G21',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.47.1',
+    language: 'greek',
+    text: 'τὸ',
+    transliteration: 'to',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'neuter', number: 'singular', case: 'nominative' },
+    strongs: 'G3588',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.47.2',
+    language: 'greek',
+    text: 'πνεῦμά',
+    transliteration: 'pneuma',
+    lemma: 'πνεῦμα',
+    lemmaTranslit: 'pneuma',
+    gloss: 'spirit',
+    morphology: { pos: 'noun', gender: 'neuter', number: 'singular', case: 'nominative' },
+    strongs: 'G4151',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.47.3',
+    language: 'greek',
+    text: 'μου',
+    transliteration: 'mou',
+    lemma: 'ἐγώ',
+    lemmaTranslit: 'egō',
+    gloss: 'my',
+    morphology: { pos: 'pronoun', person: '1', number: 'singular', case: 'genitive' },
+    strongs: 'G1473',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.47.4',
+    language: 'greek',
+    text: 'ἐπὶ',
+    transliteration: 'epi',
+    lemma: 'ἐπί',
+    lemmaTranslit: 'epi',
+    gloss: 'in',
+    morphology: { pos: 'preposition' },
+    strongs: 'G1909',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.47.5',
+    language: 'greek',
+    text: 'τῷ',
+    transliteration: 'tō',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'masculine', number: 'singular', case: 'dative' },
+    strongs: 'G3588',
+    position: 5,
+  },
+  {
+    id: 'Luke.1.47.6',
+    language: 'greek',
+    text: 'σωτῆρί',
+    transliteration: 'sōtēri',
+    lemma: 'σωτήρ',
+    lemmaTranslit: 'sōtēr',
+    gloss: 'Savior',
+    glossExtended: 'savior, deliverer, preserver',
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'dative' },
+    strongs: 'G4990',
+    position: 6,
+  },
+];
+
+export const luke1_47_translation: VerseTranslation = {
+  verseRef: 'Luke.1.47',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Rejoiced the spirit of-me in God the Savior of-me.',
+      spans: [
+        { id: 'Luke.1.47.en.lit.0', text: 'Rejoiced', position: 0, sourceTokenIds: ['Luke.1.47.0'], confidence: 'high' },
+        { id: 'Luke.1.47.en.lit.1', text: 'the spirit of-me', position: 1, sourceTokenIds: ['Luke.1.47.1', 'Luke.1.47.2', 'Luke.1.47.3'], confidence: 'high' },
+        { id: 'Luke.1.47.en.lit.2', text: 'in God the Savior of-me.', position: 2, sourceTokenIds: ['Luke.1.47.4', 'Luke.1.47.5', 'Luke.1.47.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'My spirit rejoices in God my Savior.',
+      spans: [
+        { id: 'Luke.1.47.en.idi.0', text: 'My spirit rejoices', position: 0, sourceTokenIds: ['Luke.1.47.0', 'Luke.1.47.1', 'Luke.1.47.2', 'Luke.1.47.3'], confidence: 'high' },
+        { id: 'Luke.1.47.en.idi.1', text: 'in God my Savior.', position: 1, sourceTokenIds: ['Luke.1.47.4', 'Luke.1.47.5', 'Luke.1.47.6'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_47_verse = {
+  ref: 'Luke.1.47',
+  sourceTokens: luke1_47_tokens,
+  translation: luke1_47_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:53 – He has filled the hungry with good things
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_53_tokens: SourceToken[] = [
+  {
+    id: 'Luke.1.53.0',
+    language: 'greek',
+    text: 'πεινῶντας',
+    transliteration: 'peinōntas',
+    lemma: 'πεινάω',
+    lemmaTranslit: 'peinaō',
+    gloss: 'the hungry',
+    morphology: { pos: 'verb', gender: 'masculine', number: 'plural', tense: 'present', voice: 'active', mood: 'participle', case: 'accusative' },
+    strongs: 'G3983',
+    position: 0,
+  },
+  {
+    id: 'Luke.1.53.1',
+    language: 'greek',
+    text: 'ἐνέπλησεν',
+    transliteration: 'eneplēsen',
+    lemma: 'ἐμπίπλημι',
+    lemmaTranslit: 'empiplēmi',
+    gloss: 'he filled',
+    morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'aorist', voice: 'active', mood: 'indicative' },
+    strongs: 'G1705',
+    position: 1,
+  },
+  {
+    id: 'Luke.1.53.2',
+    language: 'greek',
+    text: 'ἀγαθῶν',
+    transliteration: 'agathōn',
+    lemma: 'ἀγαθός',
+    lemmaTranslit: 'agathos',
+    gloss: 'with good things',
+    morphology: { pos: 'adjective', gender: 'neuter', number: 'plural', case: 'genitive' },
+    strongs: 'G18',
+    position: 2,
+  },
+  {
+    id: 'Luke.1.53.3',
+    language: 'greek',
+    text: 'πλουτοῦντας',
+    transliteration: 'ploutountas',
+    lemma: 'πλουτέω',
+    lemmaTranslit: 'plouteō',
+    gloss: 'the rich',
+    morphology: { pos: 'verb', gender: 'masculine', number: 'plural', tense: 'present', voice: 'active', mood: 'participle', case: 'accusative' },
+    strongs: 'G4147',
+    position: 3,
+  },
+  {
+    id: 'Luke.1.53.4',
+    language: 'greek',
+    text: 'ἐξαπέστειλεν',
+    transliteration: 'exapesteilen',
+    lemma: 'ἐξαποστέλλω',
+    lemmaTranslit: 'exapostellō',
+    gloss: 'he sent away',
+    morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'aorist', voice: 'active', mood: 'indicative' },
+    strongs: 'G1821',
+    position: 4,
+  },
+  {
+    id: 'Luke.1.53.5',
+    language: 'greek',
+    text: 'κενούς',
+    transliteration: 'kenous',
+    lemma: 'κενός',
+    lemmaTranslit: 'kenos',
+    gloss: 'empty',
+    morphology: { pos: 'adjective', gender: 'masculine', number: 'plural', case: 'accusative' },
+    strongs: 'G2756',
+    position: 5,
+  },
+];
+
+export const luke1_53_translation: VerseTranslation = {
+  verseRef: 'Luke.1.53',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'The hungering he filled with good things, and the being-rich he sent away empty.',
+      spans: [
+        { id: 'Luke.1.53.en.lit.0', text: 'The hungering', position: 0, sourceTokenIds: ['Luke.1.53.0'], confidence: 'high' },
+        { id: 'Luke.1.53.en.lit.1', text: 'he filled with good things,', position: 1, sourceTokenIds: ['Luke.1.53.1', 'Luke.1.53.2'], confidence: 'high' },
+        { id: 'Luke.1.53.en.lit.2', text: 'and the being-rich he sent away empty.', position: 2, sourceTokenIds: ['Luke.1.53.3', 'Luke.1.53.4', 'Luke.1.53.5'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'He has filled the hungry with good things and sent the rich away empty.',
+      spans: [
+        { id: 'Luke.1.53.en.idi.0', text: 'He has filled the hungry with good things', position: 0, sourceTokenIds: ['Luke.1.53.0', 'Luke.1.53.1', 'Luke.1.53.2'], confidence: 'high' },
+        { id: 'Luke.1.53.en.idi.1', text: 'and sent the rich away empty.', position: 1, sourceTokenIds: ['Luke.1.53.3', 'Luke.1.53.4', 'Luke.1.53.5'], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const luke1_53_verse = {
+  ref: 'Luke.1.53',
+  sourceTokens: luke1_53_tokens,
+  translation: luke1_53_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Combined export — Luke 1:26-56 (Annunciation & Magnificat)
+ * ──────────────────────────────────────────────────────────── */
+
+export const luke1_26_56_verses = [
+  luke1_26_verse,
+  luke1_28_verse,
+  luke1_30_verse,
+  luke1_31_verse,
+  luke1_35_verse,
+  luke1_46_verse,
+  luke1_47_verse,
+  luke1_53_verse,
+];
+
+export default luke1_26_56_verses;
