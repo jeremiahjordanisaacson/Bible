@@ -1,24 +1,26 @@
 import { Metadata } from 'next';
 import { allBooks, bibleStats, categories, getBooksByCategory, oldTestamentBooks, newTestamentBooks } from '@/data/books-metadata';
+import { getRegisteredChapters } from '@/data/chapter-registry';
 
 export const metadata: Metadata = {
   title: 'Bible Statistics | Open Bible',
   description: 'Statistics and coverage of the Open Bible Translation project',
 };
 
-// Books with rich sample data
-const RICH_DATA_BOOKS = ['Gen', 'John'];
-
 export default function StatsPage() {
-  const richChapters = 2; // Gen 1 and John 1
-  const coveragePercent = ((richChapters / bibleStats.totalChapters) * 100).toFixed(2);
+  const registeredChapters = getRegisteredChapters();
+  const richChapters = registeredChapters.length;
+  const coveragePercent = ((richChapters / bibleStats.totalChapters) * 100).toFixed(1);
+
+  // Count unique books with rich data
+  const richBooks = new Set(registeredChapters.map(k => k.split('.')[0]));
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Bible Statistics</h1>
 
       {/* Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-[var(--muted)] rounded-lg p-6">
           <div className="text-3xl font-bold text-[var(--accent)]">{bibleStats.totalBooks}</div>
           <div className="text-[var(--muted-foreground)]">Total Books</div>
@@ -28,8 +30,12 @@ export default function StatsPage() {
           <div className="text-[var(--muted-foreground)]">Total Chapters</div>
         </div>
         <div className="bg-[var(--muted)] rounded-lg p-6">
-          <div className="text-3xl font-bold text-[var(--accent)]">{coveragePercent}%</div>
-          <div className="text-[var(--muted-foreground)]">Rich Data Coverage</div>
+          <div className="text-3xl font-bold text-green-600">{richChapters}</div>
+          <div className="text-[var(--muted-foreground)]">Chapters with Morphology</div>
+        </div>
+        <div className="bg-[var(--muted)] rounded-lg p-6">
+          <div className="text-3xl font-bold text-green-600">{richBooks.size}</div>
+          <div className="text-[var(--muted-foreground)]">Books with Rich Data</div>
         </div>
       </div>
 
@@ -74,21 +80,27 @@ export default function StatsPage() {
 
       {/* Data Coverage */}
       <div className="border border-[var(--border)] rounded-lg p-6 mb-8">
-        <h2 className="text-xl font-semibold mb-4">Data Coverage</h2>
+        <h2 className="text-xl font-semibold mb-4">Morphological Data Coverage</h2>
         <p className="text-[var(--muted-foreground)] mb-4">
-          All 66 books have basic text available via the World English Bible (public domain).
-          Rich morphological data with study tools is currently available for:
+          All 66 books have basic text via the World English Bible (public domain).
+          {richChapters} chapters across {richBooks.size} books have rich morphological data
+          with Hebrew/Greek tokens, Strong&apos;s numbers, multiple translation layers, and study notes
+          ({coveragePercent}% of all {bibleStats.totalChapters.toLocaleString()} chapters).
         </p>
-        <div className="flex gap-4">
-          {RICH_DATA_BOOKS.map((code) => {
+        <div className="flex flex-wrap gap-2">
+          {Array.from(richBooks).map((code) => {
             const book = allBooks.find(b => b.code === code);
+            const chaptersForBook = registeredChapters
+              .filter(k => k.startsWith(code + '.'))
+              .map(k => k.split('.')[1]);
             return (
               <a
                 key={code}
-                href={`/read/${code}/1/`}
-                className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors"
+                href={`/read/${code}/${chaptersForBook[0]}/`}
+                className="px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-lg hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors text-sm"
+                title={`Chapters: ${chaptersForBook.join(', ')}`}
               >
-                {book?.name} 1
+                {book?.name || code} ({chaptersForBook.length})
               </a>
             );
           })}

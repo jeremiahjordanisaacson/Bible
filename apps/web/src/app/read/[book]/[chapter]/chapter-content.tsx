@@ -249,9 +249,10 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
                     <strong>Source:</strong> {translationName}
                   </div>
                   <div className="text-xs text-[var(--muted-foreground)] mt-1">
-                    Morphological study data available for{' '}
-                    <Link href="/read/Gen/1/" className="text-[var(--accent)] hover:underline">Genesis 1</Link>
-                    {' '}and{' '}
+                    Morphological study data available for key chapters across all 66 books.
+                    Try{' '}
+                    <Link href="/read/Gen/1/" className="text-[var(--accent)] hover:underline">Genesis 1</Link>,{' '}
+                    <Link href="/read/Psa/23/" className="text-[var(--accent)] hover:underline">Psalm 23</Link>, or{' '}
                     <Link href="/read/John/1/" className="text-[var(--accent)] hover:underline">John 1</Link>.
                   </div>
                 </>
