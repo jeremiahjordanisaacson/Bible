@@ -8,15 +8,11 @@ import { SimpleVerseDisplay } from '@/components/simple-verse-display';
 import { LayerToggle, ViewToggles } from '@/components/layer-toggle';
 import { useBibleStore } from '@/store/bible-store';
 import { useKeyboardNavigation } from '@/hooks/use-keyboard-navigation';
-import genesisChapter1Verses from '@/data/sample-genesis';
-import genesisChapter2Verses from '@/data/sample-genesis-2';
-import genesisChapter3Verses from '@/data/sample-genesis-3';
-import genesisChapter4Verses from '@/data/sample-genesis-4';
-import genesisChapter5Verses from '@/data/sample-genesis-5';
-import genesisChapter6Verses from '@/data/sample-genesis-6';
-import genesisChapter7Verses from '@/data/sample-genesis-7';
-import genesisChapter8Verses from '@/data/sample-genesis-8';
-import johnChapter1Verses from '@/data/sample-john';
+import {
+  getRichVerseData,
+  hasRichChapterData,
+  getRichVerseNumbers,
+} from '@/data/chapter-registry';
 import { getVariantsForVerse } from '@/data/variants';
 import { getBook, getNextBook, getPrevBook } from '@/data/books-metadata';
 import { KeyboardShortcutsModal } from '@/components/keyboard-shortcuts-modal';
@@ -38,92 +34,7 @@ import { ProvenancePanel } from '@/components/provenance-panel';
 import { fetchChapter, convertToSimpleVerses } from '@/lib/bible-api';
 import { addToReadingHistory } from '@/lib/reading-history';
 
-// Sample data mapping - rich data with morphology
-function getRichVerseData(book: string, chapter: number, verseNum: number) {
-  if (book === 'Gen' && chapter === 1) {
-    const verse = genesisChapter1Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'Gen' && chapter === 2) {
-    const verse = genesisChapter2Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'Gen' && chapter === 3) {
-    const verse = genesisChapter3Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'Gen' && chapter === 4) {
-    const verse = genesisChapter4Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'Gen' && chapter === 5) {
-    const verse = genesisChapter5Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'Gen' && chapter === 6) {
-    const verse = genesisChapter6Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'Gen' && chapter === 7) {
-    const verse = genesisChapter7Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'Gen' && chapter === 8) {
-    const verse = genesisChapter8Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  if (book === 'John' && chapter === 1) {
-    const verse = johnChapter1Verses.find((v, i) => i + 1 === verseNum);
-    return verse || null;
-  }
-  return null;
-}
-
-// Check if a chapter has any rich data
-function hasRichChapterData(book: string, chapter: number) {
-  if (book === 'Gen' && chapter === 1) return true;
-  if (book === 'Gen' && chapter === 2) return true;
-  if (book === 'Gen' && chapter === 3) return true;
-  if (book === 'Gen' && chapter === 4) return true;
-  if (book === 'Gen' && chapter === 5) return true;
-  if (book === 'Gen' && chapter === 6) return true;
-  if (book === 'Gen' && chapter === 7) return true;
-  if (book === 'Gen' && chapter === 8) return true;
-  if (book === 'John' && chapter === 1) return true;
-  return false;
-}
-
-// Get list of verse numbers with rich data
-function getRichVerseNumbers(book: string, chapter: number): number[] {
-  if (book === 'Gen' && chapter === 1) {
-    return genesisChapter1Verses.map((_, i) => i + 1);
-  }
-  if (book === 'Gen' && chapter === 2) {
-    return genesisChapter2Verses.map((_, i) => i + 1);
-  }
-  if (book === 'Gen' && chapter === 3) {
-    return genesisChapter3Verses.map((_, i) => i + 1);
-  }
-  if (book === 'Gen' && chapter === 4) {
-    return genesisChapter4Verses.map((_, i) => i + 1);
-  }
-  if (book === 'Gen' && chapter === 5) {
-    return genesisChapter5Verses.map((_, i) => i + 1);
-  }
-  if (book === 'Gen' && chapter === 6) {
-    return genesisChapter6Verses.map((_, i) => i + 1);
-  }
-  if (book === 'Gen' && chapter === 7) {
-    return genesisChapter7Verses.map((_, i) => i + 1);
-  }
-  if (book === 'Gen' && chapter === 8) {
-    return genesisChapter8Verses.map((_, i) => i + 1);
-  }
-  if (book === 'John' && chapter === 1) {
-    return johnChapter1Verses.map((_, i) => i + 1);
-  }
-  return [];
-}
+// Rich data functions provided by chapter-registry.ts
 
 interface SimpleVerse {
   ref: string;
