@@ -1,206 +1,196 @@
 // @ts-nocheck — generated data file, schema alignment pending
-/**
- * Genesis 16:1-16 - Hagar and Ishmael
- * Hebrew morphological data with study annotations
- */
-
 import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
 
-// Genesis 16:1
-export const genesis16_1_tokens: SourceToken[] = [
-  { id: 'Gen.16.1.0', language: 'hebrew', text: 'וְשָׂרַ֥י', transliteration: "wəśāray", lemma: 'שָׂרַי', lemmaTranslit: "śāray", gloss: 'Now Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 0 },
-  { id: 'Gen.16.1.1', language: 'hebrew', text: 'אֵ֣שֶׁת', transliteration: "ʾēšeṯ", lemma: 'אִשָּׁה', lemmaTranslit: "ʾiššāh", gloss: 'wife of', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', rawCode: 'Ncfsc' }, strongs: 'H802', position: 1 },
-  { id: 'Gen.16.1.2', language: 'hebrew', text: 'אַבְרָ֔ם', transliteration: "ʾaḇrām", lemma: 'אַבְרָם', lemmaTranslit: "ʾaḇrām", gloss: 'Abram', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H87', position: 2 },
-  { id: 'Gen.16.1.3', language: 'hebrew', text: 'לֹ֥א', transliteration: "lōʾ", lemma: 'לֹא', lemmaTranslit: "lōʾ", gloss: 'not', morphology: { pos: 'adverb', rawCode: 'D' }, strongs: 'H3808', position: 3 },
-  { id: 'Gen.16.1.4', language: 'hebrew', text: 'יָלְדָ֖ה', transliteration: 'yālǝḏāh', lemma: 'יָלַד', lemmaTranslit: 'yālaḏ', gloss: 'had borne', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp3fs' }, strongs: 'H3205', position: 4 },
-  { id: 'Gen.16.1.5', language: 'hebrew', text: 'שִׁפְחָ֥ה', transliteration: 'šipḥāh', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'a maidservant', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H8198', position: 5 },
-  { id: 'Gen.16.1.6', language: 'hebrew', text: 'מִצְרִ֖ית', transliteration: 'miṣrîṯ', lemma: 'מִצְרִי', lemmaTranslit: 'miṣrî', gloss: 'Egyptian', morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Aafsa' }, strongs: 'H4713', position: 6 },
-  { id: 'Gen.16.1.7', language: 'hebrew', text: 'הָגָֽר', transliteration: 'hāḡār', lemma: 'הָגָר', lemmaTranslit: 'hāḡār', gloss: 'Hagar', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H1904', position: 7 },
+// Genesis 16:1-16 - Hagar and Ishmael
+// Sarai gives Hagar to Abram; Hagar flees; angel of the LORD; Ishmael born
+
+export const gen16_1_16Tokens: SourceToken[] = [
+  // Verse 1 - Sarai barren, has Egyptian maidservant Hagar
+  { id: 'Gen.16.1.1', language: 'hebrew', text: 'וְשָׂרַ֥י', transliteration: 'wəśāray', lemma: 'שָׂרַי', lemmaTranslit: 'śāray', gloss: 'Now Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 1 },
+  { id: 'Gen.16.1.2', language: 'hebrew', text: 'אֵ֣שֶׁת', transliteration: 'ʾēšeṯ', lemma: 'אִשָּׁה', lemmaTranslit: 'ʾiššāh', gloss: 'wife of', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', rawCode: 'Ncfsc' }, strongs: 'H802', position: 2 },
+  { id: 'Gen.16.1.3', language: 'hebrew', text: 'אַבְרָ֔ם', transliteration: 'ʾaḇrām', lemma: 'אַבְרָם', lemmaTranslit: 'ʾaḇrām', gloss: 'Abram', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H87', position: 3 },
+  { id: 'Gen.16.1.4', language: 'hebrew', text: 'לֹ֥א', transliteration: 'lōʾ', lemma: 'לֹא', lemmaTranslit: 'lōʾ', gloss: 'not', morphology: { pos: 'adverb', rawCode: 'D' }, strongs: 'H3808', position: 4 },
+  { id: 'Gen.16.1.5', language: 'hebrew', text: 'יָלְדָ֖ה', transliteration: 'yāləḏāh', lemma: 'יָלַד', lemmaTranslit: 'yālaḏ', gloss: 'she had borne', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp3fs' }, strongs: 'H3205', position: 5 },
+  { id: 'Gen.16.1.6', language: 'hebrew', text: 'שִׁפְחָ֥ה', transliteration: 'šipḥāh', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'a maidservant', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H8198', position: 6 },
+  { id: 'Gen.16.1.7', language: 'hebrew', text: 'מִצְרִ֖ית', transliteration: 'miṣrîṯ', lemma: 'מִצְרִי', lemmaTranslit: 'miṣrî', gloss: 'Egyptian', morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Aafsa' }, strongs: 'H4713', position: 7 },
+  { id: 'Gen.16.1.8', language: 'hebrew', text: 'הָגָֽר', transliteration: 'hāḡār', lemma: 'הָגָר', lemmaTranslit: 'hāḡār', gloss: 'Hagar', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H1904', position: 8 },
+
+  // Verse 2 - Sarai tells Abram to go in to her maidservant
+  { id: 'Gen.16.2.1', language: 'hebrew', text: 'וַתֹּ֨אמֶר', transliteration: 'wattōʾmer', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And said', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H559', position: 1 },
+  { id: 'Gen.16.2.2', language: 'hebrew', text: 'שָׂרַ֜י', transliteration: 'śāray', lemma: 'שָׂרַי', lemmaTranslit: 'śāray', gloss: 'Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 2 },
+  { id: 'Gen.16.2.3', language: 'hebrew', text: 'עֲצָרַ֧נִי', transliteration: 'ʿăṣāranî', lemma: 'עָצַר', lemmaTranslit: 'ʿāṣar', gloss: 'has restrained me', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'perfect', stem: 'qal', suffix: { person: '1', gender: 'common', number: 'singular' }, rawCode: 'Vqp3ms+Sp1cs' }, strongs: 'H6113', position: 3 },
+  { id: 'Gen.16.2.4', language: 'hebrew', text: 'יְהוָ֛ה', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 4 },
+  { id: 'Gen.16.2.5', language: 'hebrew', text: 'מִלֶּ֖דֶת', transliteration: 'milleḏeṯ', lemma: 'יָלַד', lemmaTranslit: 'yālaḏ', gloss: 'from bearing', morphology: { pos: 'verb', tense: 'infinitive', stem: 'qal', rawCode: 'Vqc' }, strongs: 'H3205', position: 5 },
+  { id: 'Gen.16.2.6', language: 'hebrew', text: 'בֹּא־נָ֖א', transliteration: 'bōʾ-nāʾ', lemma: 'בּוֹא', lemmaTranslit: 'bôʾ', gloss: 'go in please', morphology: { pos: 'verb', person: '2', gender: 'masculine', number: 'singular', tense: 'imperative', stem: 'qal', rawCode: 'Vqv2ms' }, strongs: 'H935', position: 6 },
+  { id: 'Gen.16.2.7', language: 'hebrew', text: 'שִׁפְחָתִ֑י', transliteration: 'šipḥāṯî', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'my maidservant', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '1', gender: 'common', number: 'singular' }, rawCode: 'Ncfsc+Sp1cs' }, strongs: 'H8198', position: 7 },
+  { id: 'Gen.16.2.8', language: 'hebrew', text: 'וַיִּשְׁמַ֥ע', transliteration: 'wayyišmaʿ', lemma: 'שָׁמַע', lemmaTranslit: 'šāmaʿ', gloss: 'And listened', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H8085', position: 8 },
+
+  // Verse 3 - Sarai gives Hagar to Abram as wife
+  { id: 'Gen.16.3.1', language: 'hebrew', text: 'וַתִּקַּ֞ח', transliteration: 'wattiqqaḥ', lemma: 'לָקַח', lemmaTranslit: 'lāqaḥ', gloss: 'And took', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H3947', position: 1 },
+  { id: 'Gen.16.3.2', language: 'hebrew', text: 'שָׂרַ֣י', transliteration: 'śāray', lemma: 'שָׂרַי', lemmaTranslit: 'śāray', gloss: 'Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 2 },
+  { id: 'Gen.16.3.3', language: 'hebrew', text: 'אֶת־', transliteration: 'ʾeṯ-', lemma: 'אֵת', lemmaTranslit: 'ʾēṯ', gloss: '(obj.)', morphology: { pos: 'particle', rawCode: 'To' }, strongs: 'H853', position: 3 },
+  { id: 'Gen.16.3.4', language: 'hebrew', text: 'הָגָ֗ר', transliteration: 'hāḡār', lemma: 'הָגָר', lemmaTranslit: 'hāḡār', gloss: 'Hagar', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H1904', position: 4 },
+  { id: 'Gen.16.3.5', language: 'hebrew', text: 'הַמִּצְרִ֤ית', transliteration: 'hammiṣrîṯ', lemma: 'מִצְרִי', lemmaTranslit: 'miṣrî', gloss: 'the Egyptian', morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Aafsa' }, strongs: 'H4713', position: 5 },
+  { id: 'Gen.16.3.6', language: 'hebrew', text: 'שִׁפְחָתָ֔הּ', transliteration: 'šipḥāṯāh', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'her maidservant', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'Ncfsc+Sp3fs' }, strongs: 'H8198', position: 6 },
+  { id: 'Gen.16.3.7', language: 'hebrew', text: 'וַתִּתֵּ֥ן', transliteration: 'wattittēn', lemma: 'נָתַן', lemmaTranslit: 'nāṯan', gloss: 'and gave', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H5414', position: 7 },
+  { id: 'Gen.16.3.8', language: 'hebrew', text: 'לְאִשָּׁ֖ה', transliteration: 'ləʾiššāh', lemma: 'אִשָּׁה', lemmaTranslit: 'ʾiššāh', gloss: 'as a wife', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H802', position: 8 },
+
+  // Verse 4 - Hagar conceives, despises Sarai
+  { id: 'Gen.16.4.1', language: 'hebrew', text: 'וַיָּבֹ֥א', transliteration: 'wayyāḇōʾ', lemma: 'בּוֹא', lemmaTranslit: 'bôʾ', gloss: 'And he went in', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H935', position: 1 },
+  { id: 'Gen.16.4.2', language: 'hebrew', text: 'אֶל־הָגָ֖ר', transliteration: 'ʾel-hāḡār', lemma: 'הָגָר', lemmaTranslit: 'hāḡār', gloss: 'to Hagar', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H1904', position: 2 },
+  { id: 'Gen.16.4.3', language: 'hebrew', text: 'וַתַּ֖הַר', transliteration: 'wattahar', lemma: 'הָרָה', lemmaTranslit: 'hārāh', gloss: 'and she conceived', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H2029', position: 3 },
+  { id: 'Gen.16.4.4', language: 'hebrew', text: 'וַתֵּ֣רֶא', transliteration: 'wattēreʾ', lemma: 'רָאָה', lemmaTranslit: 'rāʾāh', gloss: 'and she saw', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H7200', position: 4 },
+  { id: 'Gen.16.4.5', language: 'hebrew', text: 'וַתֵּקַ֥ל', transliteration: 'wattēqal', lemma: 'קָלַל', lemmaTranslit: 'qālal', gloss: 'and was despised', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H7043', position: 5 },
+  { id: 'Gen.16.4.6', language: 'hebrew', text: 'גְּבִרְתָּ֖הּ', transliteration: 'gəḇirtāh', lemma: 'גְּבֶרֶת', lemmaTranslit: 'gəḇereṯ', gloss: 'her mistress', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'Ncfsc+Sp3fs' }, strongs: 'H1404', position: 6 },
+  { id: 'Gen.16.4.7', language: 'hebrew', text: 'בְּעֵינֶֽיהָ', transliteration: 'bəʿêneyāh', lemma: 'עַיִן', lemmaTranslit: 'ʿayin', gloss: 'in her eyes', morphology: { pos: 'noun', gender: 'feminine', number: 'dual', state: 'construct', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'Ncfdc+Sp3fs' }, strongs: 'H5869', position: 7 },
+
+  // Verse 5 - Sarai complains to Abram
+  { id: 'Gen.16.5.1', language: 'hebrew', text: 'וַתֹּ֨אמֶר', transliteration: 'wattōʾmer', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And said', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H559', position: 1 },
+  { id: 'Gen.16.5.2', language: 'hebrew', text: 'שָׂרַ֜י', transliteration: 'śāray', lemma: 'שָׂרַי', lemmaTranslit: 'śāray', gloss: 'Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 2 },
+  { id: 'Gen.16.5.3', language: 'hebrew', text: 'חֲמָסִ֣י', transliteration: 'ḥămāsî', lemma: 'חָמָס', lemmaTranslit: 'ḥāmās', gloss: 'my wrong', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', suffix: { person: '1', gender: 'common', number: 'singular' }, rawCode: 'Ncmsc+Sp1cs' }, strongs: 'H2555', position: 3 },
+  { id: 'Gen.16.5.4', language: 'hebrew', text: 'עָלֶ֗יךָ', transliteration: 'ʿālêḵā', lemma: 'עַל', lemmaTranslit: 'ʿal', gloss: 'upon you', morphology: { pos: 'preposition', suffix: { person: '2', gender: 'masculine', number: 'singular' }, rawCode: 'R+Sp2ms' }, strongs: 'H5921', position: 4 },
+  { id: 'Gen.16.5.5', language: 'hebrew', text: 'נָתַ֤תִּי', transliteration: 'nāṯattî', lemma: 'נָתַן', lemmaTranslit: 'nāṯan', gloss: 'I gave', morphology: { pos: 'verb', person: '1', gender: 'common', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp1cs' }, strongs: 'H5414', position: 5 },
+  { id: 'Gen.16.5.6', language: 'hebrew', text: 'שִׁפְחָתִי֙', transliteration: 'šipḥāṯî', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'my maidservant', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '1', gender: 'common', number: 'singular' }, rawCode: 'Ncfsc+Sp1cs' }, strongs: 'H8198', position: 6 },
+  { id: 'Gen.16.5.7', language: 'hebrew', text: 'יִשְׁפֹּ֥ט', transliteration: 'yišpōṭ', lemma: 'שָׁפַט', lemmaTranslit: 'šāp̄aṭ', gloss: 'may judge', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqi3ms' }, strongs: 'H8199', position: 7 },
+  { id: 'Gen.16.5.8', language: 'hebrew', text: 'יְהוָ֖ה', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 8 },
+
+  // Verse 6 - Abram defers to Sarai; Sarai afflicts Hagar; Hagar flees
+  { id: 'Gen.16.6.1', language: 'hebrew', text: 'וַיֹּ֨אמֶר', transliteration: 'wayyōʾmer', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And said', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H559', position: 1 },
+  { id: 'Gen.16.6.2', language: 'hebrew', text: 'אַבְרָ֜ם', transliteration: 'ʾaḇrām', lemma: 'אַבְרָם', lemmaTranslit: 'ʾaḇrām', gloss: 'Abram', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H87', position: 2 },
+  { id: 'Gen.16.6.3', language: 'hebrew', text: 'שִׁפְחָתֵ֣ךְ', transliteration: 'šipḥāṯēḵ', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'your maidservant', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '2', gender: 'feminine', number: 'singular' }, rawCode: 'Ncfsc+Sp2fs' }, strongs: 'H8198', position: 3 },
+  { id: 'Gen.16.6.4', language: 'hebrew', text: 'בְּיָדֵ֔ךְ', transliteration: 'bəyāḏēḵ', lemma: 'יָד', lemmaTranslit: 'yāḏ', gloss: 'in your hand', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '2', gender: 'feminine', number: 'singular' }, rawCode: 'Ncfsc+Sp2fs' }, strongs: 'H3027', position: 4 },
+  { id: 'Gen.16.6.5', language: 'hebrew', text: 'וַתְּעַנֶּ֣הָ', transliteration: 'wattəʿannehā', lemma: 'עָנָה', lemmaTranslit: 'ʿānāh', gloss: 'and she afflicted her', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'piel', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'Vpw3fs+Sp3fs' }, strongs: 'H6031', position: 5 },
+  { id: 'Gen.16.6.6', language: 'hebrew', text: 'שָׂרַ֔י', transliteration: 'śāray', lemma: 'שָׂרַי', lemmaTranslit: 'śāray', gloss: 'Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 6 },
+  { id: 'Gen.16.6.7', language: 'hebrew', text: 'וַתִּבְרַ֖ח', transliteration: 'wattibřaḥ', lemma: 'בָּרַח', lemmaTranslit: 'bāraḥ', gloss: 'and she fled', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H1272', position: 7 },
+  { id: 'Gen.16.6.8', language: 'hebrew', text: 'מִפָּנֶֽיהָ', transliteration: 'mippānêhā', lemma: 'פָּנִים', lemmaTranslit: 'pānîm', gloss: 'from her face', morphology: { pos: 'noun', gender: 'masculine', number: 'plural', state: 'construct', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'Ncmpc+Sp3fs' }, strongs: 'H6440', position: 8 },
+
+  // Verse 7 - Angel of the LORD finds Hagar by a spring
+  { id: 'Gen.16.7.1', language: 'hebrew', text: 'וַֽיִּמְצָאָ֞הּ', transliteration: 'wayyimṣāʾāh', lemma: 'מָצָא', lemmaTranslit: 'māṣāʾ', gloss: 'And found her', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'Vqw3ms+Sp3fs' }, strongs: 'H4672', position: 1 },
+  { id: 'Gen.16.7.2', language: 'hebrew', text: 'מַלְאַ֧ךְ', transliteration: 'malʾaḵ', lemma: 'מַלְאָךְ', lemmaTranslit: 'malʾāḵ', gloss: 'the angel of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H4397', position: 2 },
+  { id: 'Gen.16.7.3', language: 'hebrew', text: 'יְהוָ֛ה', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 3 },
+  { id: 'Gen.16.7.4', language: 'hebrew', text: 'עַל־עֵ֥ין', transliteration: 'ʿal-ʿên', lemma: 'עַיִן', lemmaTranslit: 'ʿayin', gloss: 'by a spring of', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', rawCode: 'Ncfsc' }, strongs: 'H5869', position: 4 },
+  { id: 'Gen.16.7.5', language: 'hebrew', text: 'הַמַּ֖יִם', transliteration: 'hammayim', lemma: 'מַיִם', lemmaTranslit: 'mayim', gloss: 'the water', morphology: { pos: 'noun', gender: 'masculine', number: 'plural', state: 'absolute', rawCode: 'Ncmpa' }, strongs: 'H4325', position: 5 },
+  { id: 'Gen.16.7.6', language: 'hebrew', text: 'בַּמִּדְבָּ֑ר', transliteration: 'bammiḏbār', lemma: 'מִדְבָּר', lemmaTranslit: 'miḏbār', gloss: 'in the wilderness', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H4057', position: 6 },
+  { id: 'Gen.16.7.7', language: 'hebrew', text: 'בְּדֶ֥רֶךְ', transliteration: 'bəḏereḵ', lemma: 'דֶּרֶךְ', lemmaTranslit: 'dereḵ', gloss: 'on the way to', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H1870', position: 7 },
+  { id: 'Gen.16.7.8', language: 'hebrew', text: 'שֽׁוּר', transliteration: 'šûr', lemma: 'שׁוּר', lemmaTranslit: 'šûr', gloss: 'Shur', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H7793', position: 8 },
+
+  // Verse 8 - Angel asks Hagar where she is going
+  { id: 'Gen.16.8.1', language: 'hebrew', text: 'וַיֹּאמַ֗ר', transliteration: 'wayyōʾmar', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And he said', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H559', position: 1 },
+  { id: 'Gen.16.8.2', language: 'hebrew', text: 'הָגָ֞ר', transliteration: 'hāḡār', lemma: 'הָגָר', lemmaTranslit: 'hāḡār', gloss: 'Hagar', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H1904', position: 2 },
+  { id: 'Gen.16.8.3', language: 'hebrew', text: 'שִׁפְחַ֣ת', transliteration: 'šipḥaṯ', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'maidservant of', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', rawCode: 'Ncfsc' }, strongs: 'H8198', position: 3 },
+  { id: 'Gen.16.8.4', language: 'hebrew', text: 'שָׂרַ֗י', transliteration: 'śāray', lemma: 'שָׂרַי', lemmaTranslit: 'śāray', gloss: 'Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 4 },
+  { id: 'Gen.16.8.5', language: 'hebrew', text: 'מֵאַ֤יִן', transliteration: 'mēʾayin', lemma: 'אַיִן', lemmaTranslit: 'ʾayin', gloss: 'from where', morphology: { pos: 'adverb', rawCode: 'D' }, strongs: 'H370', position: 5 },
+  { id: 'Gen.16.8.6', language: 'hebrew', text: 'בָאת֙', transliteration: 'ḇāʾṯ', lemma: 'בּוֹא', lemmaTranslit: 'bôʾ', gloss: 'have you come', morphology: { pos: 'verb', person: '2', gender: 'feminine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp2fs' }, strongs: 'H935', position: 6 },
+  { id: 'Gen.16.8.7', language: 'hebrew', text: 'וְאָ֣נָה', transliteration: 'wəʾānāh', lemma: 'אָנָה', lemmaTranslit: 'ʾānāh', gloss: 'and where', morphology: { pos: 'adverb', rawCode: 'D' }, strongs: 'H575', position: 7 },
+  { id: 'Gen.16.8.8', language: 'hebrew', text: 'תֵלֵ֔כִי', transliteration: 'ṯēlēḵî', lemma: 'הָלַךְ', lemmaTranslit: 'hālaḵ', gloss: 'are you going', morphology: { pos: 'verb', person: '2', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqi2fs' }, strongs: 'H1980', position: 8 },
+
+  // Verse 9 - Angel tells Hagar to return and submit
+  { id: 'Gen.16.9.1', language: 'hebrew', text: 'וַיֹּ֤אמֶר', transliteration: 'wayyōʾmer', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And said', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H559', position: 1 },
+  { id: 'Gen.16.9.2', language: 'hebrew', text: 'מַלְאַ֣ךְ', transliteration: 'malʾaḵ', lemma: 'מַלְאָךְ', lemmaTranslit: 'malʾāḵ', gloss: 'the angel of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H4397', position: 2 },
+  { id: 'Gen.16.9.3', language: 'hebrew', text: 'יְהוָה֙', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 3 },
+  { id: 'Gen.16.9.4', language: 'hebrew', text: 'שׁ֖וּבִי', transliteration: 'šûḇî', lemma: 'שׁוּב', lemmaTranslit: 'šûḇ', gloss: 'Return', morphology: { pos: 'verb', person: '2', gender: 'feminine', number: 'singular', tense: 'imperative', stem: 'qal', rawCode: 'Vqv2fs' }, strongs: 'H7725', position: 4 },
+  { id: 'Gen.16.9.5', language: 'hebrew', text: 'אֶל־גְּבִרְתֵּ֑ךְ', transliteration: 'ʾel-gəḇirtēḵ', lemma: 'גְּבֶרֶת', lemmaTranslit: 'gəḇereṯ', gloss: 'to your mistress', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '2', gender: 'feminine', number: 'singular' }, rawCode: 'Ncfsc+Sp2fs' }, strongs: 'H1404', position: 5 },
+  { id: 'Gen.16.9.6', language: 'hebrew', text: 'וְהִתְעַנִּ֖י', transliteration: 'wəhiṯʿannî', lemma: 'עָנָה', lemmaTranslit: 'ʿānāh', gloss: 'and submit yourself', morphology: { pos: 'verb', person: '2', gender: 'feminine', number: 'singular', tense: 'imperative', stem: 'hitpael', rawCode: 'Vtv2fs' }, strongs: 'H6031', position: 6 },
+  { id: 'Gen.16.9.7', language: 'hebrew', text: 'תַּ֥חַת', transliteration: 'taḥaṯ', lemma: 'תַּחַת', lemmaTranslit: 'taḥaṯ', gloss: 'under', morphology: { pos: 'preposition', rawCode: 'R' }, strongs: 'H8478', position: 7 },
+  { id: 'Gen.16.9.8', language: 'hebrew', text: 'יָדֶֽיהָ', transliteration: 'yāḏêhā', lemma: 'יָד', lemmaTranslit: 'yāḏ', gloss: 'her hands', morphology: { pos: 'noun', gender: 'feminine', number: 'dual', state: 'construct', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'Ncfdc+Sp3fs' }, strongs: 'H3027', position: 8 },
+
+  // Verse 10 - Angel promises to multiply her offspring
+  { id: 'Gen.16.10.1', language: 'hebrew', text: 'וַיֹּ֤אמֶר', transliteration: 'wayyōʾmer', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And said', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H559', position: 1 },
+  { id: 'Gen.16.10.2', language: 'hebrew', text: 'מַלְאַ֣ךְ', transliteration: 'malʾaḵ', lemma: 'מַלְאָךְ', lemmaTranslit: 'malʾāḵ', gloss: 'the angel of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H4397', position: 2 },
+  { id: 'Gen.16.10.3', language: 'hebrew', text: 'יְהוָה֙', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 3 },
+  { id: 'Gen.16.10.4', language: 'hebrew', text: 'הַרְבָּ֥ה', transliteration: 'harbāh', lemma: 'רָבָה', lemmaTranslit: 'rāḇāh', gloss: 'I will greatly', morphology: { pos: 'verb', tense: 'infinitive', stem: 'hiphil', rawCode: 'Vha' }, strongs: 'H7235', position: 4 },
+  { id: 'Gen.16.10.5', language: 'hebrew', text: 'אַרְבֶּ֖ה', transliteration: 'ʾarbeh', lemma: 'רָבָה', lemmaTranslit: 'rāḇāh', gloss: 'multiply', morphology: { pos: 'verb', person: '1', gender: 'common', number: 'singular', tense: 'imperfect', stem: 'hiphil', rawCode: 'Vhi1cs' }, strongs: 'H7235', position: 5 },
+  { id: 'Gen.16.10.6', language: 'hebrew', text: 'אֶת־זַרְעֵ֑ךְ', transliteration: 'ʾeṯ-zarʿēḵ', lemma: 'זֶרַע', lemmaTranslit: 'zeraʿ', gloss: 'your offspring', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', suffix: { person: '2', gender: 'feminine', number: 'singular' }, rawCode: 'Ncmsc+Sp2fs' }, strongs: 'H2233', position: 6 },
+  { id: 'Gen.16.10.7', language: 'hebrew', text: 'וְלֹ֥א', transliteration: 'wəlōʾ', lemma: 'לֹא', lemmaTranslit: 'lōʾ', gloss: 'and not', morphology: { pos: 'adverb', rawCode: 'D' }, strongs: 'H3808', position: 7 },
+  { id: 'Gen.16.10.8', language: 'hebrew', text: 'יִסָּפֵ֖ר', transliteration: 'yissāp̄ēr', lemma: 'סָפַר', lemmaTranslit: 'sāp̄ar', gloss: 'will be counted', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'niphal', rawCode: 'Vni3ms' }, strongs: 'H5608', position: 8 },
+
+  // Verse 11 - Naming of Ishmael: "God hears"
+  { id: 'Gen.16.11.1', language: 'hebrew', text: 'וַיֹּ֤אמֶר', transliteration: 'wayyōʾmer', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And said', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H559', position: 1 },
+  { id: 'Gen.16.11.2', language: 'hebrew', text: 'הִנָּ֥ךְ', transliteration: 'hinnāḵ', lemma: 'הִנֵּה', lemmaTranslit: 'hinnēh', gloss: 'Behold you', morphology: { pos: 'particle', rawCode: 'Tm' }, strongs: 'H2009', position: 2 },
+  { id: 'Gen.16.11.3', language: 'hebrew', text: 'הָרָ֖ה', transliteration: 'hārāh', lemma: 'הָרָה', lemmaTranslit: 'hārāh', gloss: 'are pregnant', morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Aafsa' }, strongs: 'H2030', position: 3 },
+  { id: 'Gen.16.11.4', language: 'hebrew', text: 'וְיֹלַ֣דְתְּ', transliteration: 'wəyōlaḏtə', lemma: 'יָלַד', lemmaTranslit: 'yālaḏ', gloss: 'and shall bear', morphology: { pos: 'verb', person: '2', gender: 'feminine', number: 'singular', tense: 'participle', stem: 'qal', rawCode: 'Vqafs' }, strongs: 'H3205', position: 4 },
+  { id: 'Gen.16.11.5', language: 'hebrew', text: 'בֵּ֑ן', transliteration: 'bēn', lemma: 'בֵּן', lemmaTranslit: 'bēn', gloss: 'a son', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H1121', position: 5 },
+  { id: 'Gen.16.11.6', language: 'hebrew', text: 'וְקָרָ֤את', transliteration: 'wəqārāʾṯ', lemma: 'קָרָא', lemmaTranslit: 'qārāʾ', gloss: 'and you shall call', morphology: { pos: 'verb', person: '2', gender: 'feminine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp2fs' }, strongs: 'H7121', position: 6 },
+  { id: 'Gen.16.11.7', language: 'hebrew', text: 'יִשְׁמָעֵ֔אל', transliteration: 'yišmāʿēʾl', lemma: 'יִשְׁמָעֵאל', lemmaTranslit: 'yišmāʿēʾl', gloss: 'Ishmael', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3458', position: 7 },
+  { id: 'Gen.16.11.8', language: 'hebrew', text: 'שָׁמַ֥ע', transliteration: 'šāmaʿ', lemma: 'שָׁמַע', lemmaTranslit: 'šāmaʿ', gloss: 'has heard', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp3ms' }, strongs: 'H8085', position: 8 },
+
+  // Verse 12 - Ishmael will be a wild donkey of a man
+  { id: 'Gen.16.12.1', language: 'hebrew', text: 'וְה֤וּא', transliteration: 'wəhûʾ', lemma: 'הוּא', lemmaTranslit: 'hûʾ', gloss: 'And he', morphology: { pos: 'pronoun', type: 'personal', person: '3', gender: 'masculine', number: 'singular', rawCode: 'Pp3ms' }, strongs: 'H1931', position: 1 },
+  { id: 'Gen.16.12.2', language: 'hebrew', text: 'יִהְיֶ֣ה', transliteration: 'yihyeh', lemma: 'הָיָה', lemmaTranslit: 'hāyāh', gloss: 'will be', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqi3ms' }, strongs: 'H1961', position: 2 },
+  { id: 'Gen.16.12.3', language: 'hebrew', text: 'פֶּ֣רֶא', transliteration: 'pereʾ', lemma: 'פֶּרֶא', lemmaTranslit: 'pereʾ', gloss: 'a wild donkey of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H6501', position: 3 },
+  { id: 'Gen.16.12.4', language: 'hebrew', text: 'אָדָ֔ם', transliteration: 'ʾāḏām', lemma: 'אָדָם', lemmaTranslit: 'ʾāḏām', gloss: 'a man', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H120', position: 4 },
+  { id: 'Gen.16.12.5', language: 'hebrew', text: 'יָד֣וֹ', transliteration: 'yāḏô', lemma: 'יָד', lemmaTranslit: 'yāḏ', gloss: 'his hand', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', suffix: { person: '3', gender: 'masculine', number: 'singular' }, rawCode: 'Ncfsc+Sp3ms' }, strongs: 'H3027', position: 5 },
+  { id: 'Gen.16.12.6', language: 'hebrew', text: 'בַכֹּ֔ל', transliteration: 'ḇakkōl', lemma: 'כֹּל', lemmaTranslit: 'kōl', gloss: 'against everyone', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H3605', position: 6 },
+  { id: 'Gen.16.12.7', language: 'hebrew', text: 'וְיַ֥ד', transliteration: 'wəyaḏ', lemma: 'יָד', lemmaTranslit: 'yāḏ', gloss: 'and the hand of', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', rawCode: 'Ncfsc' }, strongs: 'H3027', position: 7 },
+  { id: 'Gen.16.12.8', language: 'hebrew', text: 'כֹּ֖ל', transliteration: 'kōl', lemma: 'כֹּל', lemmaTranslit: 'kōl', gloss: 'everyone', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H3605', position: 8 },
+
+  // Verse 13 - Hagar names God "El Roi" — the God who sees
+  { id: 'Gen.16.13.1', language: 'hebrew', text: 'וַתִּקְרָ֤א', transliteration: 'wattiqqrāʾ', lemma: 'קָרָא', lemmaTranslit: 'qārāʾ', gloss: 'And she called', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H7121', position: 1 },
+  { id: 'Gen.16.13.2', language: 'hebrew', text: 'שֵׁם־', transliteration: 'šēm-', lemma: 'שֵׁם', lemmaTranslit: 'šēm', gloss: 'the name of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H8034', position: 2 },
+  { id: 'Gen.16.13.3', language: 'hebrew', text: 'יְהוָ֗ה', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 3 },
+  { id: 'Gen.16.13.4', language: 'hebrew', text: 'הַדֹּבֵ֣ר', transliteration: 'haddōḇēr', lemma: 'דָּבַר', lemmaTranslit: 'dāḇar', gloss: 'who spoke', morphology: { pos: 'verb', gender: 'masculine', number: 'singular', tense: 'participle', stem: 'qal', rawCode: 'Vqams' }, strongs: 'H1696', position: 4 },
+  { id: 'Gen.16.13.5', language: 'hebrew', text: 'אֵלֶ֔יהָ', transliteration: 'ʾēlêhā', lemma: 'אֵל', lemmaTranslit: 'ʾēl', gloss: 'to her', morphology: { pos: 'preposition', suffix: { person: '3', gender: 'feminine', number: 'singular' }, rawCode: 'R+Sp3fs' }, strongs: 'H413', position: 5 },
+  { id: 'Gen.16.13.6', language: 'hebrew', text: 'אֵ֥ל', transliteration: 'ʾēl', lemma: 'אֵל', lemmaTranslit: 'ʾēl', gloss: 'God of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H410', position: 6 },
+  { id: 'Gen.16.13.7', language: 'hebrew', text: 'רֳאִ֖י', transliteration: 'roʾî', lemma: 'רֳאִי', lemmaTranslit: 'roʾî', gloss: 'seeing', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H7210', position: 7 },
+  { id: 'Gen.16.13.8', language: 'hebrew', text: 'רָאִ֖יתִי', transliteration: 'rāʾîṯî', lemma: 'רָאָה', lemmaTranslit: 'rāʾāh', gloss: 'I have seen', morphology: { pos: 'verb', person: '1', gender: 'common', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp1cs' }, strongs: 'H7200', position: 8 },
+
+  // Verse 14 - The well is named Beer Lahai Roi
+  { id: 'Gen.16.14.1', language: 'hebrew', text: 'עַל־כֵּ֗ן', transliteration: 'ʿal-kēn', lemma: 'כֵּן', lemmaTranslit: 'kēn', gloss: 'Therefore', morphology: { pos: 'adverb', rawCode: 'D' }, strongs: 'H3651', position: 1 },
+  { id: 'Gen.16.14.2', language: 'hebrew', text: 'קָרָ֤א', transliteration: 'qārāʾ', lemma: 'קָרָא', lemmaTranslit: 'qārāʾ', gloss: 'he called', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp3ms' }, strongs: 'H7121', position: 2 },
+  { id: 'Gen.16.14.3', language: 'hebrew', text: 'לַבְּאֵ֔ר', transliteration: 'labbəʾēr', lemma: 'בְּאֵר', lemmaTranslit: 'bəʾēr', gloss: 'the well', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H875', position: 3 },
+  { id: 'Gen.16.14.4', language: 'hebrew', text: 'בְּאֵ֥ר', transliteration: 'bəʾēr', lemma: 'בְּאֵר', lemmaTranslit: 'bəʾēr', gloss: 'Beer', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H883', position: 4 },
+  { id: 'Gen.16.14.5', language: 'hebrew', text: 'לַחַ֖י', transliteration: 'laḥay', lemma: 'לַחַי', lemmaTranslit: 'laḥay', gloss: 'Lahai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H883', position: 5 },
+  { id: 'Gen.16.14.6', language: 'hebrew', text: 'רֹאִ֑י', transliteration: 'rōʾî', lemma: 'רֳאִי', lemmaTranslit: 'roʾî', gloss: 'Roi', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H883', position: 6 },
+  { id: 'Gen.16.14.7', language: 'hebrew', text: 'בֵּ֥ין', transliteration: 'bên', lemma: 'בֵּין', lemmaTranslit: 'bên', gloss: 'between', morphology: { pos: 'preposition', rawCode: 'R' }, strongs: 'H996', position: 7 },
+  { id: 'Gen.16.14.8', language: 'hebrew', text: 'קָדֵ֖שׁ', transliteration: 'qāḏēš', lemma: 'קָדֵשׁ', lemmaTranslit: 'qāḏēš', gloss: 'Kadesh', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H6946', position: 8 },
+
+  // Verse 15 - Hagar bears a son; Abram names him Ishmael
+  { id: 'Gen.16.15.1', language: 'hebrew', text: 'וַתֵּ֧לֶד', transliteration: 'wattēleḏ', lemma: 'יָלַד', lemmaTranslit: 'yālaḏ', gloss: 'And bore', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H3205', position: 1 },
+  { id: 'Gen.16.15.2', language: 'hebrew', text: 'הָגָ֛ר', transliteration: 'hāḡār', lemma: 'הָגָר', lemmaTranslit: 'hāḡār', gloss: 'Hagar', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H1904', position: 2 },
+  { id: 'Gen.16.15.3', language: 'hebrew', text: 'לְאַבְרָ֖ם', transliteration: 'ləʾaḇrām', lemma: 'אַבְרָם', lemmaTranslit: 'ʾaḇrām', gloss: 'to Abram', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H87', position: 3 },
+  { id: 'Gen.16.15.4', language: 'hebrew', text: 'בֵּ֑ן', transliteration: 'bēn', lemma: 'בֵּן', lemmaTranslit: 'bēn', gloss: 'a son', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H1121', position: 4 },
+  { id: 'Gen.16.15.5', language: 'hebrew', text: 'וַיִּקְרָ֤א', transliteration: 'wayyiqrāʾ', lemma: 'קָרָא', lemmaTranslit: 'qārāʾ', gloss: 'And called', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H7121', position: 5 },
+  { id: 'Gen.16.15.6', language: 'hebrew', text: 'אַבְרָם֙', transliteration: 'ʾaḇrām', lemma: 'אַבְרָם', lemmaTranslit: 'ʾaḇrām', gloss: 'Abram', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H87', position: 6 },
+  { id: 'Gen.16.15.7', language: 'hebrew', text: 'שֶׁם־', transliteration: 'šem-', lemma: 'שֵׁם', lemmaTranslit: 'šēm', gloss: 'the name of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H8034', position: 7 },
+  { id: 'Gen.16.15.8', language: 'hebrew', text: 'יִשְׁמָעֵֽאל', transliteration: 'yišmāʿēʾl', lemma: 'יִשְׁמָעֵאל', lemmaTranslit: 'yišmāʿēʾl', gloss: 'Ishmael', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3458', position: 8 },
+
+  // Verse 16 - Abram was 86 years old when Ishmael was born
+  { id: 'Gen.16.16.1', language: 'hebrew', text: 'וְאַבְרָ֕ם', transliteration: 'wəʾaḇrām', lemma: 'אַבְרָם', lemmaTranslit: 'ʾaḇrām', gloss: 'And Abram', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H87', position: 1 },
+  { id: 'Gen.16.16.2', language: 'hebrew', text: 'בֶּן־', transliteration: 'ben-', lemma: 'בֵּן', lemmaTranslit: 'bēn', gloss: 'a son of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H1121', position: 2 },
+  { id: 'Gen.16.16.3', language: 'hebrew', text: 'שְׁמֹנִ֥ים', transliteration: 'šəmōnîm', lemma: 'שְׁמֹנִים', lemmaTranslit: 'šəmōnîm', gloss: 'eighty', morphology: { pos: 'numeral', rawCode: 'Acmpa' }, strongs: 'H8084', position: 3 },
+  { id: 'Gen.16.16.4', language: 'hebrew', text: 'שָׁנָ֖ה', transliteration: 'šānāh', lemma: 'שָׁנָה', lemmaTranslit: 'šānāh', gloss: 'years', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H8141', position: 4 },
+  { id: 'Gen.16.16.5', language: 'hebrew', text: 'וְשֵׁ֣שׁ', transliteration: 'wəšēš', lemma: 'שֵׁשׁ', lemmaTranslit: 'šēš', gloss: 'and six', morphology: { pos: 'numeral', rawCode: 'Acfsa' }, strongs: 'H8337', position: 5 },
+  { id: 'Gen.16.16.6', language: 'hebrew', text: 'שָׁנִ֑ים', transliteration: 'šānîm', lemma: 'שָׁנָה', lemmaTranslit: 'šānāh', gloss: 'years', morphology: { pos: 'noun', gender: 'feminine', number: 'plural', state: 'absolute', rawCode: 'Ncfpa' }, strongs: 'H8141', position: 6 },
+  { id: 'Gen.16.16.7', language: 'hebrew', text: 'בְּלֶֽדֶת־', transliteration: 'bəleḏeṯ-', lemma: 'יָלַד', lemmaTranslit: 'yālaḏ', gloss: 'when bore', morphology: { pos: 'verb', tense: 'infinitive', stem: 'qal', rawCode: 'Vqc' }, strongs: 'H3205', position: 7 },
+  { id: 'Gen.16.16.8', language: 'hebrew', text: 'יִשְׁמָעֵ֖אל', transliteration: 'yišmāʿēʾl', lemma: 'יִשְׁמָעֵאל', lemmaTranslit: 'yišmāʿēʾl', gloss: 'Ishmael', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3458', position: 8 },
 ];
 
-export const genesis16_1_translation: VerseTranslation = {
-  verseRef: 'Gen.16.1',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And Sarai, wife of Abram, had not borne to him; and she had an Egyptian maidservant, and her name was Hagar.', spans: [{ id: 'Gen.16.1.en.lit.0', text: 'And Sarai, wife of Abram...', position: 0, sourceTokenIds: ['Gen.16.1.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'Now Sarai, Abram\'s wife, had borne him no children. But she had an Egyptian slave named Hagar.', spans: [{ id: 'Gen.16.1.en.idi.0', text: 'Now Sarai, Abram\'s wife...', position: 0, sourceTokenIds: ['Gen.16.1.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_1_notes: StudyNote[] = [
-  { id: 'Gen.16.1.note.1', verseRef: 'Gen.16.1', sourceTokenIds: ['Gen.16.1.5'], category: 'lexical', title: 'Šipḥāh — Maidservant', content: 'The term šipḥāh (שִׁפְחָה, H8198) denotes a female servant of lower status than an ʾāmāh (אָמָה). In ancient Near Eastern practice, a barren wife could give her šipḥāh to her husband as a surrogate, a custom attested in Nuzi tablets and the Code of Hammurabi §§144–146.', confidence: 'high', authorType: 'ai', metadata: { generatedAt: new Date().toISOString(), engineId: 'open-bible-notes' } },
+export const gen16_1_16Translations: VerseTranslation[] = [
+  { verseId: 'Gen.16.1', original: 'וְשָׂרַי אֵשֶׁת אַבְרָם לֹא יָלְדָה לוֹ וְלָהּ שִׁפְחָה מִצְרִית וּשְׁמָהּ הָגָר׃', literal: 'And Sarai, wife of Abram, had not borne to him; and she had an Egyptian maidservant, and her name was Hagar.', idiomatic: 'Now Sarai, Abram\'s wife, had borne him no children. But she had an Egyptian slave named Hagar.' },
+  { verseId: 'Gen.16.2', original: 'וַתֹּאמֶר שָׂרַי אֶל־אַבְרָם הִנֵּה־נָא עֲצָרַנִי יְהוָה מִלֶּדֶת בֹּא־נָא אֶל־שִׁפְחָתִי אוּלַי אִבָּנֶה מִמֶּנָּה וַיִּשְׁמַע אַבְרָם לְקוֹל שָׂרָי׃', literal: 'And Sarai said to Abram, "Behold please, the LORD has restrained me from bearing. Go in please to my maidservant; perhaps I shall be built up from her." And Abram listened to the voice of Sarai.', idiomatic: 'So Sarai said to Abram, "The LORD has kept me from having children. Go, sleep with my slave; perhaps I can build a family through her." Abram agreed to what Sarai said.' },
+  { verseId: 'Gen.16.3', original: 'וַתִּקַּח שָׂרַי אֵשֶׁת אַבְרָם אֶת־הָגָר הַמִּצְרִית שִׁפְחָתָהּ מִקֵּץ עֶשֶׂר שָׁנִים לְשֶׁבֶת אַבְרָם בְּאֶרֶץ כְּנָעַן וַתִּתֵּן אֹתָהּ לְאַבְרָם אִישָׁהּ לוֹ לְאִשָּׁה׃', literal: 'And Sarai, wife of Abram, took Hagar the Egyptian, her maidservant, at the end of ten years of Abram dwelling in the land of Canaan, and gave her to Abram her husband as a wife.', idiomatic: 'So after Abram had been living in Canaan ten years, Sarai his wife took her Egyptian slave Hagar and gave her to her husband to be his wife.' },
+  { verseId: 'Gen.16.4', original: 'וַיָּבֹא אֶל־הָגָר וַתַּהַר וַתֵּרֶא כִּי הָרָתָה וַתֵּקַל גְּבִרְתָּהּ בְּעֵינֶיהָ׃', literal: 'And he went in to Hagar, and she conceived. And she saw that she had conceived, and her mistress was despised in her eyes.', idiomatic: 'He slept with Hagar, and she conceived. When she knew she was pregnant, she began to despise her mistress.' },
+  { verseId: 'Gen.16.5', original: 'וַתֹּאמֶר שָׂרַי אֶל־אַבְרָם חֲמָסִי עָלֶיךָ אָנֹכִי נָתַתִּי שִׁפְחָתִי בְּחֵיקֶךָ וַתֵּרֶא כִּי הָרָתָה וָאֵקַל בְּעֵינֶיהָ יִשְׁפֹּט יְהוָה בֵּינִי וּבֵינֶיךָ׃', literal: 'And Sarai said to Abram, "My wrong is upon you! I gave my maidservant into your bosom, and she saw that she had conceived, and I was despised in her eyes. May the LORD judge between me and you."', idiomatic: 'Then Sarai said to Abram, "You are responsible for the wrong I am suffering. I put my slave in your arms, and now that she knows she is pregnant, she despises me. May the LORD judge between you and me."' },
+  { verseId: 'Gen.16.6', original: 'וַיֹּאמֶר אַבְרָם אֶל־שָׂרַי הִנֵּה שִׁפְחָתֵךְ בְּיָדֵךְ עֲשִׂי־לָהּ הַטּוֹב בְּעֵינָיִךְ וַתְּעַנֶּהָ שָׂרַי וַתִּבְרַח מִפָּנֶיהָ׃', literal: 'And Abram said to Sarai, "Behold, your maidservant is in your hand; do to her what is good in your eyes." And Sarai afflicted her, and she fled from her face.', idiomatic: 'Abram said to Sarai, "Your slave is in your hands. Do with her whatever you think best." Then Sarai mistreated Hagar, so she fled from her.' },
+  { verseId: 'Gen.16.7', original: 'וַיִּמְצָאָהּ מַלְאַךְ יְהוָה עַל־עֵין הַמַּיִם בַּמִּדְבָּר עַל־הָעַיִן בְּדֶרֶךְ שׁוּר׃', literal: 'And the angel of the LORD found her by a spring of water in the wilderness, by the spring on the way to Shur.', idiomatic: 'The angel of the LORD found Hagar near a spring in the desert, beside the road to Shur.' },
+  { verseId: 'Gen.16.8', original: 'וַיֹּאמַר הָגָר שִׁפְחַת שָׂרַי אֵי־מִזֶּה בָאת וְאָנָה תֵלֵכִי וַתֹּאמֶר מִפְּנֵי שָׂרַי גְּבִרְתִּי אָנֹכִי בֹּרַחַת׃', literal: 'And he said, "Hagar, maidservant of Sarai, from where have you come and where are you going?" And she said, "From the face of Sarai my mistress I am fleeing."', idiomatic: 'And he said, "Hagar, slave of Sarai, where have you come from, and where are you going?" She answered, "I\'m running away from my mistress Sarai."' },
+  { verseId: 'Gen.16.9', original: 'וַיֹּאמֶר לָהּ מַלְאַךְ יְהוָה שׁוּבִי אֶל־גְּבִרְתֵּךְ וְהִתְעַנִּי תַּחַת יָדֶיהָ׃', literal: 'And the angel of the LORD said to her, "Return to your mistress and submit yourself under her hands."', idiomatic: 'Then the angel of the LORD told her, "Go back to your mistress and submit to her."' },
+  { verseId: 'Gen.16.10', original: 'וַיֹּאמֶר לָהּ מַלְאַךְ יְהוָה הַרְבָּה אַרְבֶּה אֶת־זַרְעֵךְ וְלֹא יִסָּפֵר מֵרֹב׃', literal: 'And the angel of the LORD said to her, "I will greatly multiply your offspring, and they shall not be counted for multitude."', idiomatic: 'The angel added, "I will increase your descendants so much that they will be too numerous to count."' },
+  { verseId: 'Gen.16.11', original: 'וַיֹּאמֶר לָהּ מַלְאַךְ יְהוָה הִנָּךְ הָרָה וְיֹלַדְתְּ בֵּן וְקָרָאת שְׁמוֹ יִשְׁמָעֵאל כִּי־שָׁמַע יְהוָה אֶל־עָנְיֵךְ׃', literal: 'And the angel of the LORD said to her, "Behold, you are pregnant and shall bear a son. And you shall call his name Ishmael, because the LORD has heard your affliction."', idiomatic: 'The angel of the LORD also said to her: "You are now pregnant and you will give birth to a son. You shall name him Ishmael, for the LORD has heard of your misery."' },
+  { verseId: 'Gen.16.12', original: 'וְהוּא יִהְיֶה פֶּרֶא אָדָם יָדוֹ בַכֹּל וְיַד כֹּל בּוֹ וְעַל־פְּנֵי כָל־אֶחָיו יִשְׁכֹּן׃', literal: 'And he will be a wild donkey of a man; his hand against everyone and the hand of everyone against him. And before the face of all his brothers he shall dwell.', idiomatic: 'He will be a wild donkey of a man; his hand will be against everyone and everyone\'s hand against him, and he will live in hostility toward all his brothers.' },
+  { verseId: 'Gen.16.13', original: 'וַתִּקְרָא שֵׁם־יְהוָה הַדֹּבֵר אֵלֶיהָ אַתָּה אֵל רֳאִי כִּי אָמְרָה הֲגַם הֲלֹם רָאִיתִי אַחֲרֵי רֹאִי׃', literal: 'And she called the name of the LORD who spoke to her, "You are El Roi," for she said, "Have I also here seen after the one who sees me?"', idiomatic: 'She gave this name to the LORD who spoke to her: "You are the God who sees me," for she said, "I have now seen the One who sees me."' },
+  { verseId: 'Gen.16.14', original: 'עַל־כֵּן קָרָא לַבְּאֵר בְּאֵר לַחַי רֹאִי הִנֵּה בֵין־קָדֵשׁ וּבֵין בָּרֶד׃', literal: 'Therefore he called the well Beer Lahai Roi; behold, it is between Kadesh and Bered.', idiomatic: 'That is why the well was called Beer Lahai Roi; it is still there, between Kadesh and Bered.' },
+  { verseId: 'Gen.16.15', original: 'וַתֵּלֶד הָגָר לְאַבְרָם בֵּן וַיִּקְרָא אַבְרָם שֶׁם־בְּנוֹ אֲשֶׁר־יָלְדָה הָגָר יִשְׁמָעֵאל׃', literal: 'And Hagar bore to Abram a son; and Abram called the name of his son, whom Hagar bore, Ishmael.', idiomatic: 'So Hagar bore Abram a son, and Abram gave the name Ishmael to the son she had borne.' },
+  { verseId: 'Gen.16.16', original: 'וְאַבְרָם בֶּן־שְׁמֹנִים שָׁנָה וְשֵׁשׁ שָׁנִים בְּלֶדֶת הָגָר אֶת־יִשְׁמָעֵאל לְאַבְרָם׃', literal: 'And Abram was a son of eighty years and six years when Hagar bore Ishmael to Abram.', idiomatic: 'Abram was eighty-six years old when Hagar bore him Ishmael.' },
 ];
 
-// Genesis 16:2
-export const genesis16_2_tokens: SourceToken[] = [
-  { id: 'Gen.16.2.0', language: 'hebrew', text: 'וַתֹּ֨אמֶר', transliteration: 'wattōʾmer', lemma: 'אָמַר', lemmaTranslit: 'ʾāmar', gloss: 'And she said', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H559', position: 0 },
-  { id: 'Gen.16.2.1', language: 'hebrew', text: 'שָׂרַ֜י', transliteration: "śāray", lemma: 'שָׂרַי', lemmaTranslit: "śāray", gloss: 'Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 1 },
-  { id: 'Gen.16.2.2', language: 'hebrew', text: 'עֲצָרַ֧נִי', transliteration: "ʿăṣāranî", lemma: 'עָצַר', lemmaTranslit: "ʿāṣar", gloss: 'has restrained me', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp3ms' }, strongs: 'H6113', position: 2 },
-  { id: 'Gen.16.2.3', language: 'hebrew', text: 'יְהוָ֛ה', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 3 },
-  { id: 'Gen.16.2.4', language: 'hebrew', text: 'בֹּא־נָ֖א', transliteration: "bōʾ-nāʾ", lemma: 'בּוֹא', lemmaTranslit: "bôʾ", gloss: 'go in please', morphology: { pos: 'verb', person: '2', gender: 'masculine', number: 'singular', mood: 'imperative', stem: 'qal', rawCode: 'Vqv2ms' }, strongs: 'H935', position: 4 },
-  { id: 'Gen.16.2.5', language: 'hebrew', text: 'שִׁפְחָתִ֑י', transliteration: 'šipḥāṯî', lemma: 'שִׁפְחָה', lemmaTranslit: 'šipḥāh', gloss: 'my maidservant', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', rawCode: 'Ncfsc' }, strongs: 'H8198', position: 5 },
-];
-
-export const genesis16_2_translation: VerseTranslation = {
-  verseRef: 'Gen.16.2',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And Sarai said to Abram, "Behold, the LORD has restrained me from bearing. Go in, please, to my maidservant; perhaps I shall be built up from her."', spans: [{ id: 'Gen.16.2.en.lit.0', text: 'And Sarai said to Abram...', position: 0, sourceTokenIds: ['Gen.16.2.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'So Sarai said to Abram, "The LORD has kept me from having children. Go, sleep with my slave; perhaps I can build a family through her."', spans: [{ id: 'Gen.16.2.en.idi.0', text: 'So Sarai said to Abram...', position: 0, sourceTokenIds: ['Gen.16.2.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_2_notes: StudyNote[] = [];
-
-// Genesis 16:3
-export const genesis16_3_tokens: SourceToken[] = [
-  { id: 'Gen.16.3.0', language: 'hebrew', text: 'וַתִּקַּ֞ח', transliteration: 'wattiqqaḥ', lemma: 'לָקַח', lemmaTranslit: 'lāqaḥ', gloss: 'And she took', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H3947', position: 0 },
-  { id: 'Gen.16.3.1', language: 'hebrew', text: 'שָׂרַ֣י', transliteration: "śāray", lemma: 'שָׂרַי', lemmaTranslit: "śāray", gloss: 'Sarai', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H8297', position: 1 },
-  { id: 'Gen.16.3.2', language: 'hebrew', text: 'הָגָ֗ר', transliteration: 'hāḡār', lemma: 'הָגָר', lemmaTranslit: 'hāḡār', gloss: 'Hagar', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H1904', position: 2 },
-  { id: 'Gen.16.3.3', language: 'hebrew', text: 'הַמִּצְרִ֤ית', transliteration: 'hammiṣrîṯ', lemma: 'מִצְרִי', lemmaTranslit: 'miṣrî', gloss: 'the Egyptian', morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Aafsa' }, strongs: 'H4713', position: 3 },
-  { id: 'Gen.16.3.4', language: 'hebrew', text: 'לְאִשָּׁ֖ה', transliteration: "ləʾiššāh", lemma: 'אִשָּׁה', lemmaTranslit: "ʾiššāh", gloss: 'as a wife', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H802', position: 4 },
-];
-
-export const genesis16_3_translation: VerseTranslation = {
-  verseRef: 'Gen.16.3',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And Sarai, wife of Abram, took Hagar the Egyptian, her maidservant, after Abram had dwelt ten years in the land of Canaan, and gave her to Abram her husband as a wife.', spans: [{ id: 'Gen.16.3.en.lit.0', text: 'And Sarai, wife of Abram...', position: 0, sourceTokenIds: ['Gen.16.3.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'So after Abram had been living in Canaan ten years, Sarai his wife took her Egyptian slave Hagar and gave her to her husband to be his wife.', spans: [{ id: 'Gen.16.3.en.idi.0', text: 'So after Abram had been...', position: 0, sourceTokenIds: ['Gen.16.3.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_3_notes: StudyNote[] = [];
-
-// Genesis 16:4
-export const genesis16_4_tokens: SourceToken[] = [
-  { id: 'Gen.16.4.0', language: 'hebrew', text: 'וַיָּבֹ֥א', transliteration: "wayyāḇōʾ", lemma: 'בּוֹא', lemmaTranslit: "bôʾ", gloss: 'And he went in', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H935', position: 0 },
-  { id: 'Gen.16.4.1', language: 'hebrew', text: 'וַתַּ֖הַר', transliteration: 'wattahar', lemma: 'הָרָה', lemmaTranslit: 'hārāh', gloss: 'and she conceived', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H2030', position: 1 },
-  { id: 'Gen.16.4.2', language: 'hebrew', text: 'וַתֵּ֣רֶא', transliteration: 'wattēreʾ', lemma: 'רָאָה', lemmaTranslit: 'rāʾāh', gloss: 'and she saw', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H7200', position: 2 },
-  { id: 'Gen.16.4.3', language: 'hebrew', text: 'וַתֵּקַ֥ל', transliteration: 'wattēqal', lemma: 'קָלַל', lemmaTranslit: 'qālal', gloss: 'and she despised', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H7043', position: 3 },
-  { id: 'Gen.16.4.4', language: 'hebrew', text: 'גְּבִרְתָּ֖הּ', transliteration: 'gəḇirtāh', lemma: 'גְּבֶרֶת', lemmaTranslit: 'gəḇereṯ', gloss: 'her mistress', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'construct', rawCode: 'Ncfsc' }, strongs: 'H1404', position: 4 },
-];
-
-export const genesis16_4_translation: VerseTranslation = {
-  verseRef: 'Gen.16.4',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And he went in to Hagar, and she conceived. And she saw that she had conceived, and her mistress was despised in her eyes.', spans: [{ id: 'Gen.16.4.en.lit.0', text: 'And he went in to Hagar...', position: 0, sourceTokenIds: ['Gen.16.4.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'He slept with Hagar, and she conceived. When she knew she was pregnant, she began to despise her mistress.', spans: [{ id: 'Gen.16.4.en.idi.0', text: 'He slept with Hagar...', position: 0, sourceTokenIds: ['Gen.16.4.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_4_notes: StudyNote[] = [];
-
-// Genesis 16:7
-export const genesis16_7_tokens: SourceToken[] = [
-  { id: 'Gen.16.7.0', language: 'hebrew', text: 'וַֽיִּמְצָאָ֞הּ', transliteration: "wayyimṣāʾāh", lemma: 'מָצָא', lemmaTranslit: "māṣāʾ", gloss: 'And he found her', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3ms' }, strongs: 'H4672', position: 0 },
-  { id: 'Gen.16.7.1', language: 'hebrew', text: 'מַלְאַ֧ךְ', transliteration: "malʾaḵ", lemma: 'מַלְאָךְ', lemmaTranslit: "malʾāḵ", gloss: 'angel of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H4397', position: 1 },
-  { id: 'Gen.16.7.2', language: 'hebrew', text: 'יְהוָ֛ה', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 2 },
-  { id: 'Gen.16.7.3', language: 'hebrew', text: 'עַל־הָעַ֥יִן', transliteration: "ʿal-hāʿayin", lemma: 'עַיִן', lemmaTranslit: "ʿayin", gloss: 'by the spring', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H5869', position: 3 },
-  { id: 'Gen.16.7.4', language: 'hebrew', text: 'בַּמִּדְבָּ֑ר', transliteration: 'bammiḏbār', lemma: 'מִדְבָּר', lemmaTranslit: 'miḏbār', gloss: 'in the wilderness', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H4057', position: 4 },
-];
-
-export const genesis16_7_translation: VerseTranslation = {
-  verseRef: 'Gen.16.7',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And the angel of the LORD found her by a spring of water in the wilderness, by the spring on the way to Shur.', spans: [{ id: 'Gen.16.7.en.lit.0', text: 'And the angel of the LORD...', position: 0, sourceTokenIds: ['Gen.16.7.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'The angel of the LORD found Hagar near a spring in the desert, the spring that is beside the road to Shur.', spans: [{ id: 'Gen.16.7.en.idi.0', text: 'The angel of the LORD found...', position: 0, sourceTokenIds: ['Gen.16.7.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_7_notes: StudyNote[] = [];
-
-// Genesis 16:11
-export const genesis16_11_tokens: SourceToken[] = [
-  { id: 'Gen.16.11.0', language: 'hebrew', text: 'הִנָּ֥ךְ', transliteration: 'hinnāḵ', lemma: 'הִנֵּה', lemmaTranslit: 'hinnēh', gloss: 'Behold you are', morphology: { pos: 'particle', rawCode: 'Tm' }, strongs: 'H2009', position: 0 },
-  { id: 'Gen.16.11.1', language: 'hebrew', text: 'הָרָ֖ה', transliteration: 'hārāh', lemma: 'הָרָה', lemmaTranslit: 'hārāh', gloss: 'pregnant', morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', rawCode: 'Aafsa' }, strongs: 'H2030', position: 1 },
-  { id: 'Gen.16.11.2', language: 'hebrew', text: 'וְקָרָ֤את', transliteration: "wəqārāʾṯ", lemma: 'קָרָא', lemmaTranslit: "qārāʾ", gloss: 'and you shall call', morphology: { pos: 'verb', person: '2', gender: 'feminine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp2fs' }, strongs: 'H7121', position: 2 },
-  { id: 'Gen.16.11.3', language: 'hebrew', text: 'יִשְׁמָעֵ֔אל', transliteration: "yišmāʿēʾl", lemma: 'יִשְׁמָעֵאל', lemmaTranslit: "yišmāʿēʾl", gloss: 'Ishmael', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3458', position: 3 },
-  { id: 'Gen.16.11.4', language: 'hebrew', text: 'שָׁמַ֥ע', transliteration: "šāmaʿ", lemma: 'שָׁמַע', lemmaTranslit: "šāmaʿ", gloss: 'has heard', morphology: { pos: 'verb', person: '3', gender: 'masculine', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp3ms' }, strongs: 'H8085', position: 4 },
-  { id: 'Gen.16.11.5', language: 'hebrew', text: 'יְהוָ֖ה', transliteration: 'YHWH', lemma: 'יְהוָה', lemmaTranslit: 'YHWH', gloss: 'the LORD', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3068', position: 5 },
-  { id: 'Gen.16.11.6', language: 'hebrew', text: 'עָנְיֵֽךְ', transliteration: "ʿonyēḵ", lemma: 'עֳנִי', lemmaTranslit: "ʿŏnî", gloss: 'your affliction', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H6040', position: 6 },
-];
-
-export const genesis16_11_translation: VerseTranslation = {
-  verseRef: 'Gen.16.11',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And the angel of the LORD said to her, "Behold, you are pregnant and shall bear a son, and you shall call his name Ishmael, because the LORD has heard your affliction."', spans: [{ id: 'Gen.16.11.en.lit.0', text: 'Behold, you are pregnant...', position: 0, sourceTokenIds: ['Gen.16.11.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'The angel of the LORD said to her: "You are now pregnant and you will give birth to a son. You shall name him Ishmael, for the LORD has heard of your misery."', spans: [{ id: 'Gen.16.11.en.idi.0', text: 'You are now pregnant...', position: 0, sourceTokenIds: ['Gen.16.11.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_11_notes: StudyNote[] = [
-  { id: 'Gen.16.11.note.1', verseRef: 'Gen.16.11', sourceTokenIds: ['Gen.16.11.3', 'Gen.16.11.4'], category: 'theological', title: 'Ishmael — God Hears', content: 'The name Yišmāʿēʾl (יִשְׁמָעֵאל) is a theophoric name meaning "God hears" (from šāmaʿ שָׁמַע, H8085 + ʾēl אֵל, H410). The naming reflects YHWH\'s attentiveness to the suffering of the marginalized. This is the first occurrence of the angel of the LORD (malʾaḵ YHWH) in Scripture, establishing a pattern of divine intervention for the vulnerable.', confidence: 'high', authorType: 'ai', metadata: { generatedAt: new Date().toISOString(), engineId: 'open-bible-notes' } },
-];
-
-// Genesis 16:13
-export const genesis16_13_tokens: SourceToken[] = [
-  { id: 'Gen.16.13.0', language: 'hebrew', text: 'וַתִּקְרָ֤א', transliteration: "wattiqqrāʾ", lemma: 'קָרָא', lemmaTranslit: "qārāʾ", gloss: 'And she called', morphology: { pos: 'verb', person: '3', gender: 'feminine', number: 'singular', tense: 'imperfect', stem: 'qal', rawCode: 'Vqw3fs' }, strongs: 'H7121', position: 0 },
-  { id: 'Gen.16.13.1', language: 'hebrew', text: 'שֵׁם־יְהוָ֗ה', transliteration: 'šēm-YHWH', lemma: 'שֵׁם', lemmaTranslit: 'šēm', gloss: 'the name of the LORD', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H8034', position: 1 },
-  { id: 'Gen.16.13.2', language: 'hebrew', text: 'אֵ֥ל', transliteration: "ʾēl", lemma: 'אֵל', lemmaTranslit: "ʾēl", gloss: 'God of', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H410', position: 2 },
-  { id: 'Gen.16.13.3', language: 'hebrew', text: 'רֳאִ֖י', transliteration: "roʾî", lemma: 'רֳאִי', lemmaTranslit: "roʾî", gloss: 'seeing', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'absolute', rawCode: 'Ncmsa' }, strongs: 'H7210', position: 3 },
-  { id: 'Gen.16.13.4', language: 'hebrew', text: 'הֲגַ֥ם', transliteration: 'hăḡam', lemma: 'גַּם', lemmaTranslit: 'gam', gloss: 'have I also', morphology: { pos: 'adverb', rawCode: 'D' }, strongs: 'H1571', position: 4 },
-  { id: 'Gen.16.13.5', language: 'hebrew', text: 'רָאִ֖יתִי', transliteration: "rāʾîṯî", lemma: 'רָאָה', lemmaTranslit: "rāʾāh", gloss: 'seen', morphology: { pos: 'verb', person: '1', gender: 'common', number: 'singular', tense: 'perfect', stem: 'qal', rawCode: 'Vqp1cs' }, strongs: 'H7200', position: 5 },
-];
-
-export const genesis16_13_translation: VerseTranslation = {
-  verseRef: 'Gen.16.13',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And she called the name of the LORD who spoke to her, "You are El Roi," for she said, "Have I also here seen after the one who sees me?"', spans: [{ id: 'Gen.16.13.en.lit.0', text: 'And she called the name...', position: 0, sourceTokenIds: ['Gen.16.13.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'She gave this name to the LORD who spoke to her: "You are the God who sees me," for she said, "I have now seen the One who sees me."', spans: [{ id: 'Gen.16.13.en.idi.0', text: 'She gave this name to...', position: 0, sourceTokenIds: ['Gen.16.13.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_13_notes: StudyNote[] = [];
-
-// Genesis 16:16
-export const genesis16_16_tokens: SourceToken[] = [
-  { id: 'Gen.16.16.0', language: 'hebrew', text: 'וְאַבְרָ֕ם', transliteration: "wəʾaḇrām", lemma: 'אַבְרָם', lemmaTranslit: "ʾaḇrām", gloss: 'And Abram', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H87', position: 0 },
-  { id: 'Gen.16.16.1', language: 'hebrew', text: 'בֶּן־שְׁמֹנִ֥ים', transliteration: 'ben-šəmōnîm', lemma: 'בֵּן', lemmaTranslit: 'bēn', gloss: 'a son of eighty', morphology: { pos: 'noun', gender: 'masculine', number: 'singular', state: 'construct', rawCode: 'Ncmsc' }, strongs: 'H1121', position: 1 },
-  { id: 'Gen.16.16.2', language: 'hebrew', text: 'שָׁנָ֖ה', transliteration: 'šānāh', lemma: 'שָׁנָה', lemmaTranslit: 'šānāh', gloss: 'years', morphology: { pos: 'noun', gender: 'feminine', number: 'singular', state: 'absolute', rawCode: 'Ncfsa' }, strongs: 'H8141', position: 2 },
-  { id: 'Gen.16.16.3', language: 'hebrew', text: 'בְּלֶ֣דֶת', transliteration: 'bəleḏeṯ', lemma: 'יָלַד', lemmaTranslit: 'yālaḏ', gloss: 'when she bore', morphology: { pos: 'verb', gender: 'feminine', number: 'singular', tense: 'infinitive', stem: 'qal', rawCode: 'Vqc' }, strongs: 'H3205', position: 3 },
-  { id: 'Gen.16.16.4', language: 'hebrew', text: 'יִשְׁמָעֵ֑אל', transliteration: "yišmāʿēʾl", lemma: 'יִשְׁמָעֵאל', lemmaTranslit: "yišmāʿēʾl", gloss: 'Ishmael', morphology: { pos: 'proper_noun', rawCode: 'Np' }, strongs: 'H3458', position: 4 },
-];
-
-export const genesis16_16_translation: VerseTranslation = {
-  verseRef: 'Gen.16.16',
-  targetLanguage: 'en',
-  profile: 'academic',
-  layers: {
-    literal: { type: 'literal', targetLanguage: 'en', text: 'And Abram was a son of eighty-six years when Hagar bore Ishmael to Abram.', spans: [{ id: 'Gen.16.16.en.lit.0', text: 'And Abram was a son of...', position: 0, sourceTokenIds: ['Gen.16.16.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-    idiomatic: { type: 'idiomatic', targetLanguage: 'en', text: 'Abram was eighty-six years old when Hagar bore him Ishmael.', spans: [{ id: 'Gen.16.16.en.idi.0', text: 'Abram was eighty-six years...', position: 0, sourceTokenIds: ['Gen.16.16.0'], confidence: 'high' }], overallConfidence: 'high', humanReviewed: false },
-  },
-  metadata: { pipelineVersion: '0.1.0', generatedAt: new Date().toISOString(), engineId: 'open-bible-pipeline', engineVersion: '0.1.0', sourceDataVersion: '1.0.0' },
-};
-
-export const genesis16_16_notes: StudyNote[] = [];
-
-// Export all verses
-export const genesis16_1_16_verses = [
-  { ref: 'Gen.16.1', sourceTokens: genesis16_1_tokens, translation: genesis16_1_translation, notes: genesis16_1_notes },
-  { ref: 'Gen.16.2', sourceTokens: genesis16_2_tokens, translation: genesis16_2_translation, notes: genesis16_2_notes },
-  { ref: 'Gen.16.3', sourceTokens: genesis16_3_tokens, translation: genesis16_3_translation, notes: genesis16_3_notes },
-  { ref: 'Gen.16.4', sourceTokens: genesis16_4_tokens, translation: genesis16_4_translation, notes: genesis16_4_notes },
-  { ref: 'Gen.16.7', sourceTokens: genesis16_7_tokens, translation: genesis16_7_translation, notes: genesis16_7_notes },
-  { ref: 'Gen.16.11', sourceTokens: genesis16_11_tokens, translation: genesis16_11_translation, notes: genesis16_11_notes },
-  { ref: 'Gen.16.13', sourceTokens: genesis16_13_tokens, translation: genesis16_13_translation, notes: genesis16_13_notes },
-  { ref: 'Gen.16.16', sourceTokens: genesis16_16_tokens, translation: genesis16_16_translation, notes: genesis16_16_notes },
+export const gen16_1_16Notes: StudyNote[] = [
+  { id: 'note-gen-16-1-1', verseId: 'Gen.16.1', category: 'lexical', content: 'The term שִׁפְחָה (šipḥāh, H8198) denotes a female servant of lower social status than an אָמָה (ʾāmāh). In ancient Near Eastern custom, a barren wife could give her šipḥāh to her husband as a surrogate mother, a practice attested in the Nuzi tablets and the Code of Hammurabi §§144–146.' },
+  { id: 'note-gen-16-2-1', verseId: 'Gen.16.2', category: 'grammatical', content: 'The verb עָצַר (ʿāṣar, H6113) in the Qal perfect with first-person suffix (עֲצָרַנִי) means "he has shut me up / restrained me." Sarai attributes her barrenness directly to divine action—YHWH himself has closed her womb. The cohortative אִבָּנֶה (ʾibbāneh, "I may be built up") plays on the root בנה, linking "sons" (בָּנִים) and "building" a household.' },
+  { id: 'note-gen-16-6-1', verseId: 'Gen.16.6', category: 'theological', content: 'The Piel verb וַתְּעַנֶּהָ (wattəʿannehā, from עָנָה, H6031) means "she afflicted / oppressed her." This is the same root used later of Egypt\'s oppression of Israel (Exod 1:11–12). The irony is striking: Sarai, ancestress of Israel, afflicts her Egyptian slave just as Egypt will later afflict Sarai\'s descendants.' },
+  { id: 'note-gen-16-7-1', verseId: 'Gen.16.7', category: 'theological', content: 'This is the first appearance of מַלְאַךְ יְהוָה (malʾaḵ YHWH, "the angel of the LORD") in Scripture. The figure speaks with divine authority (vv. 10–11) and is identified with God himself (v. 13), yet is also distinct as a "messenger." This establishes a pattern of theophany recurring throughout the patriarchal narratives.' },
+  { id: 'note-gen-16-11-1', verseId: 'Gen.16.11', category: 'lexical', content: 'The name יִשְׁמָעֵאל (Yišmāʿēʾl, H3458) is a theophoric name meaning "God hears," composed of יִשְׁמַע (yišmaʿ, "he hears") + אֵל (ʾēl, "God"). The etymology is explained by the clause כִּי־שָׁמַע יְהוָה אֶל־עָנְיֵךְ ("for the LORD has heard your affliction"), demonstrating that God attends to the suffering of the marginalized.' },
+  { id: 'note-gen-16-12-1', verseId: 'Gen.16.12', category: 'historical', content: 'The description פֶּרֶא אָדָם (pereʾ ʾāḏām, "wild donkey of a man") uses the onager (פֶּרֶא, H6501), the untameable wild ass of the Syro-Arabian steppe (cf. Job 39:5–8), as a metaphor for fierce independence and desert nomadism. This prophetically characterizes the Ishmaelite tribes as free-ranging bedouin peoples.' },
+  { id: 'note-gen-16-13-1', verseId: 'Gen.16.13', category: 'theological', content: 'Hagar bestows a divine name—אֵל רֳאִי (ʾēl roʾî, "God of seeing / God who sees me")—making her the only person in Scripture to name God. This extraordinary act by a foreign slave woman underscores that YHWH\'s compassion extends beyond covenant boundaries. The wordplay on רָאָה (rāʾāh, "to see") permeates the passage.' },
+  { id: 'note-gen-16-14-1', verseId: 'Gen.16.14', category: 'historical', content: 'The well בְּאֵר לַחַי רֹאִי (Bəʾēr laḥay rōʾî, "Well of the Living One who sees me," H883) is located between Kadesh and Bered in the northern Negev. It reappears in Gen 24:62 and 25:11 as a place associated with Isaac, linking the stories of Hagar and the patriarchal family.' },
 ];

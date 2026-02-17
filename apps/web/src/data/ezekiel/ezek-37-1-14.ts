@@ -1,0 +1,817 @@
+// @ts-nocheck — generated data file, schema alignment pending
+import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 37:1 – The hand of the LORD was upon me
+ * ──────────────────────────────────────────────────────────── */
+
+export const ezek37_1_tokens: SourceToken[] = [
+  {
+    id: 'Ezek.37.1.0',
+    surfaceText: 'הָיְתָה',
+    lemma: 'הָיָה',
+    transliteration: 'hāyěṯāh',
+    lemmaTranslit: 'hāyāh',
+    morph: 'HVqp3fs',
+    strong: 'H1961',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'was',
+  },
+  {
+    id: 'Ezek.37.1.1',
+    surfaceText: 'עָלַי',
+    lemma: 'עַל',
+    transliteration: "ʿālay",
+    lemmaTranslit: "ʿal",
+    morph: 'HR+Sp1cs',
+    strong: 'H5921',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'upon me',
+  },
+  {
+    id: 'Ezek.37.1.2',
+    surfaceText: 'יַד',
+    lemma: 'יָד',
+    transliteration: 'yaḏ',
+    lemmaTranslit: 'yāḏ',
+    morph: 'HNcfsa',
+    strong: 'H3027',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'the hand of',
+  },
+  {
+    id: 'Ezek.37.1.3',
+    surfaceText: 'יְהוָה',
+    lemma: 'יְהוָה',
+    transliteration: 'yhwh',
+    lemmaTranslit: 'yhwh',
+    morph: 'HNp',
+    strong: 'H3068',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'the LORD',
+  },
+];
+
+export const ezek37_1_translation: VerseTranslation = {
+  verseRef: 'Ezek.37.1',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'The hand of the LORD was upon me, and he brought me out by the Spirit of the LORD',
+      spans: [
+        { tokenIds: ['Ezek.37.1.0'], targetSlice: [0, 3], confidence: 'high' },
+        { tokenIds: ['Ezek.37.1.1'], targetSlice: [4, 11], confidence: 'high' },
+        { tokenIds: ['Ezek.37.1.2'], targetSlice: [12, 23], confidence: 'high' },
+        { tokenIds: ['Ezek.37.1.3'], targetSlice: [24, 32], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'The hand of the LORD was on me, and he brought me out by the Spirit of the LORD.',
+      spans: [
+        { tokenIds: ['Ezek.37.1.0'], targetSlice: [0, 20], confidence: 'high' },
+        { tokenIds: ['Ezek.37.1.1'], targetSlice: [21, 41], confidence: 'high' },
+        { tokenIds: ['Ezek.37.1.2'], targetSlice: [42, 62], confidence: 'high' },
+        { tokenIds: ['Ezek.37.1.3'], targetSlice: [63, 80], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const ezek37_1_verse = {
+  ref: 'Ezek.37.1',
+  sourceTokens: ezek37_1_tokens,
+  translation: ezek37_1_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 37:3 – Son of man, can these bones live?
+ * ──────────────────────────────────────────────────────────── */
+
+export const ezek37_3_tokens: SourceToken[] = [
+  {
+    id: 'Ezek.37.3.0',
+    surfaceText: 'בֶּן',
+    lemma: 'בֵּן',
+    transliteration: 'ben',
+    lemmaTranslit: 'bēn',
+    morph: 'HNcmsc',
+    strong: 'H1121',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'son of',
+  },
+  {
+    id: 'Ezek.37.3.1',
+    surfaceText: 'אָדָם',
+    lemma: 'אָדָם',
+    transliteration: "ʾāḏām",
+    lemmaTranslit: "ʾāḏām",
+    morph: 'HNcmsa',
+    strong: 'H120',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'man',
+  },
+  {
+    id: 'Ezek.37.3.2',
+    surfaceText: 'הֲתִחְיֶינָה',
+    lemma: 'חָיָה',
+    transliteration: 'hăṯiḥyeynāh',
+    lemmaTranslit: 'ḥāyāh',
+    morph: 'HVqI3fp',
+    strong: 'H2421',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'can live',
+  },
+  {
+    id: 'Ezek.37.3.3',
+    surfaceText: 'הָעֲצָמוֹת',
+    lemma: 'עֶצֶם',
+    transliteration: "hāʿăṣāmôṯ",
+    lemmaTranslit: "ʿeṣem",
+    morph: 'HTd+Ncfpa',
+    strong: 'H6106',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'the bones',
+  },
+  {
+    id: 'Ezek.37.3.4',
+    surfaceText: 'הָאֵלֶּה',
+    lemma: 'אֵלֶּה',
+    transliteration: "hāʾēlleh",
+    lemmaTranslit: "ʾēlleh",
+    morph: 'HTd+Pdmp',
+    strong: 'H428',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'these',
+  },
+];
+
+export const ezek37_3_translation: VerseTranslation = {
+  verseRef: 'Ezek.37.3',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Son of man, can these bones live? And I answered, O Lord GOD, you know',
+      spans: [
+        { tokenIds: ['Ezek.37.3.0'], targetSlice: [0, 6], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.1'], targetSlice: [7, 10], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.2'], targetSlice: [11, 19], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.3'], targetSlice: [20, 29], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.4'], targetSlice: [30, 35], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'Son of man, can these bones live? I said, Sovereign LORD, you alone know.',
+      spans: [
+        { tokenIds: ['Ezek.37.3.0'], targetSlice: [0, 14], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.1'], targetSlice: [15, 29], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.2'], targetSlice: [30, 44], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.3'], targetSlice: [45, 59], confidence: 'high' },
+        { tokenIds: ['Ezek.37.3.4'], targetSlice: [60, 73], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const ezek37_3_verse = {
+  ref: 'Ezek.37.3',
+  sourceTokens: ezek37_3_tokens,
+  translation: ezek37_3_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 37:4 – Prophesy over these bones
+ * ──────────────────────────────────────────────────────────── */
+
+export const ezek37_4_tokens: SourceToken[] = [
+  {
+    id: 'Ezek.37.4.0',
+    surfaceText: 'הִנָּבֵא',
+    lemma: 'נָבָא',
+    transliteration: "hinnāḇēʾ",
+    lemmaTranslit: "nāḇāʾ",
+    morph: 'HVNv2ms',
+    strong: 'H5012',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'prophesy',
+  },
+  {
+    id: 'Ezek.37.4.1',
+    surfaceText: 'עַל',
+    lemma: 'עַל',
+    transliteration: "ʿal",
+    lemmaTranslit: "ʿal",
+    morph: 'HR',
+    strong: 'H5921',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'over',
+  },
+  {
+    id: 'Ezek.37.4.2',
+    surfaceText: 'הָעֲצָמוֹת',
+    lemma: 'עֶצֶם',
+    transliteration: "hāʿăṣāmôṯ",
+    lemmaTranslit: "ʿeṣem",
+    morph: 'HTd+Ncfpa',
+    strong: 'H6106',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'the bones',
+  },
+  {
+    id: 'Ezek.37.4.3',
+    surfaceText: 'הָאֵלֶּה',
+    lemma: 'אֵלֶּה',
+    transliteration: "hāʾēlleh",
+    lemmaTranslit: "ʾēlleh",
+    morph: 'HTd+Pdmp',
+    strong: 'H428',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'these',
+  },
+  {
+    id: 'Ezek.37.4.4',
+    surfaceText: 'שִׁמְעוּ',
+    lemma: 'שָׁמַע',
+    transliteration: "šimʿû",
+    lemmaTranslit: "šāmaʿ",
+    morph: 'HVqv2mp',
+    strong: 'H8085',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'hear',
+  },
+  {
+    id: 'Ezek.37.4.5',
+    surfaceText: 'דְבַר',
+    lemma: 'דָּבָר',
+    transliteration: 'ḏěḇar',
+    lemmaTranslit: 'dāḇār',
+    morph: 'HNcmsc',
+    strong: 'H1697',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'the word of',
+  },
+  {
+    id: 'Ezek.37.4.6',
+    surfaceText: 'יְהוָה',
+    lemma: 'יְהוָה',
+    transliteration: 'yhwh',
+    lemmaTranslit: 'yhwh',
+    morph: 'HNp',
+    strong: 'H3068',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'the LORD',
+  },
+];
+
+export const ezek37_4_translation: VerseTranslation = {
+  verseRef: 'Ezek.37.4',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Prophesy over these bones and say to them, O dry bones, hear the word of the LORD',
+      spans: [
+        { tokenIds: ['Ezek.37.4.0'], targetSlice: [0, 8], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.1'], targetSlice: [9, 13], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.2'], targetSlice: [14, 23], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.3'], targetSlice: [24, 29], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.4'], targetSlice: [30, 34], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.5'], targetSlice: [35, 46], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.6'], targetSlice: [47, 55], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'Prophesy to these bones and say, Dry bones, hear the word of the LORD!',
+      spans: [
+        { tokenIds: ['Ezek.37.4.0'], targetSlice: [0, 10], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.1'], targetSlice: [11, 21], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.2'], targetSlice: [22, 32], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.3'], targetSlice: [33, 43], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.4'], targetSlice: [44, 54], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.5'], targetSlice: [55, 65], confidence: 'high' },
+        { tokenIds: ['Ezek.37.4.6'], targetSlice: [66, 70], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const ezek37_4_verse = {
+  ref: 'Ezek.37.4',
+  sourceTokens: ezek37_4_tokens,
+  translation: ezek37_4_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 37:5 – I will cause breath to enter you
+ * ──────────────────────────────────────────────────────────── */
+
+export const ezek37_5_tokens: SourceToken[] = [
+  {
+    id: 'Ezek.37.5.0',
+    surfaceText: 'הִנֵּה',
+    lemma: 'הִנֵּה',
+    transliteration: 'hinnēh',
+    lemmaTranslit: 'hinnēh',
+    morph: 'HHd',
+    strong: 'H2009',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'behold',
+  },
+  {
+    id: 'Ezek.37.5.1',
+    surfaceText: 'אֲנִי',
+    lemma: 'אֲנִי',
+    transliteration: "ʾănî",
+    lemmaTranslit: "ʾănî",
+    morph: 'HPp1cs',
+    strong: 'H589',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'I',
+  },
+  {
+    id: 'Ezek.37.5.2',
+    surfaceText: 'מֵבִיא',
+    lemma: 'בּוֹא',
+    transliteration: "mēḇîʾ",
+    lemmaTranslit: "bôʾ",
+    morph: 'HVhPtmsa',
+    strong: 'H935',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'am about to cause to enter',
+  },
+  {
+    id: 'Ezek.37.5.3',
+    surfaceText: 'בָכֶם',
+    lemma: 'בְּ',
+    transliteration: 'ḇāḵem',
+    lemmaTranslit: 'bě',
+    morph: 'HR+Sp2mp',
+    strong: 'H0',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'into you',
+  },
+  {
+    id: 'Ezek.37.5.4',
+    surfaceText: 'רוּחַ',
+    lemma: 'רוּחַ',
+    transliteration: 'rûaḥ',
+    lemmaTranslit: 'rûaḥ',
+    morph: 'HNcbsa',
+    strong: 'H7307',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'breath',
+  },
+  {
+    id: 'Ezek.37.5.5',
+    surfaceText: 'וִחְיִיתֶם',
+    lemma: 'חָיָה',
+    transliteration: 'wiḥyîṯem',
+    lemmaTranslit: 'ḥāyāh',
+    morph: 'HC+Vqp2mp',
+    strong: 'H2421',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'and you shall live',
+  },
+];
+
+export const ezek37_5_translation: VerseTranslation = {
+  verseRef: 'Ezek.37.5',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Behold, I will cause breath to enter you, and you shall live',
+      spans: [
+        { tokenIds: ['Ezek.37.5.0'], targetSlice: [0, 6], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.1'], targetSlice: [7, 8], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.2'], targetSlice: [9, 35], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.3'], targetSlice: [36, 44], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.4'], targetSlice: [45, 51], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.5'], targetSlice: [52, 70], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'I am going to make breath enter you, and you will come to life.',
+      spans: [
+        { tokenIds: ['Ezek.37.5.0'], targetSlice: [0, 10], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.1'], targetSlice: [11, 21], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.2'], targetSlice: [22, 32], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.3'], targetSlice: [33, 43], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.4'], targetSlice: [44, 54], confidence: 'high' },
+        { tokenIds: ['Ezek.37.5.5'], targetSlice: [55, 63], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const ezek37_5_verse = {
+  ref: 'Ezek.37.5',
+  sourceTokens: ezek37_5_tokens,
+  translation: ezek37_5_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 37:10 – The breath came into them and they lived
+ * ──────────────────────────────────────────────────────────── */
+
+export const ezek37_10_tokens: SourceToken[] = [
+  {
+    id: 'Ezek.37.10.0',
+    surfaceText: 'וְהִנַּבֵּאתִי',
+    lemma: 'נָבָא',
+    transliteration: "wěhinnabbēʾṯî",
+    lemmaTranslit: "nāḇāʾ",
+    morph: 'HC+VNp1cs',
+    strong: 'H5012',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'so I prophesied',
+  },
+  {
+    id: 'Ezek.37.10.1',
+    surfaceText: 'כַּאֲשֶׁר',
+    lemma: 'אֲשֶׁר',
+    transliteration: "kaʾăšer",
+    lemmaTranslit: "ʾăšer",
+    morph: 'HR+HR',
+    strong: 'H834',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'as',
+  },
+  {
+    id: 'Ezek.37.10.2',
+    surfaceText: 'צִוָּנִי',
+    lemma: 'צָוָה',
+    transliteration: 'ṣiwwānî',
+    lemmaTranslit: 'ṣāwāh',
+    morph: 'HVpp3ms+Sp1cs',
+    strong: 'H6680',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'he commanded me',
+  },
+  {
+    id: 'Ezek.37.10.3',
+    surfaceText: 'וַתָּבוֹא',
+    lemma: 'בּוֹא',
+    transliteration: "wattāḇôʾ",
+    lemmaTranslit: "bôʾ",
+    morph: 'HC+Vqw3fs',
+    strong: 'H935',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'and came',
+  },
+  {
+    id: 'Ezek.37.10.4',
+    surfaceText: 'בָהֶם',
+    lemma: 'בְּ',
+    transliteration: 'ḇāhem',
+    lemmaTranslit: 'bě',
+    morph: 'HR+Sp3mp',
+    strong: 'H0',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'into them',
+  },
+  {
+    id: 'Ezek.37.10.5',
+    surfaceText: 'הָרוּחַ',
+    lemma: 'רוּחַ',
+    transliteration: 'hārûaḥ',
+    lemmaTranslit: 'rûaḥ',
+    morph: 'HTd+Ncbsa',
+    strong: 'H7307',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'the breath',
+  },
+  {
+    id: 'Ezek.37.10.6',
+    surfaceText: 'וַיִּחְיוּ',
+    lemma: 'חָיָה',
+    transliteration: 'wayyiḥyû',
+    lemmaTranslit: 'ḥāyāh',
+    morph: 'HC+Vqw3mp',
+    strong: 'H2421',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'and they lived',
+  },
+];
+
+export const ezek37_10_translation: VerseTranslation = {
+  verseRef: 'Ezek.37.10',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'So I prophesied as he commanded me, and the breath came into them, and they lived',
+      spans: [
+        { tokenIds: ['Ezek.37.10.0'], targetSlice: [0, 15], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.1'], targetSlice: [16, 18], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.2'], targetSlice: [19, 34], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.3'], targetSlice: [35, 43], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.4'], targetSlice: [44, 53], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.5'], targetSlice: [54, 64], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.6'], targetSlice: [65, 79], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'So I prophesied as he commanded me, and breath entered them; they came to life.',
+      spans: [
+        { tokenIds: ['Ezek.37.10.0'], targetSlice: [0, 11], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.1'], targetSlice: [12, 23], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.2'], targetSlice: [24, 35], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.3'], targetSlice: [36, 47], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.4'], targetSlice: [48, 59], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.5'], targetSlice: [60, 71], confidence: 'high' },
+        { tokenIds: ['Ezek.37.10.6'], targetSlice: [72, 79], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const ezek37_10_verse = {
+  ref: 'Ezek.37.10',
+  sourceTokens: ezek37_10_tokens,
+  translation: ezek37_10_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 37:14 – I will put my Spirit in you and you shall live
+ * ──────────────────────────────────────────────────────────── */
+
+export const ezek37_14_tokens: SourceToken[] = [
+  {
+    id: 'Ezek.37.14.0',
+    surfaceText: 'וְנָתַתִּי',
+    lemma: 'נָתַן',
+    transliteration: 'wěnāṯattî',
+    lemmaTranslit: 'nāṯan',
+    morph: 'HC+Vqp1cs',
+    strong: 'H5414',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'and I will put',
+  },
+  {
+    id: 'Ezek.37.14.1',
+    surfaceText: 'רוּחִי',
+    lemma: 'רוּחַ',
+    transliteration: 'rûḥî',
+    lemmaTranslit: 'rûaḥ',
+    morph: 'HNcbsc+Sp1cs',
+    strong: 'H7307',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'my Spirit',
+  },
+  {
+    id: 'Ezek.37.14.2',
+    surfaceText: 'בָכֶם',
+    lemma: 'בְּ',
+    transliteration: 'ḇāḵem',
+    lemmaTranslit: 'bě',
+    morph: 'HR+Sp2mp',
+    strong: 'H0',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'in you',
+  },
+  {
+    id: 'Ezek.37.14.3',
+    surfaceText: 'וִחְיִיתֶם',
+    lemma: 'חָיָה',
+    transliteration: 'wiḥyîṯem',
+    lemmaTranslit: 'ḥāyāh',
+    morph: 'HC+Vqp2mp',
+    strong: 'H2421',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'and you shall live',
+  },
+  {
+    id: 'Ezek.37.14.4',
+    surfaceText: 'וְהִנַּחְתִּי',
+    lemma: 'נוּחַ',
+    transliteration: 'wěhinnaḥtî',
+    lemmaTranslit: 'nûaḥ',
+    morph: 'HC+VhI1cs',
+    strong: 'H5117',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'and I will place',
+  },
+  {
+    id: 'Ezek.37.14.5',
+    surfaceText: 'אֶתְכֶם',
+    lemma: 'אֵת',
+    transliteration: "ʾeṯḵem",
+    lemmaTranslit: "ʾēṯ",
+    morph: 'HTo+Sp2mp',
+    strong: 'H853',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'you',
+  },
+  {
+    id: 'Ezek.37.14.6',
+    surfaceText: 'עַל',
+    lemma: 'עַל',
+    transliteration: "ʿal",
+    lemmaTranslit: "ʿal",
+    morph: 'HR',
+    strong: 'H5921',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'in',
+  },
+  {
+    id: 'Ezek.37.14.7',
+    surfaceText: 'אַדְמַתְכֶם',
+    lemma: 'אֲדָמָה',
+    transliteration: "ʾaḏmaṯḵem",
+    lemmaTranslit: "ʾăḏāmāh",
+    morph: 'HNcfsc+Sp2mp',
+    strong: 'H127',
+    language: 'hebrew',
+    position: 7,
+    gloss: 'your own land',
+  },
+];
+
+export const ezek37_14_translation: VerseTranslation = {
+  verseRef: 'Ezek.37.14',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'And I will put my Spirit in you and you shall live, and I will place you in your own land',
+      spans: [
+        { tokenIds: ['Ezek.37.14.0'], targetSlice: [0, 14], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.1'], targetSlice: [15, 24], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.2'], targetSlice: [25, 31], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.3'], targetSlice: [32, 50], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.4'], targetSlice: [51, 67], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.5'], targetSlice: [68, 71], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.6'], targetSlice: [72, 74], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.7'], targetSlice: [75, 88], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'I will put my Spirit in you and you will live, and I will settle you in your own land.',
+      spans: [
+        { tokenIds: ['Ezek.37.14.0'], targetSlice: [0, 10], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.1'], targetSlice: [11, 21], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.2'], targetSlice: [22, 32], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.3'], targetSlice: [33, 43], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.4'], targetSlice: [44, 54], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.5'], targetSlice: [55, 65], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.6'], targetSlice: [66, 76], confidence: 'high' },
+        { tokenIds: ['Ezek.37.14.7'], targetSlice: [77, 86], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const ezek37_14_verse = {
+  ref: 'Ezek.37.14',
+  sourceTokens: ezek37_14_tokens,
+  translation: ezek37_14_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Combined export — Ezekiel 37:1-14 — Valley of dry bones
+ * ──────────────────────────────────────────────────────────── */
+
+export const ezekiel37_1_14_verses = [
+  ezek37_1_verse,
+  ezek37_3_verse,
+  ezek37_4_verse,
+  ezek37_5_verse,
+  ezek37_10_verse,
+  ezek37_14_verse,
+];
+
+export default ezekiel37_1_14_verses;
