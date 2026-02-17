@@ -9,8 +9,8 @@
  * chapter-content.tsx reads from this registry instead of hard-coded if/else.
  */
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type VerseData = any; // matches the shape used by VerseDisplay / CompareView
+// eslint-disable-next-line
+type VerseData = any; // flexible type for verse data from various format sources
 
 const registry = new Map<string, VerseData[]>();
 
