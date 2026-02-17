@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import type { PipelineStage, PipelineConfig, PipelineContext } from '../pipeline';
 import type { VerseAlignment, AlignmentMapping } from '@open-bible/schemas';
+import type { ConfidenceLevel } from '@open-bible/schemas';
 
 /**
  * Align stage - creates alignments between source tokens and translation spans
@@ -37,7 +38,14 @@ export const alignStage: PipelineStage = {
         const outputPath = path.join(langAlignDir, `${bookCode}.alignments.json`);
 
         if (!fs.existsSync(outputPath) || config.force) {
-          const translations = JSON.parse(fs.readFileSync(transPath, 'utf-8'));
+          let translations: Record<string, unknown>;
+          try {
+            translations = JSON.parse(fs.readFileSync(transPath, 'utf-8'));
+          } catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            context.warnings.push(`Failed to parse translations for ${bookCode} (${targetLang}): ${message}`);
+            continue;
+          }
           const alignments = generateAlignments(translations, targetLang);
           fs.writeFileSync(outputPath, JSON.stringify(alignments, null, 2));
         }
@@ -60,28 +68,30 @@ function generateAlignments(
   const alignments: Record<string, VerseAlignment> = {};
 
   for (const [verseRef, trans] of Object.entries(translations)) {
-    const translation = trans as any;
-    const layers = translation.layers || {};
+    const translation = trans as Record<string, unknown>;
+    const layers = (translation.layers || {}) as Record<string, unknown>;
 
     // Process each layer
     for (const [layerType, layer] of Object.entries(layers)) {
       if (!layer) continue;
 
-      const layerData = layer as any;
+      const layerData = layer as Record<string, unknown>;
       const mappings: AlignmentMapping[] = [];
       const alignedSourceTokens = new Set<string>();
+      const spans = (layerData.spans || []) as Array<Record<string, unknown>>;
 
-      for (const span of layerData.spans || []) {
-        if (span.sourceTokenIds && span.sourceTokenIds.length > 0) {
+      for (const span of spans) {
+        const sourceTokenIds = span.sourceTokenIds as string[] | undefined;
+        if (sourceTokenIds && sourceTokenIds.length > 0) {
           mappings.push({
             id: `${verseRef}.${layerType}.${span.id}`,
-            sourceTokenIds: span.sourceTokenIds,
-            targetSpanId: span.id,
-            type: span.sourceTokenIds.length > 1 ? 'phrase' : 'direct',
-            confidence: span.confidence || 'medium',
+            sourceTokenIds,
+            targetSpanId: span.id as string,
+            type: sourceTokenIds.length > 1 ? 'phrase' : 'direct',
+            confidence: ((span.confidence as string) || 'medium') as ConfidenceLevel,
           });
 
-          span.sourceTokenIds.forEach((id: string) => alignedSourceTokens.add(id));
+          sourceTokenIds.forEach((id: string) => alignedSourceTokens.add(id));
         }
       }
 

@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import type { PipelineStage, PipelineConfig, PipelineContext } from '../pipeline';
-import type { SourceDataset } from '@open-bible/schemas';
+import { SourceDataset } from '@open-bible/schemas';
 
 /**
  * Ingest stage - loads raw source texts and registers datasets
@@ -87,27 +87,17 @@ export const ingestStage: PipelineStage = {
 };
 
 /**
- * Validate a dataset manifest
+ * Validate a dataset manifest using the Zod schema
  */
 function validateDataset(data: unknown): SourceDataset {
-  // Basic validation - in production, use the Zod schema
-  if (!data || typeof data !== 'object') {
-    throw new Error('Invalid dataset manifest');
+  const result = SourceDataset.safeParse(data);
+  if (!result.success) {
+    const issues = result.error.issues.map((i: { path: (string | number)[]; message: string }) =>
+      `${i.path.join('.')}: ${i.message}`
+    ).join('; ');
+    throw new Error(`Invalid dataset manifest: ${issues}`);
   }
-
-  const d = data as Record<string, unknown>;
-
-  if (!d.id || typeof d.id !== 'string') {
-    throw new Error('Dataset missing id');
-  }
-  if (!d.name || typeof d.name !== 'string') {
-    throw new Error('Dataset missing name');
-  }
-  if (!d.license || typeof d.license !== 'object') {
-    throw new Error('Dataset missing license');
-  }
-
-  return data as SourceDataset;
+  return result.data;
 }
 
 /**
