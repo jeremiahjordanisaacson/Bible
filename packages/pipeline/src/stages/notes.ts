@@ -22,7 +22,6 @@ export const notesStage: PipelineStage = {
     // Process each book
     for (const bookCode of context.processedBooks) {
       const tokensPath = path.join(tokensDir, `${bookCode}.tokens.json`);
-      const translationsPath = path.join(translationsDir, 'en', `${bookCode}.translations.json`);
 
       if (!fs.existsSync(tokensPath)) {
         continue;
@@ -31,10 +30,28 @@ export const notesStage: PipelineStage = {
       const outputPath = path.join(notesDir, `${bookCode}.notes.json`);
 
       if (!fs.existsSync(outputPath) || config.force) {
-        const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf-8'));
-        const translations = fs.existsSync(translationsPath)
-          ? JSON.parse(fs.readFileSync(translationsPath, 'utf-8'))
-          : {};
+        let tokens: Record<string, unknown>;
+        try {
+          tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf-8'));
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          context.warnings.push(`Failed to parse tokens for ${bookCode}: ${message}`);
+          continue;
+        }
+
+        // Try each target language for translations, use the first available
+        let translations: Record<string, unknown> = {};
+        for (const lang of config.targetLanguages) {
+          const translationsPath = path.join(translationsDir, lang, `${bookCode}.translations.json`);
+          if (fs.existsSync(translationsPath)) {
+            try {
+              translations = JSON.parse(fs.readFileSync(translationsPath, 'utf-8'));
+            } catch {
+              // Fall through to next language
+            }
+            break;
+          }
+        }
 
         const notes = await generateBookNotes(bookCode, tokens, translations, context);
         fs.writeFileSync(outputPath, JSON.stringify(notes, null, 2));

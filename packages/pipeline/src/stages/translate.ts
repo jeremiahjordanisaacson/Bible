@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import type { PipelineStage, PipelineConfig, PipelineContext } from '../pipeline';
-import type { VerseTranslation, TranslationLayerType } from '@open-bible/schemas';
+import type { VerseTranslation, VerseTokens, TranslationLayerType } from '@open-bible/schemas';
 import { getTranslationEngine, type TranslationEngine } from '../engines/translation-engine';
 
 /**
@@ -43,7 +43,14 @@ export const translateStage: PipelineStage = {
 
         if (!fs.existsSync(outputPath) || config.force) {
           // Load tokens
-          const tokenData = JSON.parse(fs.readFileSync(tokensPath, 'utf-8'));
+          let tokenData: Record<string, unknown>;
+          try {
+            tokenData = JSON.parse(fs.readFileSync(tokensPath, 'utf-8'));
+          } catch (error) {
+            const message = error instanceof Error ? error.message : String(error);
+            context.warnings.push(`Failed to parse tokens for ${bookCode}: ${message}`);
+            continue;
+          }
 
           // Generate translations
           const translations = await generateBookTranslations(
@@ -78,9 +85,16 @@ async function generateBookTranslations(
 
   for (const [verseRef, verseTokens] of Object.entries(tokenData)) {
     try {
+      const vt = verseTokens as Record<string, unknown>;
+      const tokens = {
+        verseRef: (vt.verseRef as string) || verseRef,
+        language: (vt.language as string) || 'hebrew',
+        tokens: (vt.tokens as Array<Record<string, unknown>>) || [],
+        tokenCount: (vt.tokenCount as number) || 0,
+      };
       const translation = await engine.translateVerse(
         verseRef,
-        verseTokens as any,
+        tokens as VerseTokens,
         targetLanguage,
         layers
       );

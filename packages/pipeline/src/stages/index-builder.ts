@@ -47,14 +47,13 @@ async function buildTranslationIndex(
       const translations = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
       for (const [verseRef, trans] of Object.entries(translations)) {
-        const translation = trans as any;
-        const layers = translation.layers || {};
+        const translation = trans as Record<string, unknown>;
+        const layers = (translation.layers || {}) as Record<string, unknown>;
 
-        // Index the idiomatic layer primarily
-        const layer = layers.idiomatic || layers.literal;
+        const layer = (layers.idiomatic || layers.literal) as Record<string, unknown> | undefined;
         if (layer?.text) {
           // Tokenize text into words
-          const words = layer.text.toLowerCase()
+          const words = (layer.text as string).toLowerCase()
             .replace(/[.,;:!?"'()]/g, '')
             .split(/\s+/)
             .filter((w: string) => w.length > 2);
@@ -63,7 +62,7 @@ async function buildTranslationIndex(
             if (!index[word]) {
               index[word] = [];
             }
-            index[word].push({ verseRef, text: layer.text });
+            index[word].push({ verseRef, text: layer.text as string });
           }
         }
       }
@@ -92,17 +91,17 @@ async function buildLemmaIndex(
     const tokenData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
     for (const [verseRef, verseTokens] of Object.entries(tokenData)) {
-      const vt = verseTokens as any;
-      for (const token of vt.tokens || []) {
+      const vt = verseTokens as Record<string, unknown>;
+      for (const token of (vt.tokens || []) as Array<Record<string, unknown>>) {
         if (token.lemma) {
-          const key = token.lemma.toLowerCase();
+          const key = (token.lemma as string).toLowerCase();
           if (!index[key]) {
             index[key] = [];
           }
           index[key].push({
             verseRef,
-            tokenId: token.id,
-            gloss: token.gloss || '',
+            tokenId: token.id as string,
+            gloss: (token.gloss as string) || '',
           });
         }
       }
@@ -131,17 +130,18 @@ async function buildStrongsIndex(
     const tokenData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
     for (const [verseRef, verseTokens] of Object.entries(tokenData)) {
-      const vt = verseTokens as any;
-      for (const token of vt.tokens || []) {
+      const vt = verseTokens as Record<string, unknown>;
+      for (const token of (vt.tokens || []) as Array<Record<string, unknown>>) {
         if (token.strongs) {
-          if (!index[token.strongs]) {
-            index[token.strongs] = [];
+          const strongs = token.strongs as string;
+          if (!index[strongs]) {
+            index[strongs] = [];
           }
-          index[token.strongs].push({
+          index[strongs].push({
             verseRef,
-            tokenId: token.id,
-            lemma: token.lemma || '',
-            gloss: token.gloss || '',
+            tokenId: token.id as string,
+            lemma: (token.lemma as string) || '',
+            gloss: (token.gloss as string) || '',
           });
         }
       }
