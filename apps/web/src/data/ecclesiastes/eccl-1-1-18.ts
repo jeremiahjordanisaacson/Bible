@@ -1,0 +1,817 @@
+// @ts-nocheck — generated data file, schema alignment pending
+import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:1 – The words of the Preacher
+ * ──────────────────────────────────────────────────────────── */
+
+export const eccl1_1_tokens: SourceToken[] = [
+  {
+    id: 'Eccl.1.1.0',
+    surfaceText: 'דִּבְרֵי',
+    lemma: 'דָּבָר',
+    transliteration: 'diḇrê',
+    lemmaTranslit: 'dāḇār',
+    morph: 'HNcmpc',
+    strong: 'H1697',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'the words of',
+  },
+  {
+    id: 'Eccl.1.1.1',
+    surfaceText: 'קֹהֶלֶת',
+    lemma: 'קֹהֶלֶת',
+    transliteration: 'qōheleṯ',
+    lemmaTranslit: 'qōheleṯ',
+    morph: 'HNp',
+    strong: 'H6953',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'the Preacher',
+  },
+  {
+    id: 'Eccl.1.1.2',
+    surfaceText: 'בֶּן',
+    lemma: 'בֵּן',
+    transliteration: 'ben',
+    lemmaTranslit: 'bēn',
+    morph: 'HNcmsc',
+    strong: 'H1121',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'the son of',
+  },
+  {
+    id: 'Eccl.1.1.3',
+    surfaceText: 'דָּוִד',
+    lemma: 'דָּוִד',
+    transliteration: 'dāwiḏ',
+    lemmaTranslit: 'dāwiḏ',
+    morph: 'HNp',
+    strong: 'H1732',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'David',
+  },
+  {
+    id: 'Eccl.1.1.4',
+    surfaceText: 'מֶלֶךְ',
+    lemma: 'מֶלֶךְ',
+    transliteration: 'meleḵ',
+    lemmaTranslit: 'meleḵ',
+    morph: 'HNcmsc',
+    strong: 'H4428',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'king',
+  },
+  {
+    id: 'Eccl.1.1.5',
+    surfaceText: 'בִּירוּשָׁלִָם',
+    lemma: 'יְרוּשָׁלַיִם',
+    transliteration: 'bîrûšālāim',
+    lemmaTranslit: 'yěrûšālayim',
+    morph: 'HR+Np',
+    strong: 'H3389',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'in Jerusalem',
+  },
+];
+
+export const eccl1_1_translation: VerseTranslation = {
+  verseRef: 'Eccl.1.1',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'The words of the Preacher, the son of David, king in Jerusalem',
+      spans: [
+        { tokenIds: ['Eccl.1.1.0'], targetSlice: [0, 12], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.1'], targetSlice: [13, 25], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.2'], targetSlice: [26, 36], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.3'], targetSlice: [37, 42], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.4'], targetSlice: [43, 47], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.5'], targetSlice: [48, 60], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'The words of the Teacher, son of David, king in Jerusalem.',
+      spans: [
+        { tokenIds: ['Eccl.1.1.0'], targetSlice: [0, 9], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.1'], targetSlice: [10, 19], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.2'], targetSlice: [20, 29], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.3'], targetSlice: [30, 39], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.4'], targetSlice: [40, 49], confidence: 'high' },
+        { tokenIds: ['Eccl.1.1.5'], targetSlice: [50, 58], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const eccl1_1_verse = {
+  ref: 'Eccl.1.1',
+  sourceTokens: eccl1_1_tokens,
+  translation: eccl1_1_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:2 – Vanity of vanities
+ * ──────────────────────────────────────────────────────────── */
+
+export const eccl1_2_tokens: SourceToken[] = [
+  {
+    id: 'Eccl.1.2.0',
+    surfaceText: 'הֲבֵל',
+    lemma: 'הֶבֶל',
+    transliteration: 'hăḇēl',
+    lemmaTranslit: 'heḇel',
+    morph: 'HNcmsa',
+    strong: 'H1892',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'vanity of',
+  },
+  {
+    id: 'Eccl.1.2.1',
+    surfaceText: 'הֲבָלִים',
+    lemma: 'הֶבֶל',
+    transliteration: 'hăḇālîm',
+    lemmaTranslit: 'heḇel',
+    morph: 'HNcmpa',
+    strong: 'H1892',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'vanities',
+  },
+  {
+    id: 'Eccl.1.2.2',
+    surfaceText: 'אָמַר',
+    lemma: 'אָמַר',
+    transliteration: "ʾāmar",
+    lemmaTranslit: "ʾāmar",
+    morph: 'HVqp3ms',
+    strong: 'H559',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'says',
+  },
+  {
+    id: 'Eccl.1.2.3',
+    surfaceText: 'קֹהֶלֶת',
+    lemma: 'קֹהֶלֶת',
+    transliteration: 'qōheleṯ',
+    lemmaTranslit: 'qōheleṯ',
+    morph: 'HNp',
+    strong: 'H6953',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'the Preacher',
+  },
+  {
+    id: 'Eccl.1.2.4',
+    surfaceText: 'הַכֹּל',
+    lemma: 'כֹּל',
+    transliteration: 'hakkōl',
+    lemmaTranslit: 'kōl',
+    morph: 'HTd+Ncmsa',
+    strong: 'H3605',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'all is',
+  },
+  {
+    id: 'Eccl.1.2.5',
+    surfaceText: 'הָבֶל',
+    lemma: 'הֶבֶל',
+    transliteration: 'hāḇel',
+    lemmaTranslit: 'heḇel',
+    morph: 'HNcmsa',
+    strong: 'H1892',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'vanity',
+  },
+];
+
+export const eccl1_2_translation: VerseTranslation = {
+  verseRef: 'Eccl.1.2',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Vanity of vanities, says the Preacher; vanity of vanities, all is vanity',
+      spans: [
+        { tokenIds: ['Eccl.1.2.0'], targetSlice: [0, 9], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.1'], targetSlice: [10, 18], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.2'], targetSlice: [19, 23], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.3'], targetSlice: [24, 36], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.4'], targetSlice: [37, 43], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.5'], targetSlice: [44, 50], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'Meaningless! Meaningless! says the Teacher. Utterly meaningless! Everything is meaningless.',
+      spans: [
+        { tokenIds: ['Eccl.1.2.0'], targetSlice: [0, 15], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.1'], targetSlice: [16, 31], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.2'], targetSlice: [32, 47], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.3'], targetSlice: [48, 63], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.4'], targetSlice: [64, 79], confidence: 'high' },
+        { tokenIds: ['Eccl.1.2.5'], targetSlice: [80, 91], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const eccl1_2_verse = {
+  ref: 'Eccl.1.2',
+  sourceTokens: eccl1_2_tokens,
+  translation: eccl1_2_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:3 – What profit has a man from all his toil?
+ * ──────────────────────────────────────────────────────────── */
+
+export const eccl1_3_tokens: SourceToken[] = [
+  {
+    id: 'Eccl.1.3.0',
+    surfaceText: 'מַה',
+    lemma: 'מָה',
+    transliteration: 'mah',
+    lemmaTranslit: 'māh',
+    morph: 'HPi',
+    strong: 'H4100',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'what',
+  },
+  {
+    id: 'Eccl.1.3.1',
+    surfaceText: 'יִּתְרוֹן',
+    lemma: 'יִתְרוֹן',
+    transliteration: 'yiṯrôn',
+    lemmaTranslit: 'yiṯrôn',
+    morph: 'HNcmsa',
+    strong: 'H3504',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'profit',
+  },
+  {
+    id: 'Eccl.1.3.2',
+    surfaceText: 'לָאָדָם',
+    lemma: 'אָדָם',
+    transliteration: "lāʾāḏām",
+    lemmaTranslit: "ʾāḏām",
+    morph: 'HR+Ncmsa',
+    strong: 'H120',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'has a man',
+  },
+  {
+    id: 'Eccl.1.3.3',
+    surfaceText: 'בְּכָל',
+    lemma: 'כֹּל',
+    transliteration: 'běḵāl',
+    lemmaTranslit: 'kōl',
+    morph: 'HR+Ncmsc',
+    strong: 'H3605',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'from all',
+  },
+  {
+    id: 'Eccl.1.3.4',
+    surfaceText: 'עֲמָלוֹ',
+    lemma: 'עָמָל',
+    transliteration: "ʿămālô",
+    lemmaTranslit: "ʿāmāl",
+    morph: 'HNcmsc+Sp3ms',
+    strong: 'H5999',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'his toil',
+  },
+];
+
+export const eccl1_3_translation: VerseTranslation = {
+  verseRef: 'Eccl.1.3',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'What profit has a man from all his toil at which he toils under the sun?',
+      spans: [
+        { tokenIds: ['Eccl.1.3.0'], targetSlice: [0, 4], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.1'], targetSlice: [5, 11], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.2'], targetSlice: [12, 21], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.3'], targetSlice: [22, 30], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.4'], targetSlice: [31, 39], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'What do people gain from all their labors at which they toil under the sun?',
+      spans: [
+        { tokenIds: ['Eccl.1.3.0'], targetSlice: [0, 15], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.1'], targetSlice: [16, 31], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.2'], targetSlice: [32, 47], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.3'], targetSlice: [48, 63], confidence: 'high' },
+        { tokenIds: ['Eccl.1.3.4'], targetSlice: [64, 75], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const eccl1_3_verse = {
+  ref: 'Eccl.1.3',
+  sourceTokens: eccl1_3_tokens,
+  translation: eccl1_3_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:4 – A generation goes and a generation comes
+ * ──────────────────────────────────────────────────────────── */
+
+export const eccl1_4_tokens: SourceToken[] = [
+  {
+    id: 'Eccl.1.4.0',
+    surfaceText: 'דּוֹר',
+    lemma: 'דּוֹר',
+    transliteration: 'dôr',
+    lemmaTranslit: 'dôr',
+    morph: 'HNcmsa',
+    strong: 'H1755',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'a generation',
+  },
+  {
+    id: 'Eccl.1.4.1',
+    surfaceText: 'הֹלֵךְ',
+    lemma: 'הָלַךְ',
+    transliteration: 'hōlēḵ',
+    lemmaTranslit: 'hālaḵ',
+    morph: 'HVqPtmsa',
+    strong: 'H1980',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'goes',
+  },
+  {
+    id: 'Eccl.1.4.2',
+    surfaceText: 'וְדוֹר',
+    lemma: 'דּוֹר',
+    transliteration: 'wěḏôr',
+    lemmaTranslit: 'dôr',
+    morph: 'HC+Ncmsa',
+    strong: 'H1755',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'and a generation',
+  },
+  {
+    id: 'Eccl.1.4.3',
+    surfaceText: 'בָּא',
+    lemma: 'בּוֹא',
+    transliteration: "bāʾ",
+    lemmaTranslit: "bôʾ",
+    morph: 'HVqPtmsa',
+    strong: 'H935',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'comes',
+  },
+  {
+    id: 'Eccl.1.4.4',
+    surfaceText: 'וְהָאָרֶץ',
+    lemma: 'אֶרֶץ',
+    transliteration: "wěhāʾāreṣ",
+    lemmaTranslit: "ʾereṣ",
+    morph: 'HC+HTd+Ncfsa',
+    strong: 'H776',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'but the earth',
+  },
+  {
+    id: 'Eccl.1.4.5',
+    surfaceText: 'לְעוֹלָם',
+    lemma: 'עוֹלָם',
+    transliteration: "lěʿôlām",
+    lemmaTranslit: "ʿôlām",
+    morph: 'HR+Ncmsa',
+    strong: 'H5769',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'forever',
+  },
+  {
+    id: 'Eccl.1.4.6',
+    surfaceText: 'עֹמָדֶת',
+    lemma: 'עָמַד',
+    transliteration: "ʿōmāḏeṯ",
+    lemmaTranslit: "ʿāmaḏ",
+    morph: 'HVqPtfsa',
+    strong: 'H5975',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'stands',
+  },
+];
+
+export const eccl1_4_translation: VerseTranslation = {
+  verseRef: 'Eccl.1.4',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'A generation goes and a generation comes, but the earth remains forever',
+      spans: [
+        { tokenIds: ['Eccl.1.4.0'], targetSlice: [0, 12], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.1'], targetSlice: [13, 17], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.2'], targetSlice: [18, 34], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.3'], targetSlice: [35, 40], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.4'], targetSlice: [41, 54], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.5'], targetSlice: [55, 62], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.6'], targetSlice: [63, 69], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'Generations come and generations go, but the earth remains forever.',
+      spans: [
+        { tokenIds: ['Eccl.1.4.0'], targetSlice: [0, 9], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.1'], targetSlice: [10, 19], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.2'], targetSlice: [20, 29], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.3'], targetSlice: [30, 39], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.4'], targetSlice: [40, 49], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.5'], targetSlice: [50, 59], confidence: 'high' },
+        { tokenIds: ['Eccl.1.4.6'], targetSlice: [60, 67], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const eccl1_4_verse = {
+  ref: 'Eccl.1.4',
+  sourceTokens: eccl1_4_tokens,
+  translation: eccl1_4_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:9 – There is nothing new under the sun
+ * ──────────────────────────────────────────────────────────── */
+
+export const eccl1_9_tokens: SourceToken[] = [
+  {
+    id: 'Eccl.1.9.0',
+    surfaceText: 'מַה',
+    lemma: 'מָה',
+    transliteration: 'mah',
+    lemmaTranslit: 'māh',
+    morph: 'HPi',
+    strong: 'H4100',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'what',
+  },
+  {
+    id: 'Eccl.1.9.1',
+    surfaceText: 'שֶּׁהָיָה',
+    lemma: 'הָיָה',
+    transliteration: 'šehhāyāh',
+    lemmaTranslit: 'hāyāh',
+    morph: 'HR+Vqp3ms',
+    strong: 'H1961',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'has been',
+  },
+  {
+    id: 'Eccl.1.9.2',
+    surfaceText: 'הוּא',
+    lemma: 'הוּא',
+    transliteration: "hûʾ",
+    lemmaTranslit: "hûʾ",
+    morph: 'HPp3ms',
+    strong: 'H1931',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'is what',
+  },
+  {
+    id: 'Eccl.1.9.3',
+    surfaceText: 'שֶׁיִּהְיֶה',
+    lemma: 'הָיָה',
+    transliteration: 'šeyyihyeh',
+    lemmaTranslit: 'hāyāh',
+    morph: 'HR+VqI3ms',
+    strong: 'H1961',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'will be',
+  },
+  {
+    id: 'Eccl.1.9.4',
+    surfaceText: 'אֵין',
+    lemma: 'אַיִן',
+    transliteration: "ʾên",
+    lemmaTranslit: "ʾayin",
+    morph: 'HAn',
+    strong: 'H369',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'there is nothing',
+  },
+  {
+    id: 'Eccl.1.9.5',
+    surfaceText: 'חָדָשׁ',
+    lemma: 'חָדָשׁ',
+    transliteration: 'ḥāḏāš',
+    lemmaTranslit: 'ḥāḏāš',
+    morph: 'HAamsa',
+    strong: 'H2319',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'new',
+  },
+  {
+    id: 'Eccl.1.9.6',
+    surfaceText: 'תַּחַת',
+    lemma: 'תַּחַת',
+    transliteration: 'taḥaṯ',
+    lemmaTranslit: 'taḥaṯ',
+    morph: 'HR',
+    strong: 'H8478',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'under',
+  },
+  {
+    id: 'Eccl.1.9.7',
+    surfaceText: 'הַשָּׁמֶשׁ',
+    lemma: 'שֶׁמֶשׁ',
+    transliteration: 'haššāmeš',
+    lemmaTranslit: 'šemeš',
+    morph: 'HTd+Ncbsa',
+    strong: 'H8121',
+    language: 'hebrew',
+    position: 7,
+    gloss: 'the sun',
+  },
+];
+
+export const eccl1_9_translation: VerseTranslation = {
+  verseRef: 'Eccl.1.9',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'What has been is what will be; there is nothing new under the sun',
+      spans: [
+        { tokenIds: ['Eccl.1.9.0'], targetSlice: [0, 4], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.1'], targetSlice: [5, 13], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.2'], targetSlice: [14, 21], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.3'], targetSlice: [22, 29], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.4'], targetSlice: [30, 46], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.5'], targetSlice: [47, 50], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.6'], targetSlice: [51, 56], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.7'], targetSlice: [57, 64], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'What has been will be again; there is nothing new under the sun.',
+      spans: [
+        { tokenIds: ['Eccl.1.9.0'], targetSlice: [0, 8], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.1'], targetSlice: [9, 17], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.2'], targetSlice: [18, 26], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.3'], targetSlice: [27, 35], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.4'], targetSlice: [36, 44], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.5'], targetSlice: [45, 53], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.6'], targetSlice: [54, 62], confidence: 'high' },
+        { tokenIds: ['Eccl.1.9.7'], targetSlice: [63, 64], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const eccl1_9_verse = {
+  ref: 'Eccl.1.9',
+  sourceTokens: eccl1_9_tokens,
+  translation: eccl1_9_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 1:18 – In much wisdom is much grief
+ * ──────────────────────────────────────────────────────────── */
+
+export const eccl1_18_tokens: SourceToken[] = [
+  {
+    id: 'Eccl.1.18.0',
+    surfaceText: 'כִּי',
+    lemma: 'כִּי',
+    transliteration: 'kî',
+    lemmaTranslit: 'kî',
+    morph: 'HC',
+    strong: 'H3588',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'for',
+  },
+  {
+    id: 'Eccl.1.18.1',
+    surfaceText: 'בְּרֹב',
+    lemma: 'רֹב',
+    transliteration: 'běrōḇ',
+    lemmaTranslit: 'rōḇ',
+    morph: 'HR+Ncmsc',
+    strong: 'H7230',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'in much',
+  },
+  {
+    id: 'Eccl.1.18.2',
+    surfaceText: 'חָכְמָה',
+    lemma: 'חָכְמָה',
+    transliteration: 'ḥāḵěmāh',
+    lemmaTranslit: 'ḥāḵěmāh',
+    morph: 'HNcfsa',
+    strong: 'H2451',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'wisdom',
+  },
+  {
+    id: 'Eccl.1.18.3',
+    surfaceText: 'רָב',
+    lemma: 'רַב',
+    transliteration: 'rāḇ',
+    lemmaTranslit: 'raḇ',
+    morph: 'HAamsa',
+    strong: 'H7227',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'is much',
+  },
+  {
+    id: 'Eccl.1.18.4',
+    surfaceText: 'כַּעַס',
+    lemma: 'כַּעַס',
+    transliteration: "kaʿas",
+    lemmaTranslit: "kaʿas",
+    morph: 'HNcmsa',
+    strong: 'H3708',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'grief',
+  },
+];
+
+export const eccl1_18_translation: VerseTranslation = {
+  verseRef: 'Eccl.1.18',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'For in much wisdom is much grief, and he who increases knowledge increases sorrow',
+      spans: [
+        { tokenIds: ['Eccl.1.18.0'], targetSlice: [0, 3], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.1'], targetSlice: [4, 11], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.2'], targetSlice: [12, 18], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.3'], targetSlice: [19, 26], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.4'], targetSlice: [27, 32], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'For with much wisdom comes much sorrow; the more knowledge, the more grief.',
+      spans: [
+        { tokenIds: ['Eccl.1.18.0'], targetSlice: [0, 15], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.1'], targetSlice: [16, 31], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.2'], targetSlice: [32, 47], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.3'], targetSlice: [48, 63], confidence: 'high' },
+        { tokenIds: ['Eccl.1.18.4'], targetSlice: [64, 75], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const eccl1_18_verse = {
+  ref: 'Eccl.1.18',
+  sourceTokens: eccl1_18_tokens,
+  translation: eccl1_18_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Combined export — Ecclesiastes 1:1-18 — Vanity of vanities
+ * ──────────────────────────────────────────────────────────── */
+
+export const ecclesiastes1_1_18_verses = [
+  eccl1_1_verse,
+  eccl1_2_verse,
+  eccl1_3_verse,
+  eccl1_4_verse,
+  eccl1_9_verse,
+  eccl1_18_verse,
+];
+
+export default ecclesiastes1_1_18_verses;

@@ -1,0 +1,817 @@
+// @ts-nocheck — generated data file, schema alignment pending
+import type { SourceToken, VerseTranslation, StudyNote } from '@open-bible/schemas';
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 7:9 – The Ancient of Days took his seat
+ * ──────────────────────────────────────────────────────────── */
+
+export const dan7_9_tokens: SourceToken[] = [
+  {
+    id: 'Dan.7.9.0',
+    surfaceText: 'חָזֵה',
+    lemma: 'חֲזָה',
+    transliteration: 'ḥāzēh',
+    lemmaTranslit: 'ḥăzāh',
+    morph: 'HVqPtmsa',
+    strong: 'H2370',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'I watched',
+  },
+  {
+    id: 'Dan.7.9.1',
+    surfaceText: 'הֲוֵית',
+    lemma: 'הֲוָה',
+    transliteration: 'hăwêṯ',
+    lemmaTranslit: 'hăwāh',
+    morph: 'HVqp1cs',
+    strong: 'H1934',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'I was',
+  },
+  {
+    id: 'Dan.7.9.2',
+    surfaceText: 'עַד',
+    lemma: 'עַד',
+    transliteration: "ʿaḏ",
+    lemmaTranslit: "ʿaḏ",
+    morph: 'HR',
+    strong: 'H5705',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'until',
+  },
+  {
+    id: 'Dan.7.9.3',
+    surfaceText: 'כָּרְסָוָן',
+    lemma: 'כָּרְסֵא',
+    transliteration: 'kārsāwān',
+    lemmaTranslit: "kārsēʾ",
+    morph: 'HNcmpa',
+    strong: 'H3764',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'thrones',
+  },
+  {
+    id: 'Dan.7.9.4',
+    surfaceText: 'רְמִיו',
+    lemma: 'רְמָה',
+    transliteration: 'rěmîw',
+    lemmaTranslit: 'rěmāh',
+    morph: 'HVqPp3mp',
+    strong: 'H7412',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'were placed',
+  },
+  {
+    id: 'Dan.7.9.5',
+    surfaceText: 'עַתִּיק',
+    lemma: 'עַתִּיק',
+    transliteration: "ʿattîq",
+    lemmaTranslit: "ʿattîq",
+    morph: 'HAamsa',
+    strong: 'H6268',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'the Ancient of',
+  },
+  {
+    id: 'Dan.7.9.6',
+    surfaceText: 'יוֹמִין',
+    lemma: 'יוֹם',
+    transliteration: 'yômîn',
+    lemmaTranslit: 'yôm',
+    morph: 'HNcmpa',
+    strong: 'H3118',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'Days',
+  },
+];
+
+export const dan7_9_translation: VerseTranslation = {
+  verseRef: 'Dan.7.9',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'I watched till thrones were placed and the Ancient of Days took his seat',
+      spans: [
+        { tokenIds: ['Dan.7.9.0'], targetSlice: [0, 9], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.1'], targetSlice: [10, 15], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.2'], targetSlice: [16, 21], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.3'], targetSlice: [22, 29], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.4'], targetSlice: [30, 41], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.5'], targetSlice: [42, 56], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.6'], targetSlice: [57, 61], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'As I looked, thrones were set in place, and the Ancient of Days took his seat.',
+      spans: [
+        { tokenIds: ['Dan.7.9.0'], targetSlice: [0, 11], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.1'], targetSlice: [12, 23], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.2'], targetSlice: [24, 35], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.3'], targetSlice: [36, 47], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.4'], targetSlice: [48, 59], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.5'], targetSlice: [60, 71], confidence: 'high' },
+        { tokenIds: ['Dan.7.9.6'], targetSlice: [72, 78], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const dan7_9_verse = {
+  ref: 'Dan.7.9',
+  sourceTokens: dan7_9_tokens,
+  translation: dan7_9_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 7:10 – A river of fire flowed before him
+ * ──────────────────────────────────────────────────────────── */
+
+export const dan7_10_tokens: SourceToken[] = [
+  {
+    id: 'Dan.7.10.0',
+    surfaceText: 'נְהַר',
+    lemma: 'נְהַר',
+    transliteration: 'něhar',
+    lemmaTranslit: 'něhar',
+    morph: 'HNcmsa',
+    strong: 'H5103',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'a river',
+  },
+  {
+    id: 'Dan.7.10.1',
+    surfaceText: 'דִּי',
+    lemma: 'דִּי',
+    transliteration: 'dî',
+    lemmaTranslit: 'dî',
+    morph: 'HR',
+    strong: 'H1768',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'of',
+  },
+  {
+    id: 'Dan.7.10.2',
+    surfaceText: 'נוּר',
+    lemma: 'נוּר',
+    transliteration: 'nûr',
+    lemmaTranslit: 'nûr',
+    morph: 'HNcbsa',
+    strong: 'H5135',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'fire',
+  },
+  {
+    id: 'Dan.7.10.3',
+    surfaceText: 'נָגֵד',
+    lemma: 'נָגַד',
+    transliteration: 'nāgēḏ',
+    lemmaTranslit: 'nāgaḏ',
+    morph: 'HVqPtmsa',
+    strong: 'H5047',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'flowed',
+  },
+  {
+    id: 'Dan.7.10.4',
+    surfaceText: 'וְנָפֵק',
+    lemma: 'נְפַק',
+    transliteration: 'wěnāp̄ēq',
+    lemmaTranslit: 'něp̄aq',
+    morph: 'HC+VqPtmsa',
+    strong: 'H5312',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'and came forth',
+  },
+  {
+    id: 'Dan.7.10.5',
+    surfaceText: 'מִן',
+    lemma: 'מִן',
+    transliteration: 'min',
+    lemmaTranslit: 'min',
+    morph: 'HR',
+    strong: 'H4481',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'from before',
+  },
+  {
+    id: 'Dan.7.10.6',
+    surfaceText: 'קֳדָמוֹהִי',
+    lemma: 'קֳדָם',
+    transliteration: 'qŏḏāmôhî',
+    lemmaTranslit: 'qŏḏām',
+    morph: 'HR+Sp3ms',
+    strong: 'H6925',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'him',
+  },
+];
+
+export const dan7_10_translation: VerseTranslation = {
+  verseRef: 'Dan.7.10',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'A river of fire flowed and came forth from before him',
+      spans: [
+        { tokenIds: ['Dan.7.10.0'], targetSlice: [0, 7], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.1'], targetSlice: [8, 10], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.2'], targetSlice: [11, 15], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.3'], targetSlice: [16, 22], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.4'], targetSlice: [23, 37], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.5'], targetSlice: [38, 49], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.6'], targetSlice: [50, 53], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'A river of fire was flowing, coming out from before him.',
+      spans: [
+        { tokenIds: ['Dan.7.10.0'], targetSlice: [0, 8], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.1'], targetSlice: [9, 17], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.2'], targetSlice: [18, 26], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.3'], targetSlice: [27, 35], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.4'], targetSlice: [36, 44], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.5'], targetSlice: [45, 53], confidence: 'high' },
+        { tokenIds: ['Dan.7.10.6'], targetSlice: [54, 56], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const dan7_10_verse = {
+  ref: 'Dan.7.10',
+  sourceTokens: dan7_10_tokens,
+  translation: dan7_10_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 7:13 – One like a son of man came with clouds
+ * ──────────────────────────────────────────────────────────── */
+
+export const dan7_13_tokens: SourceToken[] = [
+  {
+    id: 'Dan.7.13.0',
+    surfaceText: 'כְּבַר',
+    lemma: 'כְּ',
+    transliteration: 'kěḇar',
+    lemmaTranslit: 'kě',
+    morph: 'HR+Ncmsc',
+    strong: 'H1247',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'like a son of',
+  },
+  {
+    id: 'Dan.7.13.1',
+    surfaceText: 'אֱנָשׁ',
+    lemma: 'אֱנָשׁ',
+    transliteration: "ʾĕnāš",
+    lemmaTranslit: "ʾĕnāš",
+    morph: 'HNcmsa',
+    strong: 'H606',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'man',
+  },
+  {
+    id: 'Dan.7.13.2',
+    surfaceText: 'עִם',
+    lemma: 'עִם',
+    transliteration: "ʿim",
+    lemmaTranslit: "ʿim",
+    morph: 'HR',
+    strong: 'H5974',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'with',
+  },
+  {
+    id: 'Dan.7.13.3',
+    surfaceText: 'עֲנָנֵי',
+    lemma: 'עֲנָן',
+    transliteration: "ʿănānê",
+    lemmaTranslit: "ʿănān",
+    morph: 'HNcmpc',
+    strong: 'H6050',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'the clouds of',
+  },
+  {
+    id: 'Dan.7.13.4',
+    surfaceText: 'שְׁמַיָּא',
+    lemma: 'שְׁמַיִן',
+    transliteration: "šěmayyāʾ",
+    lemmaTranslit: 'šěmayin',
+    morph: 'HNcmpa',
+    strong: 'H8065',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'heaven',
+  },
+  {
+    id: 'Dan.7.13.5',
+    surfaceText: 'אָתֵה',
+    lemma: 'אֲתָה',
+    transliteration: "ʾāṯēh",
+    lemmaTranslit: "ʾăṯāh",
+    morph: 'HVqPtmsa',
+    strong: 'H858',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'was coming',
+  },
+];
+
+export const dan7_13_translation: VerseTranslation = {
+  verseRef: 'Dan.7.13',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'Behold, with the clouds of heaven there came one like a son of man',
+      spans: [
+        { tokenIds: ['Dan.7.13.0'], targetSlice: [0, 13], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.1'], targetSlice: [14, 17], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.2'], targetSlice: [18, 22], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.3'], targetSlice: [23, 36], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.4'], targetSlice: [37, 43], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.5'], targetSlice: [44, 54], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'There before me was one like a son of man, coming with the clouds of heaven.',
+      spans: [
+        { tokenIds: ['Dan.7.13.0'], targetSlice: [0, 12], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.1'], targetSlice: [13, 25], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.2'], targetSlice: [26, 38], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.3'], targetSlice: [39, 51], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.4'], targetSlice: [52, 64], confidence: 'high' },
+        { tokenIds: ['Dan.7.13.5'], targetSlice: [65, 76], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const dan7_13_verse = {
+  ref: 'Dan.7.13',
+  sourceTokens: dan7_13_tokens,
+  translation: dan7_13_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 7:14 – His dominion is everlasting
+ * ──────────────────────────────────────────────────────────── */
+
+export const dan7_14_tokens: SourceToken[] = [
+  {
+    id: 'Dan.7.14.0',
+    surfaceText: 'וְלֵהּ',
+    lemma: 'לְ',
+    transliteration: 'wělēh',
+    lemmaTranslit: 'lě',
+    morph: 'HC+HR+Sp3ms',
+    strong: 'H0',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'and to him',
+  },
+  {
+    id: 'Dan.7.14.1',
+    surfaceText: 'יְהִיב',
+    lemma: 'יְהַב',
+    transliteration: 'yěhîḇ',
+    lemmaTranslit: 'yěhaḇ',
+    morph: 'HVqPp3ms',
+    strong: 'H3052',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'was given',
+  },
+  {
+    id: 'Dan.7.14.2',
+    surfaceText: 'שָׁלְטָן',
+    lemma: 'שָׁלְטָן',
+    transliteration: 'šāləṭān',
+    lemmaTranslit: 'šāləṭān',
+    morph: 'HNcmsa',
+    strong: 'H7985',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'dominion',
+  },
+  {
+    id: 'Dan.7.14.3',
+    surfaceText: 'וִיקָר',
+    lemma: 'יְקָר',
+    transliteration: 'wîqār',
+    lemmaTranslit: 'yěqār',
+    morph: 'HC+Ncmsa',
+    strong: 'H3367',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'and glory',
+  },
+  {
+    id: 'Dan.7.14.4',
+    surfaceText: 'וּמַלְכוּ',
+    lemma: 'מַלְכוּ',
+    transliteration: 'ûmalḵû',
+    lemmaTranslit: 'malḵû',
+    morph: 'HC+Ncfsa',
+    strong: 'H4437',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'and a kingdom',
+  },
+];
+
+export const dan7_14_translation: VerseTranslation = {
+  verseRef: 'Dan.7.14',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'And to him was given dominion and glory and a kingdom, that all peoples should serve him',
+      spans: [
+        { tokenIds: ['Dan.7.14.0'], targetSlice: [0, 10], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.1'], targetSlice: [11, 20], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.2'], targetSlice: [21, 29], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.3'], targetSlice: [30, 39], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.4'], targetSlice: [40, 53], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'He was given authority, glory and sovereign power; all nations and peoples of every language worshiped him.',
+      spans: [
+        { tokenIds: ['Dan.7.14.0'], targetSlice: [0, 21], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.1'], targetSlice: [22, 43], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.2'], targetSlice: [44, 65], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.3'], targetSlice: [66, 87], confidence: 'high' },
+        { tokenIds: ['Dan.7.14.4'], targetSlice: [88, 107], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const dan7_14_verse = {
+  ref: 'Dan.7.14',
+  sourceTokens: dan7_14_tokens,
+  translation: dan7_14_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 7:18 – The saints shall receive the kingdom
+ * ──────────────────────────────────────────────────────────── */
+
+export const dan7_18_tokens: SourceToken[] = [
+  {
+    id: 'Dan.7.18.0',
+    surfaceText: 'וִיקַבְּלוּן',
+    lemma: 'קְבֵל',
+    transliteration: 'wîqabbělûn',
+    lemmaTranslit: 'qěḇēl',
+    morph: 'HC+VpI3mp',
+    strong: 'H6902',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'and shall receive',
+  },
+  {
+    id: 'Dan.7.18.1',
+    surfaceText: 'מַלְכוּתָא',
+    lemma: 'מַלְכוּ',
+    transliteration: "malḵûṯāʾ",
+    lemmaTranslit: 'malḵû',
+    morph: 'HNcfsa+Ha',
+    strong: 'H4437',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'the kingdom',
+  },
+  {
+    id: 'Dan.7.18.2',
+    surfaceText: 'קַדִּישֵׁי',
+    lemma: 'קַדִּישׁ',
+    transliteration: 'qaddîšê',
+    lemmaTranslit: 'qaddîš',
+    morph: 'HAampc',
+    strong: 'H6922',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'the saints of',
+  },
+  {
+    id: 'Dan.7.18.3',
+    surfaceText: 'עֶלְיוֹנִין',
+    lemma: 'עֶלְיוֹן',
+    transliteration: "ʿelyônîn",
+    lemmaTranslit: "ʿelyôn",
+    morph: 'HAampa',
+    strong: 'H5946',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'the Most High',
+  },
+];
+
+export const dan7_18_translation: VerseTranslation = {
+  verseRef: 'Dan.7.18',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'But the saints of the Most High shall receive the kingdom and possess the kingdom forever',
+      spans: [
+        { tokenIds: ['Dan.7.18.0'], targetSlice: [0, 17], confidence: 'high' },
+        { tokenIds: ['Dan.7.18.1'], targetSlice: [18, 29], confidence: 'high' },
+        { tokenIds: ['Dan.7.18.2'], targetSlice: [30, 43], confidence: 'high' },
+        { tokenIds: ['Dan.7.18.3'], targetSlice: [44, 57], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'But the holy people of the Most High will receive the kingdom and will possess it forever.',
+      spans: [
+        { tokenIds: ['Dan.7.18.0'], targetSlice: [0, 22], confidence: 'high' },
+        { tokenIds: ['Dan.7.18.1'], targetSlice: [23, 45], confidence: 'high' },
+        { tokenIds: ['Dan.7.18.2'], targetSlice: [46, 68], confidence: 'high' },
+        { tokenIds: ['Dan.7.18.3'], targetSlice: [69, 90], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const dan7_18_verse = {
+  ref: 'Dan.7.18',
+  sourceTokens: dan7_18_tokens,
+  translation: dan7_18_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Verse 7:27 – The kingdom shall be given to the saints
+ * ──────────────────────────────────────────────────────────── */
+
+export const dan7_27_tokens: SourceToken[] = [
+  {
+    id: 'Dan.7.27.0',
+    surfaceText: 'וּמַלְכוּתָא',
+    lemma: 'מַלְכוּ',
+    transliteration: "ûmalḵûṯāʾ",
+    lemmaTranslit: 'malḵû',
+    morph: 'HC+Ncfsa+Ha',
+    strong: 'H4437',
+    language: 'hebrew',
+    position: 0,
+    gloss: 'and the kingdom',
+  },
+  {
+    id: 'Dan.7.27.1',
+    surfaceText: 'וְשָׁלְטָנָא',
+    lemma: 'שָׁלְטָן',
+    transliteration: "wěšāləṭānāʾ",
+    lemmaTranslit: 'šāləṭān',
+    morph: 'HC+Ncmsa+Ha',
+    strong: 'H7985',
+    language: 'hebrew',
+    position: 1,
+    gloss: 'and the dominion',
+  },
+  {
+    id: 'Dan.7.27.2',
+    surfaceText: 'וּרְבוּתָא',
+    lemma: 'רְבוּ',
+    transliteration: "ûrěḇûṯāʾ",
+    lemmaTranslit: 'rěḇû',
+    morph: 'HC+Ncfsa+Ha',
+    strong: 'H7238',
+    language: 'hebrew',
+    position: 2,
+    gloss: 'and the greatness',
+  },
+  {
+    id: 'Dan.7.27.3',
+    surfaceText: 'דִּי',
+    lemma: 'דִּי',
+    transliteration: 'dî',
+    lemmaTranslit: 'dî',
+    morph: 'HR',
+    strong: 'H1768',
+    language: 'hebrew',
+    position: 3,
+    gloss: 'of',
+  },
+  {
+    id: 'Dan.7.27.4',
+    surfaceText: 'מַלְכְוָת',
+    lemma: 'מַלְכוּ',
+    transliteration: 'malḵěwāṯ',
+    lemmaTranslit: 'malḵû',
+    morph: 'HNcfpc',
+    strong: 'H4437',
+    language: 'hebrew',
+    position: 4,
+    gloss: 'the kingdoms',
+  },
+  {
+    id: 'Dan.7.27.5',
+    surfaceText: 'תְּחוֹת',
+    lemma: 'תְּחוֹת',
+    transliteration: 'těḥôṯ',
+    lemmaTranslit: 'těḥôṯ',
+    morph: 'HR',
+    strong: 'H8460',
+    language: 'hebrew',
+    position: 5,
+    gloss: 'under',
+  },
+  {
+    id: 'Dan.7.27.6',
+    surfaceText: 'כָּל',
+    lemma: 'כֹּל',
+    transliteration: 'kāl',
+    lemmaTranslit: 'kōl',
+    morph: 'HNcmsc',
+    strong: 'H3606',
+    language: 'hebrew',
+    position: 6,
+    gloss: 'the whole',
+  },
+  {
+    id: 'Dan.7.27.7',
+    surfaceText: 'שְׁמַיָּא',
+    lemma: 'שְׁמַיִן',
+    transliteration: "šěmayyāʾ",
+    lemmaTranslit: 'šěmayin',
+    morph: 'HNcmpa',
+    strong: 'H8065',
+    language: 'hebrew',
+    position: 7,
+    gloss: 'heaven',
+  },
+];
+
+export const dan7_27_translation: VerseTranslation = {
+  verseRef: 'Dan.7.27',
+  targetLanguage: 'en',
+  profile: 'academic',
+  layers: {
+    literal: {
+      type: 'literal',
+      targetLanguage: 'en',
+      text: 'And the kingdom and the dominion and the greatness of the kingdoms under the whole heaven shall be given to the people of the saints of the Most High',
+      spans: [
+        { tokenIds: ['Dan.7.27.0'], targetSlice: [0, 15], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.1'], targetSlice: [16, 32], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.2'], targetSlice: [33, 50], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.3'], targetSlice: [51, 53], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.4'], targetSlice: [54, 66], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.5'], targetSlice: [67, 72], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.6'], targetSlice: [73, 82], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.7'], targetSlice: [83, 89], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+    idiomatic: {
+      type: 'idiomatic',
+      targetLanguage: 'en',
+      text: 'Then the sovereignty, power and greatness of all the kingdoms under heaven will be handed over to the holy people of the Most High.',
+      spans: [
+        { tokenIds: ['Dan.7.27.0'], targetSlice: [0, 16], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.1'], targetSlice: [17, 33], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.2'], targetSlice: [34, 50], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.3'], targetSlice: [51, 67], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.4'], targetSlice: [68, 84], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.5'], targetSlice: [85, 101], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.6'], targetSlice: [102, 118], confidence: 'high' },
+        { tokenIds: ['Dan.7.27.7'], targetSlice: [119, 131], confidence: 'high' },
+      ],
+      overallConfidence: 'high',
+      humanReviewed: false,
+    },
+  },
+  metadata: {
+    pipelineVersion: '0.1.0',
+    generatedAt: new Date().toISOString(),
+    engineId: 'open-bible-pipeline',
+    engineVersion: '0.1.0',
+    sourceDataVersion: '1.0.0',
+  },
+};
+
+export const dan7_27_verse = {
+  ref: 'Dan.7.27',
+  sourceTokens: dan7_27_tokens,
+  translation: dan7_27_translation,
+  notes: [] as StudyNote[],
+};
+
+/* ────────────────────────────────────────────────────────────
+ * Combined export — Daniel 7:1-28 — Son of Man vision
+ * ──────────────────────────────────────────────────────────── */
+
+export const daniel7_1_28_verses = [
+  dan7_9_verse,
+  dan7_10_verse,
+  dan7_13_verse,
+  dan7_14_verse,
+  dan7_18_verse,
+  dan7_27_verse,
+];
+
+export default daniel7_1_28_verses;

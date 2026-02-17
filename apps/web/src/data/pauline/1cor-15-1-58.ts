@@ -14,7 +14,7 @@ export const corinthians1_15_3_tokens: SourceToken[] = [
     lemma: 'Χριστός',
     lemmaTranslit: 'Christos',
     gloss: 'Christ',
-    morphology: { pos: 'proper-noun', gender: 'masculine', number: 'singular', case: 'nominative' },
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'nominative' },
     strongs: 'G5547',
     position: 0,
   },
@@ -57,18 +57,6 @@ export const corinthians1_15_3_tokens: SourceToken[] = [
   {
     id: '1Cor.15.3.4',
     language: 'greek',
-    text: 'ἡμῶν',
-    transliteration: 'hēmōn',
-    lemma: 'ἐγώ',
-    lemmaTranslit: 'egō',
-    gloss: 'our',
-    morphology: { pos: 'pronoun', person: '1', number: 'plural', case: 'genitive' },
-    strongs: 'G1473',
-    position: 4,
-  },
-  {
-    id: '1Cor.15.3.5',
-    language: 'greek',
     text: 'κατὰ',
     transliteration: 'kata',
     lemma: 'κατά',
@@ -76,6 +64,18 @@ export const corinthians1_15_3_tokens: SourceToken[] = [
     gloss: 'according to',
     morphology: { pos: 'preposition' },
     strongs: 'G2596',
+    position: 4,
+  },
+  {
+    id: '1Cor.15.3.5',
+    language: 'greek',
+    text: 'τὰς',
+    transliteration: 'tas',
+    lemma: 'ὁ',
+    lemmaTranslit: 'ho',
+    gloss: 'the',
+    morphology: { pos: 'article', gender: 'feminine', number: 'plural', case: 'accusative' },
+    strongs: 'G3588',
     position: 5,
   },
   {
@@ -100,15 +100,11 @@ export const corinthians1_15_3_translation: VerseTranslation = {
     literal: {
       type: 'literal',
       targetLanguage: 'en',
-      text: "That Christ died for the sins of us according to the Scriptures.",
+      text: "That Christ died for our sins according to the Scriptures.",
       spans: [
-        { id: '1Cor.15.3.en.lit.0', text: 'Christ', position: 0, sourceTokenIds: ['1Cor.15.3.0'], confidence: 'high' },
-        { id: '1Cor.15.3.en.lit.1', text: 'died', position: 1, sourceTokenIds: ['1Cor.15.3.1'], confidence: 'high' },
-        { id: '1Cor.15.3.en.lit.2', text: 'for', position: 2, sourceTokenIds: ['1Cor.15.3.2'], confidence: 'high' },
-        { id: '1Cor.15.3.en.lit.3', text: 'sins', position: 3, sourceTokenIds: ['1Cor.15.3.3'], confidence: 'high' },
-        { id: '1Cor.15.3.en.lit.4', text: 'our', position: 4, sourceTokenIds: ['1Cor.15.3.4'], confidence: 'high' },
-        { id: '1Cor.15.3.en.lit.5', text: 'according to', position: 5, sourceTokenIds: ['1Cor.15.3.5'], confidence: 'high' },
-        { id: '1Cor.15.3.en.lit.6', text: 'Scriptures', position: 6, sourceTokenIds: ['1Cor.15.3.6'], confidence: 'high' },
+        { id: '1Cor.15.3.en.lit.0', text: 'That Christ died', position: 0, sourceTokenIds: ['1Cor.15.3.0', '1Cor.15.3.1'], confidence: 'high' },
+        { id: '1Cor.15.3.en.lit.1', text: 'for our sins', position: 1, sourceTokenIds: ['1Cor.15.3.2', '1Cor.15.3.3'], confidence: 'high' },
+        { id: '1Cor.15.3.en.lit.2', text: 'according to the Scriptures.', position: 2, sourceTokenIds: ['1Cor.15.3.4', '1Cor.15.3.5', '1Cor.15.3.6'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -116,15 +112,10 @@ export const corinthians1_15_3_translation: VerseTranslation = {
     idiomatic: {
       type: 'idiomatic',
       targetLanguage: 'en',
-      text: "That Christ died for our sins according to the Scriptures.",
+      text: "Christ died for our sins in accordance with the Scriptures.",
       spans: [
-        { id: '1Cor.15.3.en.idi.0', text: 'Christ', position: 0, sourceTokenIds: ['1Cor.15.3.0'], confidence: 'high' },
-        { id: '1Cor.15.3.en.idi.1', text: 'died', position: 1, sourceTokenIds: ['1Cor.15.3.1'], confidence: 'high' },
-        { id: '1Cor.15.3.en.idi.2', text: 'for', position: 2, sourceTokenIds: ['1Cor.15.3.2'], confidence: 'high' },
-        { id: '1Cor.15.3.en.idi.3', text: 'sins', position: 3, sourceTokenIds: ['1Cor.15.3.3'], confidence: 'high' },
-        { id: '1Cor.15.3.en.idi.4', text: 'our', position: 4, sourceTokenIds: ['1Cor.15.3.4'], confidence: 'high' },
-        { id: '1Cor.15.3.en.idi.5', text: 'according to', position: 5, sourceTokenIds: ['1Cor.15.3.5'], confidence: 'high' },
-        { id: '1Cor.15.3.en.idi.6', text: 'Scriptures', position: 6, sourceTokenIds: ['1Cor.15.3.6'], confidence: 'high' },
+        { id: '1Cor.15.3.en.idi.0', text: 'Christ died for our sins', position: 0, sourceTokenIds: ['1Cor.15.3.0', '1Cor.15.3.1', '1Cor.15.3.2', '1Cor.15.3.3'], confidence: 'high' },
+        { id: '1Cor.15.3.en.idi.1', text: 'in accordance with the Scriptures.', position: 1, sourceTokenIds: ['1Cor.15.3.4', '1Cor.15.3.5', '1Cor.15.3.6'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -140,8 +131,15 @@ export const corinthians1_15_3_translation: VerseTranslation = {
 };
 
 
+export const corinthians1_15_3_verse = {
+  ref: '1Cor.15.3',
+  sourceTokens: corinthians1_15_3_tokens,
+  translation: corinthians1_15_3_translation,
+  notes: [] as StudyNote[],
+};
+
 /* ────────────────────────────────────────────────────────────
- * Verse 15:4 – He was buried and raised
+ * Verse 15:4 – Buried and raised on the third day
  * ──────────────────────────────────────────────────────────── */
 
 export const corinthians1_15_4_tokens: SourceToken[] = [
@@ -152,7 +150,7 @@ export const corinthians1_15_4_tokens: SourceToken[] = [
     transliteration: 'etaphē',
     lemma: 'θάπτω',
     lemmaTranslit: 'thaptō',
-    gloss: 'he was buried',
+    gloss: 'was buried',
     morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'aorist', voice: 'passive', mood: 'indicative' },
     strongs: 'G2290',
     position: 0,
@@ -164,7 +162,7 @@ export const corinthians1_15_4_tokens: SourceToken[] = [
     transliteration: 'egēgertai',
     lemma: 'ἐγείρω',
     lemmaTranslit: 'egeirō',
-    gloss: 'he has been raised',
+    gloss: 'has been raised',
     morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'perfect', voice: 'passive', mood: 'indicative' },
     strongs: 'G1453',
     position: 1,
@@ -172,13 +170,13 @@ export const corinthians1_15_4_tokens: SourceToken[] = [
   {
     id: '1Cor.15.4.2',
     language: 'greek',
-    text: 'τῇ',
-    transliteration: 'tē',
-    lemma: 'ὁ',
-    lemmaTranslit: 'ho',
-    gloss: 'the',
-    morphology: { pos: 'article', gender: 'feminine', number: 'singular', case: 'dative' },
-    strongs: 'G3588',
+    text: 'τρίτῃ',
+    transliteration: 'tritē',
+    lemma: 'τρίτος',
+    lemmaTranslit: 'tritos',
+    gloss: 'third',
+    morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', case: 'dative' },
+    strongs: 'G5154',
     position: 2,
   },
   {
@@ -196,30 +194,6 @@ export const corinthians1_15_4_tokens: SourceToken[] = [
   {
     id: '1Cor.15.4.4',
     language: 'greek',
-    text: 'τῇ',
-    transliteration: 'tē',
-    lemma: 'ὁ',
-    lemmaTranslit: 'ho',
-    gloss: 'the',
-    morphology: { pos: 'article', gender: 'feminine', number: 'singular', case: 'dative' },
-    strongs: 'G3588',
-    position: 4,
-  },
-  {
-    id: '1Cor.15.4.5',
-    language: 'greek',
-    text: 'τρίτῃ',
-    transliteration: 'tritē',
-    lemma: 'τρίτος',
-    lemmaTranslit: 'tritos',
-    gloss: 'third',
-    morphology: { pos: 'adjective', gender: 'feminine', number: 'singular', case: 'dative' },
-    strongs: 'G5154',
-    position: 5,
-  },
-  {
-    id: '1Cor.15.4.6',
-    language: 'greek',
     text: 'γραφάς',
     transliteration: 'graphas',
     lemma: 'γραφή',
@@ -227,7 +201,7 @@ export const corinthians1_15_4_tokens: SourceToken[] = [
     gloss: 'Scriptures',
     morphology: { pos: 'noun', gender: 'feminine', number: 'plural', case: 'accusative' },
     strongs: 'G1124',
-    position: 6,
+    position: 4,
   },
 ];
 
@@ -239,15 +213,11 @@ export const corinthians1_15_4_translation: VerseTranslation = {
     literal: {
       type: 'literal',
       targetLanguage: 'en',
-      text: "And that he was buried, and that he has been raised on the day the third according to the Scriptures.",
+      text: "And that he was buried, and that he has been raised on the third day according to the Scriptures.",
       spans: [
-        { id: '1Cor.15.4.en.lit.0', text: 'he was buried', position: 0, sourceTokenIds: ['1Cor.15.4.0'], confidence: 'high' },
-        { id: '1Cor.15.4.en.lit.1', text: 'he has been raised', position: 1, sourceTokenIds: ['1Cor.15.4.1'], confidence: 'high' },
-        { id: '1Cor.15.4.en.lit.2', text: 'the', position: 2, sourceTokenIds: ['1Cor.15.4.2'], confidence: 'high' },
-        { id: '1Cor.15.4.en.lit.3', text: 'day', position: 3, sourceTokenIds: ['1Cor.15.4.3'], confidence: 'high' },
-        { id: '1Cor.15.4.en.lit.4', text: 'the', position: 4, sourceTokenIds: ['1Cor.15.4.4'], confidence: 'high' },
-        { id: '1Cor.15.4.en.lit.5', text: 'third', position: 5, sourceTokenIds: ['1Cor.15.4.5'], confidence: 'high' },
-        { id: '1Cor.15.4.en.lit.6', text: 'Scriptures', position: 6, sourceTokenIds: ['1Cor.15.4.6'], confidence: 'high' },
+        { id: '1Cor.15.4.en.lit.0', text: 'And that he was buried,', position: 0, sourceTokenIds: ['1Cor.15.4.0'], confidence: 'high' },
+        { id: '1Cor.15.4.en.lit.1', text: 'and that he has been raised on the third day', position: 1, sourceTokenIds: ['1Cor.15.4.1', '1Cor.15.4.2', '1Cor.15.4.3'], confidence: 'high' },
+        { id: '1Cor.15.4.en.lit.2', text: 'according to the Scriptures.', position: 2, sourceTokenIds: ['1Cor.15.4.4'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -255,15 +225,11 @@ export const corinthians1_15_4_translation: VerseTranslation = {
     idiomatic: {
       type: 'idiomatic',
       targetLanguage: 'en',
-      text: "That he was buried, that he was raised on the third day according to the Scriptures.",
+      text: "He was buried, and he was raised on the third day according to the Scriptures.",
       spans: [
-        { id: '1Cor.15.4.en.idi.0', text: 'he was buried', position: 0, sourceTokenIds: ['1Cor.15.4.0'], confidence: 'high' },
-        { id: '1Cor.15.4.en.idi.1', text: 'he has been raised', position: 1, sourceTokenIds: ['1Cor.15.4.1'], confidence: 'high' },
-        { id: '1Cor.15.4.en.idi.2', text: 'the', position: 2, sourceTokenIds: ['1Cor.15.4.2'], confidence: 'high' },
-        { id: '1Cor.15.4.en.idi.3', text: 'day', position: 3, sourceTokenIds: ['1Cor.15.4.3'], confidence: 'high' },
-        { id: '1Cor.15.4.en.idi.4', text: 'the', position: 4, sourceTokenIds: ['1Cor.15.4.4'], confidence: 'high' },
-        { id: '1Cor.15.4.en.idi.5', text: 'third', position: 5, sourceTokenIds: ['1Cor.15.4.5'], confidence: 'high' },
-        { id: '1Cor.15.4.en.idi.6', text: 'Scriptures', position: 6, sourceTokenIds: ['1Cor.15.4.6'], confidence: 'high' },
+        { id: '1Cor.15.4.en.idi.0', text: 'He was buried,', position: 0, sourceTokenIds: ['1Cor.15.4.0'], confidence: 'high' },
+        { id: '1Cor.15.4.en.idi.1', text: 'and he was raised on the third day', position: 1, sourceTokenIds: ['1Cor.15.4.1', '1Cor.15.4.2', '1Cor.15.4.3'], confidence: 'high' },
+        { id: '1Cor.15.4.en.idi.2', text: 'according to the Scriptures.', position: 2, sourceTokenIds: ['1Cor.15.4.4'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -279,19 +245,26 @@ export const corinthians1_15_4_translation: VerseTranslation = {
 };
 
 
+export const corinthians1_15_4_verse = {
+  ref: '1Cor.15.4',
+  sourceTokens: corinthians1_15_4_tokens,
+  translation: corinthians1_15_4_translation,
+  notes: [] as StudyNote[],
+};
+
 /* ────────────────────────────────────────────────────────────
- * Verse 15:20 – Christ raised, firstfruits of the dead
+ * Verse 15:20 – Christ raised as firstfruits
  * ──────────────────────────────────────────────────────────── */
 
 export const corinthians1_15_20_tokens: SourceToken[] = [
   {
     id: '1Cor.15.20.0',
     language: 'greek',
-    text: 'Νυνὶ',
-    transliteration: 'Nyni',
+    text: 'νυνὶ',
+    transliteration: 'nyni',
     lemma: 'νυνί',
     lemmaTranslit: 'nyni',
-    gloss: 'But now',
+    gloss: 'but now',
     morphology: { pos: 'adverb' },
     strongs: 'G3570',
     position: 0,
@@ -304,7 +277,7 @@ export const corinthians1_15_20_tokens: SourceToken[] = [
     lemma: 'Χριστός',
     lemmaTranslit: 'Christos',
     gloss: 'Christ',
-    morphology: { pos: 'proper-noun', gender: 'masculine', number: 'singular', case: 'nominative' },
+    morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'nominative' },
     strongs: 'G5547',
     position: 1,
   },
@@ -323,29 +296,17 @@ export const corinthians1_15_20_tokens: SourceToken[] = [
   {
     id: '1Cor.15.20.3',
     language: 'greek',
-    text: 'ἐκ',
-    transliteration: 'ek',
-    lemma: 'ἐκ',
-    lemmaTranslit: 'ek',
-    gloss: 'from',
-    morphology: { pos: 'preposition' },
-    strongs: 'G1537',
-    position: 3,
-  },
-  {
-    id: '1Cor.15.20.4',
-    language: 'greek',
     text: 'νεκρῶν',
     transliteration: 'nekrōn',
     lemma: 'νεκρός',
     lemmaTranslit: 'nekros',
-    gloss: 'the dead',
+    gloss: 'of the dead',
     morphology: { pos: 'adjective', gender: 'masculine', number: 'plural', case: 'genitive' },
     strongs: 'G3498',
-    position: 4,
+    position: 3,
   },
   {
-    id: '1Cor.15.20.5',
+    id: '1Cor.15.20.4',
     language: 'greek',
     text: 'ἀπαρχὴ',
     transliteration: 'aparchē',
@@ -354,19 +315,19 @@ export const corinthians1_15_20_tokens: SourceToken[] = [
     gloss: 'firstfruits',
     morphology: { pos: 'noun', gender: 'feminine', number: 'singular', case: 'nominative' },
     strongs: 'G536',
-    position: 5,
+    position: 4,
   },
   {
-    id: '1Cor.15.20.6',
+    id: '1Cor.15.20.5',
     language: 'greek',
     text: 'κεκοιμημένων',
     transliteration: 'kekoimēmenōn',
     lemma: 'κοιμάω',
     lemmaTranslit: 'koimaō',
     gloss: 'of those who have fallen asleep',
-    morphology: { pos: 'verb', number: 'plural', tense: 'perfect', voice: 'middle-passive', mood: 'participle', case: 'genitive' },
+    morphology: { pos: 'verb', person: '3', number: 'plural', tense: 'perfect', voice: 'passive', mood: 'participle' },
     strongs: 'G2837',
-    position: 6,
+    position: 5,
   },
 ];
 
@@ -378,15 +339,11 @@ export const corinthians1_15_20_translation: VerseTranslation = {
     literal: {
       type: 'literal',
       targetLanguage: 'en',
-      text: "But now Christ has been raised from the dead, firstfruits of those having fallen asleep.",
+      text: "But now Christ has been raised from the dead, the firstfruits of those having fallen asleep.",
       spans: [
-        { id: '1Cor.15.20.en.lit.0', text: 'But now', position: 0, sourceTokenIds: ['1Cor.15.20.0'], confidence: 'high' },
-        { id: '1Cor.15.20.en.lit.1', text: 'Christ', position: 1, sourceTokenIds: ['1Cor.15.20.1'], confidence: 'high' },
-        { id: '1Cor.15.20.en.lit.2', text: 'has been raised', position: 2, sourceTokenIds: ['1Cor.15.20.2'], confidence: 'high' },
-        { id: '1Cor.15.20.en.lit.3', text: 'from', position: 3, sourceTokenIds: ['1Cor.15.20.3'], confidence: 'high' },
-        { id: '1Cor.15.20.en.lit.4', text: 'the dead', position: 4, sourceTokenIds: ['1Cor.15.20.4'], confidence: 'high' },
-        { id: '1Cor.15.20.en.lit.5', text: 'firstfruits', position: 5, sourceTokenIds: ['1Cor.15.20.5'], confidence: 'high' },
-        { id: '1Cor.15.20.en.lit.6', text: 'of those who have fallen asleep', position: 6, sourceTokenIds: ['1Cor.15.20.6'], confidence: 'high' },
+        { id: '1Cor.15.20.en.lit.0', text: 'But now Christ has been raised', position: 0, sourceTokenIds: ['1Cor.15.20.0', '1Cor.15.20.1', '1Cor.15.20.2'], confidence: 'high' },
+        { id: '1Cor.15.20.en.lit.1', text: 'from the dead,', position: 1, sourceTokenIds: ['1Cor.15.20.3'], confidence: 'high' },
+        { id: '1Cor.15.20.en.lit.2', text: 'the firstfruits of those having fallen asleep.', position: 2, sourceTokenIds: ['1Cor.15.20.4', '1Cor.15.20.5'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -394,15 +351,10 @@ export const corinthians1_15_20_translation: VerseTranslation = {
     idiomatic: {
       type: 'idiomatic',
       targetLanguage: 'en',
-      text: "But Christ has indeed been raised from the dead, the firstfruits of those who have fallen asleep.",
+      text: "But in fact Christ has been raised from the dead, the firstfruits of those who have fallen asleep.",
       spans: [
-        { id: '1Cor.15.20.en.idi.0', text: 'But now', position: 0, sourceTokenIds: ['1Cor.15.20.0'], confidence: 'high' },
-        { id: '1Cor.15.20.en.idi.1', text: 'Christ', position: 1, sourceTokenIds: ['1Cor.15.20.1'], confidence: 'high' },
-        { id: '1Cor.15.20.en.idi.2', text: 'has been raised', position: 2, sourceTokenIds: ['1Cor.15.20.2'], confidence: 'high' },
-        { id: '1Cor.15.20.en.idi.3', text: 'from', position: 3, sourceTokenIds: ['1Cor.15.20.3'], confidence: 'high' },
-        { id: '1Cor.15.20.en.idi.4', text: 'the dead', position: 4, sourceTokenIds: ['1Cor.15.20.4'], confidence: 'high' },
-        { id: '1Cor.15.20.en.idi.5', text: 'firstfruits', position: 5, sourceTokenIds: ['1Cor.15.20.5'], confidence: 'high' },
-        { id: '1Cor.15.20.en.idi.6', text: 'of those who have fallen asleep', position: 6, sourceTokenIds: ['1Cor.15.20.6'], confidence: 'high' },
+        { id: '1Cor.15.20.en.idi.0', text: 'But in fact Christ has been raised from the dead,', position: 0, sourceTokenIds: ['1Cor.15.20.0', '1Cor.15.20.1', '1Cor.15.20.2', '1Cor.15.20.3'], confidence: 'high' },
+        { id: '1Cor.15.20.en.idi.1', text: 'the firstfruits of those who have fallen asleep.', position: 1, sourceTokenIds: ['1Cor.15.20.4', '1Cor.15.20.5'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -417,6 +369,13 @@ export const corinthians1_15_20_translation: VerseTranslation = {
   },
 };
 
+
+export const corinthians1_15_20_verse = {
+  ref: '1Cor.15.20',
+  sourceTokens: corinthians1_15_20_tokens,
+  translation: corinthians1_15_20_translation,
+  notes: [] as StudyNote[],
+};
 
 /* ────────────────────────────────────────────────────────────
  * Verse 15:42 – Resurrection of the dead
@@ -438,53 +397,29 @@ export const corinthians1_15_42_tokens: SourceToken[] = [
   {
     id: '1Cor.15.42.1',
     language: 'greek',
-    text: 'τῶν',
-    transliteration: 'tōn',
-    lemma: 'ὁ',
-    lemmaTranslit: 'ho',
-    gloss: 'of the',
-    morphology: { pos: 'article', gender: 'masculine', number: 'plural', case: 'genitive' },
-    strongs: 'G3588',
+    text: 'νεκρῶν',
+    transliteration: 'nekrōn',
+    lemma: 'νεκρός',
+    lemmaTranslit: 'nekros',
+    gloss: 'of the dead',
+    morphology: { pos: 'adjective', gender: 'masculine', number: 'plural', case: 'genitive' },
+    strongs: 'G3498',
     position: 1,
   },
   {
     id: '1Cor.15.42.2',
     language: 'greek',
-    text: 'νεκρῶν',
-    transliteration: 'nekrōn',
-    lemma: 'νεκρός',
-    lemmaTranslit: 'nekros',
-    gloss: 'dead',
-    morphology: { pos: 'adjective', gender: 'masculine', number: 'plural', case: 'genitive' },
-    strongs: 'G3498',
-    position: 2,
-  },
-  {
-    id: '1Cor.15.42.3',
-    language: 'greek',
     text: 'σπείρεται',
     transliteration: 'speiretai',
     lemma: 'σπείρω',
     lemmaTranslit: 'speirō',
-    gloss: 'it is sown',
+    gloss: 'is sown',
     morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'present', voice: 'passive', mood: 'indicative' },
     strongs: 'G4687',
-    position: 3,
+    position: 2,
   },
   {
-    id: '1Cor.15.42.4',
-    language: 'greek',
-    text: 'ἐν',
-    transliteration: 'en',
-    lemma: 'ἐν',
-    lemmaTranslit: 'en',
-    gloss: 'in',
-    morphology: { pos: 'preposition' },
-    strongs: 'G1722',
-    position: 4,
-  },
-  {
-    id: '1Cor.15.42.5',
+    id: '1Cor.15.42.3',
     language: 'greek',
     text: 'φθορᾷ',
     transliteration: 'phthora',
@@ -493,22 +428,22 @@ export const corinthians1_15_42_tokens: SourceToken[] = [
     gloss: 'corruption',
     morphology: { pos: 'noun', gender: 'feminine', number: 'singular', case: 'dative' },
     strongs: 'G5356',
-    position: 5,
+    position: 3,
   },
   {
-    id: '1Cor.15.42.6',
+    id: '1Cor.15.42.4',
     language: 'greek',
     text: 'ἐγείρεται',
     transliteration: 'egeiretai',
     lemma: 'ἐγείρω',
     lemmaTranslit: 'egeirō',
-    gloss: 'it is raised',
+    gloss: 'is raised',
     morphology: { pos: 'verb', person: '3', number: 'singular', tense: 'present', voice: 'passive', mood: 'indicative' },
     strongs: 'G1453',
-    position: 6,
+    position: 4,
   },
   {
-    id: '1Cor.15.42.7',
+    id: '1Cor.15.42.5',
     language: 'greek',
     text: 'ἀφθαρσίᾳ',
     transliteration: 'aphtharsia',
@@ -517,7 +452,7 @@ export const corinthians1_15_42_tokens: SourceToken[] = [
     gloss: 'imperishability',
     morphology: { pos: 'noun', gender: 'feminine', number: 'singular', case: 'dative' },
     strongs: 'G861',
-    position: 7,
+    position: 5,
   },
 ];
 
@@ -529,16 +464,11 @@ export const corinthians1_15_42_translation: VerseTranslation = {
     literal: {
       type: 'literal',
       targetLanguage: 'en',
-      text: "So also the resurrection of the dead. It is sown in corruption, it is raised in imperishability.",
+      text: "So also is the resurrection of the dead. It is sown in corruption, it is raised in incorruption.",
       spans: [
-        { id: '1Cor.15.42.en.lit.0', text: 'resurrection', position: 0, sourceTokenIds: ['1Cor.15.42.0'], confidence: 'high' },
-        { id: '1Cor.15.42.en.lit.1', text: 'of the', position: 1, sourceTokenIds: ['1Cor.15.42.1'], confidence: 'high' },
-        { id: '1Cor.15.42.en.lit.2', text: 'dead', position: 2, sourceTokenIds: ['1Cor.15.42.2'], confidence: 'high' },
-        { id: '1Cor.15.42.en.lit.3', text: 'it is sown', position: 3, sourceTokenIds: ['1Cor.15.42.3'], confidence: 'high' },
-        { id: '1Cor.15.42.en.lit.4', text: 'in', position: 4, sourceTokenIds: ['1Cor.15.42.4'], confidence: 'high' },
-        { id: '1Cor.15.42.en.lit.5', text: 'corruption', position: 5, sourceTokenIds: ['1Cor.15.42.5'], confidence: 'high' },
-        { id: '1Cor.15.42.en.lit.6', text: 'it is raised', position: 6, sourceTokenIds: ['1Cor.15.42.6'], confidence: 'high' },
-        { id: '1Cor.15.42.en.lit.7', text: 'imperishability', position: 7, sourceTokenIds: ['1Cor.15.42.7'], confidence: 'high' },
+        { id: '1Cor.15.42.en.lit.0', text: 'So also is the resurrection of the dead.', position: 0, sourceTokenIds: ['1Cor.15.42.0', '1Cor.15.42.1'], confidence: 'high' },
+        { id: '1Cor.15.42.en.lit.1', text: 'It is sown in corruption,', position: 1, sourceTokenIds: ['1Cor.15.42.2', '1Cor.15.42.3'], confidence: 'high' },
+        { id: '1Cor.15.42.en.lit.2', text: 'it is raised in incorruption.', position: 2, sourceTokenIds: ['1Cor.15.42.4', '1Cor.15.42.5'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -546,16 +476,10 @@ export const corinthians1_15_42_translation: VerseTranslation = {
     idiomatic: {
       type: 'idiomatic',
       targetLanguage: 'en',
-      text: "So will it be with the resurrection of the dead. The body that is sown is perishable, it is raised imperishable.",
+      text: "So it is with the resurrection of the dead. What is sown perishable is raised imperishable.",
       spans: [
-        { id: '1Cor.15.42.en.idi.0', text: 'resurrection', position: 0, sourceTokenIds: ['1Cor.15.42.0'], confidence: 'high' },
-        { id: '1Cor.15.42.en.idi.1', text: 'of the', position: 1, sourceTokenIds: ['1Cor.15.42.1'], confidence: 'high' },
-        { id: '1Cor.15.42.en.idi.2', text: 'dead', position: 2, sourceTokenIds: ['1Cor.15.42.2'], confidence: 'high' },
-        { id: '1Cor.15.42.en.idi.3', text: 'it is sown', position: 3, sourceTokenIds: ['1Cor.15.42.3'], confidence: 'high' },
-        { id: '1Cor.15.42.en.idi.4', text: 'in', position: 4, sourceTokenIds: ['1Cor.15.42.4'], confidence: 'high' },
-        { id: '1Cor.15.42.en.idi.5', text: 'corruption', position: 5, sourceTokenIds: ['1Cor.15.42.5'], confidence: 'high' },
-        { id: '1Cor.15.42.en.idi.6', text: 'it is raised', position: 6, sourceTokenIds: ['1Cor.15.42.6'], confidence: 'high' },
-        { id: '1Cor.15.42.en.idi.7', text: 'imperishability', position: 7, sourceTokenIds: ['1Cor.15.42.7'], confidence: 'high' },
+        { id: '1Cor.15.42.en.idi.0', text: 'So it is with the resurrection of the dead.', position: 0, sourceTokenIds: ['1Cor.15.42.0', '1Cor.15.42.1'], confidence: 'high' },
+        { id: '1Cor.15.42.en.idi.1', text: 'What is sown perishable is raised imperishable.', position: 1, sourceTokenIds: ['1Cor.15.42.2', '1Cor.15.42.3', '1Cor.15.42.4', '1Cor.15.42.5'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -570,26 +494,24 @@ export const corinthians1_15_42_translation: VerseTranslation = {
   },
 };
 
+export const corinthians1_15_42_notes: StudyNote[] = [
+  { id: '1Cor.15.42.note.1', verseRef: '1Cor.15.42', sourceTokenIds: ['1Cor.15.42.0'], category: 'theological', title: "ἀνάστασις — Resurrection", content: "ἀνάστασις (anastasis), literally \"a standing up again,\" denotes bodily resurrection rather than mere spiritual survival. Paul employs the seed-harvest metaphor to argue that the resurrection body, while continuous with the mortal body, is qualitatively transformed — sown in corruption (phthora) but raised in incorruption (aphtharsia). This eschatological transformation is central to Paul’s entire argument in 1 Corinthians 15.", confidence: 'high', authorType: 'ai', metadata: { generatedAt: new Date().toISOString(), engineId: 'open-bible-notes' } },
+];
+
+export const corinthians1_15_42_verse = {
+  ref: '1Cor.15.42',
+  sourceTokens: corinthians1_15_42_tokens,
+  translation: corinthians1_15_42_translation,
+  notes: corinthians1_15_42_notes,
+};
 
 /* ────────────────────────────────────────────────────────────
- * Verse 15:51 – We shall all be changed
+ * Verse 15:51 – A mystery revealed
  * ──────────────────────────────────────────────────────────── */
 
 export const corinthians1_15_51_tokens: SourceToken[] = [
   {
     id: '1Cor.15.51.0',
-    language: 'greek',
-    text: 'ἰδοὺ',
-    transliteration: 'idou',
-    lemma: 'ἰδού',
-    lemmaTranslit: 'idou',
-    gloss: 'Behold',
-    morphology: { pos: 'interjection' },
-    strongs: 'G2400',
-    position: 0,
-  },
-  {
-    id: '1Cor.15.51.1',
     language: 'greek',
     text: 'μυστήριον',
     transliteration: 'mystērion',
@@ -598,10 +520,10 @@ export const corinthians1_15_51_tokens: SourceToken[] = [
     gloss: 'mystery',
     morphology: { pos: 'noun', gender: 'neuter', number: 'singular', case: 'accusative' },
     strongs: 'G3466',
-    position: 1,
+    position: 0,
   },
   {
-    id: '1Cor.15.51.2',
+    id: '1Cor.15.51.1',
     language: 'greek',
     text: 'πάντες',
     transliteration: 'pantes',
@@ -610,31 +532,31 @@ export const corinthians1_15_51_tokens: SourceToken[] = [
     gloss: 'all',
     morphology: { pos: 'adjective', gender: 'masculine', number: 'plural', case: 'nominative' },
     strongs: 'G3956',
-    position: 2,
+    position: 1,
   },
   {
-    id: '1Cor.15.51.3',
+    id: '1Cor.15.51.2',
     language: 'greek',
     text: 'κοιμηθησόμεθα',
     transliteration: 'koimēthēsometha',
     lemma: 'κοιμάω',
     lemmaTranslit: 'koimaō',
-    gloss: 'we will sleep',
+    gloss: 'we shall sleep',
     morphology: { pos: 'verb', person: '1', number: 'plural', tense: 'future', voice: 'passive', mood: 'indicative' },
     strongs: 'G2837',
-    position: 3,
+    position: 2,
   },
   {
-    id: '1Cor.15.51.4',
+    id: '1Cor.15.51.3',
     language: 'greek',
     text: 'ἀλλαγησόμεθα',
     transliteration: 'allagēsometha',
     lemma: 'ἀλλάσσω',
     lemmaTranslit: 'allassō',
-    gloss: 'we will be changed',
+    gloss: 'we shall be changed',
     morphology: { pos: 'verb', person: '1', number: 'plural', tense: 'future', voice: 'passive', mood: 'indicative' },
     strongs: 'G236',
-    position: 4,
+    position: 3,
   },
 ];
 
@@ -646,13 +568,11 @@ export const corinthians1_15_51_translation: VerseTranslation = {
     literal: {
       type: 'literal',
       targetLanguage: 'en',
-      text: "Behold, a mystery I tell you: not all we will sleep, but all we will be changed.",
+      text: "Behold, I tell you a mystery: we shall not all sleep, but we shall all be changed.",
       spans: [
-        { id: '1Cor.15.51.en.lit.0', text: 'Behold', position: 0, sourceTokenIds: ['1Cor.15.51.0'], confidence: 'high' },
-        { id: '1Cor.15.51.en.lit.1', text: 'mystery', position: 1, sourceTokenIds: ['1Cor.15.51.1'], confidence: 'high' },
-        { id: '1Cor.15.51.en.lit.2', text: 'all', position: 2, sourceTokenIds: ['1Cor.15.51.2'], confidence: 'high' },
-        { id: '1Cor.15.51.en.lit.3', text: 'we will sleep', position: 3, sourceTokenIds: ['1Cor.15.51.3'], confidence: 'high' },
-        { id: '1Cor.15.51.en.lit.4', text: 'we will be changed', position: 4, sourceTokenIds: ['1Cor.15.51.4'], confidence: 'high' },
+        { id: '1Cor.15.51.en.lit.0', text: 'Behold, I tell you a mystery:', position: 0, sourceTokenIds: ['1Cor.15.51.0'], confidence: 'high' },
+        { id: '1Cor.15.51.en.lit.1', text: 'we shall not all sleep,', position: 1, sourceTokenIds: ['1Cor.15.51.1', '1Cor.15.51.2'], confidence: 'high' },
+        { id: '1Cor.15.51.en.lit.2', text: 'but we shall all be changed.', position: 2, sourceTokenIds: ['1Cor.15.51.3'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -660,13 +580,11 @@ export const corinthians1_15_51_translation: VerseTranslation = {
     idiomatic: {
       type: 'idiomatic',
       targetLanguage: 'en',
-      text: "Listen, I tell you a mystery: We will not all sleep, but we will all be changed.",
+      text: "Behold! I tell you a mystery. We shall not all sleep, but we shall all be changed.",
       spans: [
-        { id: '1Cor.15.51.en.idi.0', text: 'Behold', position: 0, sourceTokenIds: ['1Cor.15.51.0'], confidence: 'high' },
-        { id: '1Cor.15.51.en.idi.1', text: 'mystery', position: 1, sourceTokenIds: ['1Cor.15.51.1'], confidence: 'high' },
-        { id: '1Cor.15.51.en.idi.2', text: 'all', position: 2, sourceTokenIds: ['1Cor.15.51.2'], confidence: 'high' },
-        { id: '1Cor.15.51.en.idi.3', text: 'we will sleep', position: 3, sourceTokenIds: ['1Cor.15.51.3'], confidence: 'high' },
-        { id: '1Cor.15.51.en.idi.4', text: 'we will be changed', position: 4, sourceTokenIds: ['1Cor.15.51.4'], confidence: 'high' },
+        { id: '1Cor.15.51.en.idi.0', text: 'Behold! I tell you a mystery.', position: 0, sourceTokenIds: ['1Cor.15.51.0'], confidence: 'high' },
+        { id: '1Cor.15.51.en.idi.1', text: 'We shall not all sleep,', position: 1, sourceTokenIds: ['1Cor.15.51.1', '1Cor.15.51.2'], confidence: 'high' },
+        { id: '1Cor.15.51.en.idi.2', text: 'but we shall all be changed.', position: 2, sourceTokenIds: ['1Cor.15.51.3'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -682,6 +600,13 @@ export const corinthians1_15_51_translation: VerseTranslation = {
 };
 
 
+export const corinthians1_15_51_verse = {
+  ref: '1Cor.15.51',
+  sourceTokens: corinthians1_15_51_tokens,
+  translation: corinthians1_15_51_translation,
+  notes: [] as StudyNote[],
+};
+
 /* ────────────────────────────────────────────────────────────
  * Verse 15:55 – Death, where is your sting?
  * ──────────────────────────────────────────────────────────── */
@@ -690,30 +615,6 @@ export const corinthians1_15_55_tokens: SourceToken[] = [
   {
     id: '1Cor.15.55.0',
     language: 'greek',
-    text: 'ποῦ',
-    transliteration: 'pou',
-    lemma: 'ποῦ',
-    lemmaTranslit: 'pou',
-    gloss: 'where',
-    morphology: { pos: 'adverb' },
-    strongs: 'G4226',
-    position: 0,
-  },
-  {
-    id: '1Cor.15.55.1',
-    language: 'greek',
-    text: 'σου',
-    transliteration: 'sou',
-    lemma: 'σύ',
-    lemmaTranslit: 'su',
-    gloss: 'your',
-    morphology: { pos: 'pronoun', person: '2', number: 'singular', case: 'genitive' },
-    strongs: 'G4771',
-    position: 1,
-  },
-  {
-    id: '1Cor.15.55.2',
-    language: 'greek',
     text: 'θάνατε',
     transliteration: 'thanate',
     lemma: 'θάνατος',
@@ -721,22 +622,22 @@ export const corinthians1_15_55_tokens: SourceToken[] = [
     gloss: 'O death',
     morphology: { pos: 'noun', gender: 'masculine', number: 'singular', case: 'vocative' },
     strongs: 'G2288',
-    position: 2,
+    position: 0,
   },
   {
-    id: '1Cor.15.55.3',
+    id: '1Cor.15.55.1',
     language: 'greek',
-    text: 'τὸ',
-    transliteration: 'to',
-    lemma: 'ὁ',
-    lemmaTranslit: 'ho',
-    gloss: 'the',
-    morphology: { pos: 'article', gender: 'neuter', number: 'singular', case: 'nominative' },
-    strongs: 'G3588',
-    position: 3,
+    text: 'ποῦ',
+    transliteration: 'pou',
+    lemma: 'ποῦ',
+    lemmaTranslit: 'pou',
+    gloss: 'where',
+    morphology: { pos: 'adverb' },
+    strongs: 'G4226',
+    position: 1,
   },
   {
-    id: '1Cor.15.55.4',
+    id: '1Cor.15.55.2',
     language: 'greek',
     text: 'νῖκος',
     transliteration: 'nikos',
@@ -745,10 +646,10 @@ export const corinthians1_15_55_tokens: SourceToken[] = [
     gloss: 'victory',
     morphology: { pos: 'noun', gender: 'neuter', number: 'singular', case: 'nominative' },
     strongs: 'G3534',
-    position: 4,
+    position: 2,
   },
   {
-    id: '1Cor.15.55.5',
+    id: '1Cor.15.55.3',
     language: 'greek',
     text: 'κέντρον',
     transliteration: 'kentron',
@@ -757,7 +658,7 @@ export const corinthians1_15_55_tokens: SourceToken[] = [
     gloss: 'sting',
     morphology: { pos: 'noun', gender: 'neuter', number: 'singular', case: 'nominative' },
     strongs: 'G2759',
-    position: 5,
+    position: 3,
   },
 ];
 
@@ -769,14 +670,10 @@ export const corinthians1_15_55_translation: VerseTranslation = {
     literal: {
       type: 'literal',
       targetLanguage: 'en',
-      text: "Where of you, O death, the victory? Where of you, O death, the sting?",
+      text: "Where, O death, is your victory? Where, O death, is your sting?",
       spans: [
-        { id: '1Cor.15.55.en.lit.0', text: 'where', position: 0, sourceTokenIds: ['1Cor.15.55.0'], confidence: 'high' },
-        { id: '1Cor.15.55.en.lit.1', text: 'your', position: 1, sourceTokenIds: ['1Cor.15.55.1'], confidence: 'high' },
-        { id: '1Cor.15.55.en.lit.2', text: 'O death', position: 2, sourceTokenIds: ['1Cor.15.55.2'], confidence: 'high' },
-        { id: '1Cor.15.55.en.lit.3', text: 'the', position: 3, sourceTokenIds: ['1Cor.15.55.3'], confidence: 'high' },
-        { id: '1Cor.15.55.en.lit.4', text: 'victory', position: 4, sourceTokenIds: ['1Cor.15.55.4'], confidence: 'high' },
-        { id: '1Cor.15.55.en.lit.5', text: 'sting', position: 5, sourceTokenIds: ['1Cor.15.55.5'], confidence: 'high' },
+        { id: '1Cor.15.55.en.lit.0', text: 'Where, O death, is your victory?', position: 0, sourceTokenIds: ['1Cor.15.55.0', '1Cor.15.55.1', '1Cor.15.55.2'], confidence: 'high' },
+        { id: '1Cor.15.55.en.lit.1', text: 'Where, O death, is your sting?', position: 1, sourceTokenIds: ['1Cor.15.55.3'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -784,14 +681,10 @@ export const corinthians1_15_55_translation: VerseTranslation = {
     idiomatic: {
       type: 'idiomatic',
       targetLanguage: 'en',
-      text: "Where, O death, is your victory? Where, O death, is your sting?",
+      text: "O death, where is your victory? O death, where is your sting?",
       spans: [
-        { id: '1Cor.15.55.en.idi.0', text: 'where', position: 0, sourceTokenIds: ['1Cor.15.55.0'], confidence: 'high' },
-        { id: '1Cor.15.55.en.idi.1', text: 'your', position: 1, sourceTokenIds: ['1Cor.15.55.1'], confidence: 'high' },
-        { id: '1Cor.15.55.en.idi.2', text: 'O death', position: 2, sourceTokenIds: ['1Cor.15.55.2'], confidence: 'high' },
-        { id: '1Cor.15.55.en.idi.3', text: 'the', position: 3, sourceTokenIds: ['1Cor.15.55.3'], confidence: 'high' },
-        { id: '1Cor.15.55.en.idi.4', text: 'victory', position: 4, sourceTokenIds: ['1Cor.15.55.4'], confidence: 'high' },
-        { id: '1Cor.15.55.en.idi.5', text: 'sting', position: 5, sourceTokenIds: ['1Cor.15.55.5'], confidence: 'high' },
+        { id: '1Cor.15.55.en.idi.0', text: 'O death, where is your victory?', position: 0, sourceTokenIds: ['1Cor.15.55.0', '1Cor.15.55.1', '1Cor.15.55.2'], confidence: 'high' },
+        { id: '1Cor.15.55.en.idi.1', text: 'O death, where is your sting?', position: 1, sourceTokenIds: ['1Cor.15.55.3'], confidence: 'high' },
       ],
       overallConfidence: 'high',
       humanReviewed: false,
@@ -806,58 +699,6 @@ export const corinthians1_15_55_translation: VerseTranslation = {
   },
 };
 
-// Study note for 1 Corinthians 15:42
-export const corinthians1_15_42_notes: StudyNote[] = [
-  {
-    id: '1Cor.15.42.note.1',
-    verseRef: '1Cor.15.42',
-    sourceTokenIds: ['1Cor.15.42.0'],
-    category: 'theological',
-    title: "ἀνάστασις τῶν νεκρῶν — Resurrection of the Dead",
-    content: "The noun ἀνάστασις (anastasis, 'resurrection') derives from ἀνίστημι (anistēmi, 'to raise up'). Paul uses the agricultural metaphor of sowing (σπείρεται) and reaping to explain the transformation of the resurrection body. The contrast between φθορά (phthora, corruption/perishability) and ἀφθαρσία (aphtharsia, imperishability) emphasizes the radical discontinuity between the present mortal body and the glorified resurrection body, while the seed metaphor preserves continuity of identity.",
-    confidence: 'high',
-    authorType: 'ai',
-    metadata: {
-      generatedAt: new Date().toISOString(),
-      engineId: 'open-bible-notes',
-    },
-  },
-];
-
-export const corinthians1_15_3_verse = {
-  ref: '1Cor.15.3',
-  sourceTokens: corinthians1_15_3_tokens,
-  translation: corinthians1_15_3_translation,
-  notes: [] as StudyNote[],
-};
-
-export const corinthians1_15_4_verse = {
-  ref: '1Cor.15.4',
-  sourceTokens: corinthians1_15_4_tokens,
-  translation: corinthians1_15_4_translation,
-  notes: [] as StudyNote[],
-};
-
-export const corinthians1_15_20_verse = {
-  ref: '1Cor.15.20',
-  sourceTokens: corinthians1_15_20_tokens,
-  translation: corinthians1_15_20_translation,
-  notes: [] as StudyNote[],
-};
-
-export const corinthians1_15_42_verse = {
-  ref: '1Cor.15.42',
-  sourceTokens: corinthians1_15_42_tokens,
-  translation: corinthians1_15_42_translation,
-  notes: corinthians1_15_42_notes,
-};
-
-export const corinthians1_15_51_verse = {
-  ref: '1Cor.15.51',
-  sourceTokens: corinthians1_15_51_tokens,
-  translation: corinthians1_15_51_translation,
-  notes: [] as StudyNote[],
-};
 
 export const corinthians1_15_55_verse = {
   ref: '1Cor.15.55',
@@ -865,6 +706,10 @@ export const corinthians1_15_55_verse = {
   translation: corinthians1_15_55_translation,
   notes: [] as StudyNote[],
 };
+
+/* ────────────────────────────────────────────────────────────
+ * Export combined verses
+ * ──────────────────────────────────────────────────────────── */
 
 export const corinthians1_15_1_58_verses = [
   corinthians1_15_3_verse,
