@@ -17,12 +17,17 @@ An open source, AI-assisted Bible translation platform with radical transparency
 - Cross-reference panel with linked related passages
 - Textual variant display for known manuscript differences
 - Data provenance panel showing pipeline version, engine, source data, timestamps
-- Keyboard navigation (1/2/3 for layers, S=study, N=notes, C=compare, P=provenance, V=variants, arrows for chapters)
+- Keyboard navigation (1/2/3 for layers, S=study, N=notes, C=compare, P=provenance, V=variants, ←/→ for chapters, G=jump, ?=help)
 - Dynamic chapter registry for scalable data management
 - Search across all chapters with morphological data
 - Export to Text and JSON formats
-- Dark mode, adjustable font sizes, reading themes, line spacing
+- Dark mode (class-based toggle), reading themes (sepia, night), adjustable font sizes, line spacing
 - Search within chapters, text-to-speech, print view, bookmarks
+- **ADA/WCAG accessibility**: skip-to-content link, focus-visible indicators, ARIA labels, lang/dir attributes on Hebrew/Greek text, aria-live regions, reduced-motion support, high-contrast mode
+- **GDPR compliance**: no cookies, no tracking, privacy policy page, clear-all-data button
+- **Mobile responsive**: hamburger menu, touch-friendly targets
+- **Error handling**: 404 page, error boundary with retry
+- **SEO**: per-chapter metadata, Open Graph tags
 - 69 automated tests (37 schema validation + 15 pipeline + 17 integration)
 - GitHub Actions CI: typecheck, test, build, deploy to GitHub Pages
 - Multilingual pipeline architecture with sample Spanish, French, and German translations
@@ -119,7 +124,7 @@ Bible/
 ├── apps/
 │   └── web/                   # Next.js 14 web application
 │       ├── src/app/           # Pages (read, about, books, search, etc.)
-│       ├── src/components/    # 33 React components
+│       ├── src/components/    # 37 React components
 │       ├── src/data/          # Verse data (Genesis, John, metadata)
 │       ├── src/hooks/         # Keyboard navigation
 │       └── src/store/         # Zustand state management
@@ -160,9 +165,20 @@ Staged processing:
 ### Web App (`apps/web`)
 - Next.js 14 with static export (1,199 pages)
 - Radix UI for accessible components (popovers, dialogs, tabs)
-- Tailwind CSS for styling
+- Tailwind CSS with class-based dark mode
 - Zustand for state management
 - World English Bible API fallback for chapters without morphological data
+
+### Accessibility
+- **WCAG 2.1 AA** target compliance
+- Skip-to-content link, landmark roles, focus-visible indicators
+- ARIA labels on all icon-only buttons, `aria-pressed` on toggles
+- `lang="he" dir="rtl"` on Hebrew text, `lang="el"` on Greek text
+- `aria-live` regions for search results and error states
+- `@media (prefers-reduced-motion: reduce)` support
+- `@media (prefers-contrast: high)` support
+- Skeleton loading states with `aria-busy`
+- 11 keyboard shortcuts documented in `?` modal
 
 ## Data Sources & Licenses
 
