@@ -186,6 +186,25 @@ body {
   }
 }
 
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #000000;
+    --muted-foreground: #404040;
+  }
+  .dark {
+    --border: #ffffff;
+    --muted-foreground: #d4d4d4;
+  }
+  * {
+    border-width: 2px !important;
+  }
+  .token:hover,
+  .token.highlighted {
+    outline-width: 3px;
+  }
+}
+
 /* Print styles */
 @media print {
   .no-print,

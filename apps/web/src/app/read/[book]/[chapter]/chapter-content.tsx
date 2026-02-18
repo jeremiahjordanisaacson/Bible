@@ -270,17 +270,23 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
 
       {/* Loading state */}
       {loading && (
-        <div className="max-w-3xl flex items-center justify-center py-12">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--accent)] mx-auto mb-4"></div>
-            <p className="text-[var(--muted-foreground)]">Loading {book.name} {chapterNum}...</p>
-          </div>
+        <div className="max-w-3xl" aria-busy="true" aria-label="Loading chapter">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="flex gap-4 py-4 animate-pulse">
+              <div className="w-12 h-5 bg-[var(--muted)] rounded flex-shrink-0" />
+              <div className="flex-1 space-y-2">
+                <div className="h-4 bg-[var(--muted)] rounded w-full" />
+                <div className="h-4 bg-[var(--muted)] rounded w-5/6" />
+                <div className="h-4 bg-[var(--muted)] rounded w-3/4" />
+              </div>
+            </div>
+          ))}
         </div>
       )}
 
       {/* Error state */}
       {error && !loading && (
-        <div className="max-w-2xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6">
+        <div className="max-w-2xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-6" role="alert">
           <h2 className="font-semibold mb-2">Error Loading Chapter</h2>
           <p className="text-[var(--muted-foreground)]">{error}</p>
           <button
@@ -402,6 +408,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
             value={chapterNum}
             onChange={(e) => router.push(`/read/${bookCode}/${e.target.value}/`)}
             className="px-3 py-1 border border-[var(--border)] rounded bg-[var(--background)]"
+            aria-label={`Select chapter of ${book.name}`}
           >
             {Array.from({ length: book.chapters }, (_, i) => i + 1).map((ch) => (
               <option key={ch} value={ch}>

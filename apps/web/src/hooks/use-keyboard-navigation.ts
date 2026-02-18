@@ -1,13 +1,18 @@
 'use client';
 
 import { useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { useBibleStore } from '@/store/bible-store';
+import { getBook, getNextBook, getPrevBook } from '@/data/books-metadata';
 
 /**
  * Hook for keyboard navigation and shortcuts
  */
 export function useKeyboardNavigation() {
+  const router = useRouter();
   const {
+    currentBook,
+    currentChapter,
     selectedLayer,
     setSelectedLayer,
     showStudyMode,
@@ -63,18 +68,24 @@ export function useKeyboardNavigation() {
           toggleVariants();
           break;
         case 'ArrowLeft':
-          // Navigate to previous chapter
-          {
-            const prev = document.querySelector('a[href*="/read/"][href$="/"]') as HTMLAnchorElement;
-            if (prev && prev.textContent?.includes('Chapter')) prev.click();
+          if (currentBook && currentChapter) {
+            if (currentChapter > 1) {
+              router.push(`/read/${currentBook}/${currentChapter - 1}/`);
+            } else {
+              const prev = getPrevBook(currentBook);
+              if (prev) router.push(`/read/${prev.code}/${prev.chapters}/`);
+            }
           }
           break;
         case 'ArrowRight':
-          // Navigate to next chapter
-          {
-            const links = document.querySelectorAll('a[href*="/read/"][href$="/"]');
-            const next = links[links.length - 1] as HTMLAnchorElement;
-            if (next && next.textContent?.includes('Chapter')) next.click();
+          if (currentBook && currentChapter) {
+            const book = getBook(currentBook);
+            if (book && currentChapter < book.chapters) {
+              router.push(`/read/${currentBook}/${currentChapter + 1}/`);
+            } else {
+              const next = getNextBook(currentBook);
+              if (next) router.push(`/read/${next.code}/1/`);
+            }
           }
           break;
         case '?':
@@ -82,7 +93,7 @@ export function useKeyboardNavigation() {
           break;
       }
     },
-    [setSelectedLayer, showStudyMode, setShowStudyMode, showNotes, setShowNotes, setShowKeyboardShortcuts, toggleCompareView, toggleProvenance, toggleVariants]
+    [router, currentBook, currentChapter, setSelectedLayer, showStudyMode, setShowStudyMode, showNotes, setShowNotes, setShowKeyboardShortcuts, toggleCompareView, toggleProvenance, toggleVariants]
   );
 
   useEffect(() => {

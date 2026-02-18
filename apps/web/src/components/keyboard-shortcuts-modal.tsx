@@ -9,11 +9,15 @@ interface ShortcutItem {
 }
 
 const shortcuts: ShortcutItem[] = [
+  { key: '←', description: 'Previous chapter' },
+  { key: '→', description: 'Next chapter' },
   { key: '1', description: 'Switch to Literal translation' },
   { key: '2', description: 'Switch to Idiomatic translation' },
   { key: '3', description: 'Switch to Literary translation' },
   { key: 'S', description: 'Toggle Study Mode' },
   { key: 'N', description: 'Toggle Notes' },
+  { key: 'C', description: 'Toggle Compare View' },
+  { key: 'V', description: 'Toggle Variants' },
   { key: 'G', description: 'Quick jump to reference' },
   { key: '?', description: 'Show this help' },
 ];
