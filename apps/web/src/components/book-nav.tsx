@@ -9,9 +9,20 @@ import {
   getBooksByCategory,
   type BookMetadata,
 } from '@/data/books-metadata';
+import { getRegisteredChapters } from '@/data/chapter-registry';
 
-// Books with rich morphological data (sample data)
-const RICH_DATA_BOOKS = new Set(['Gen', 'John']);
+// Dynamically detect books with rich morphological data from the registry
+function getBooksWithRichData(): Set<string> {
+  const chapters = getRegisteredChapters();
+  const books = new Set<string>();
+  for (const key of chapters) {
+    const [book] = key.split('.');
+    books.add(book);
+  }
+  return books;
+}
+
+const RICH_DATA_BOOKS = getBooksWithRichData();
 
 function hasRichData(bookCode: string): boolean {
   return RICH_DATA_BOOKS.has(bookCode);
@@ -124,7 +135,7 @@ export function BookNav({ currentBook }: BookNavProps) {
           <div className="border-t border-[var(--border)] px-4 py-2 text-xs text-[var(--muted-foreground)]">
             <span className="inline-flex items-center gap-1">
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              Rich study data (Genesis, John)
+              {RICH_DATA_BOOKS.size} books with rich study data
             </span>
             <span className="ml-3">All 66 books available</span>
           </div>
