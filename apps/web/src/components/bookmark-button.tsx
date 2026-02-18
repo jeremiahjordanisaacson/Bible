@@ -34,6 +34,8 @@ export function BookmarkButton({ bookCode, chapter, verse, text }: BookmarkButto
       onClick={handleClick}
       className="p-1 rounded hover:bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--accent)] transition-colors"
       title={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
+      aria-label={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
+      aria-pressed={bookmarked}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -43,6 +43,7 @@ export function ShareVerseButton({ verseRef, bookCode, chapter, verse }: ShareVe
       onClick={handleShare}
       className="p-1 rounded hover:bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
       title="Share verse link"
+      aria-label="Share verse link"
     >
       {copied ? (
         <svg

@@ -37,7 +37,7 @@ export function TokenPopover({ token, span, children, onOpenChange }: TokenPopov
             <div className="text-xs text-[var(--muted-foreground)] uppercase tracking-wide mb-1">
               {languageLabel}
             </div>
-            <div className={`text-2xl ${languageClass}`}>{token.text}</div>
+            <div className={`text-2xl ${languageClass}`} lang={token.language === 'hebrew' || token.language === 'aramaic' ? 'he' : 'el'} dir={token.language === 'hebrew' || token.language === 'aramaic' ? 'rtl' : 'ltr'}>{token.text}</div>
             <div className="text-sm text-[var(--muted-foreground)] italic mt-1">
               {token.transliteration}
             </div>
@@ -138,7 +138,7 @@ export function TokenPopover({ token, span, children, onOpenChange }: TokenPopov
               <div className="flex items-center gap-2 mt-2">
                 <ConfidenceBadge level={span.confidence} />
                 {span.hasImplied && (
-                  <span className="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">
+                  <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded">
                     Contains implied words
                   </span>
                 )}
@@ -174,11 +174,11 @@ function MorphBadge({ label, value }: { label: string; value: string }) {
 
 function ConfidenceBadge({ level }: { level: string }) {
   const colors = {
-    high: 'bg-confidence-high/20 text-green-700',
-    medium: 'bg-confidence-medium/20 text-yellow-700',
-    low: 'bg-confidence-low/20 text-orange-700',
-    uncertain: 'bg-confidence-uncertain/20 text-red-700',
-  }[level] || 'bg-gray-100 text-gray-700';
+    high: 'bg-confidence-high/20 text-green-700 dark:text-green-400',
+    medium: 'bg-confidence-medium/20 text-yellow-700 dark:text-yellow-400',
+    low: 'bg-confidence-low/20 text-orange-700 dark:text-orange-400',
+    uncertain: 'bg-confidence-uncertain/20 text-red-700 dark:text-red-400',
+  }[level] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
 
   return (
     <span className={`text-xs px-2 py-0.5 rounded ${colors}`}>

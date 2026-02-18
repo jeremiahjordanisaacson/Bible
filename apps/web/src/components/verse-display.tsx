@@ -111,7 +111,7 @@ export function VerseDisplay({
     const textClass = isRTL ? 'hebrew-text' : 'greek-text';
 
     return (
-      <div className={`source-text ${textClass} ${isRTL ? 'text-right' : ''} leading-loose`}>
+      <div className={`source-text ${textClass} ${isRTL ? 'text-right' : ''} leading-loose`} lang={isRTL ? 'he' : 'el'} dir={isRTL ? 'rtl' : 'ltr'}>
         {sourceTokens.map((token) => {
           const isHighlighted = isTokenHighlighted(token.id);
 
@@ -161,9 +161,9 @@ export function VerseDisplay({
                 <h4 className="font-semibold mt-1">{note.title}</h4>
               </div>
               {note.isContested && (
-                <span className="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">
-                  Contested
-                </span>
+                <span className="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded">
+                   Contested
+                 </span>
               )}
             </div>
             <div className="mt-2 text-sm prose prose-sm max-w-none">

@@ -39,6 +39,7 @@ export function TextToSpeech({ getText }: TextToSpeechProps) {
       onClick={handleToggle}
       className="p-2 rounded hover:bg-[var(--muted)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors no-print"
       title={speaking ? 'Stop reading' : 'Read aloud'}
+      aria-label={speaking ? 'Stop reading aloud' : 'Read chapter aloud'}
     >
       {speaking ? (
         <svg

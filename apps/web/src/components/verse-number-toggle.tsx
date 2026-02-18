@@ -42,6 +42,8 @@ export function VerseNumberToggle({ showVerseNumbers, onToggle }: VerseNumberTog
         }
       `}
       title={showVerseNumbers ? 'Hide verse numbers' : 'Show verse numbers'}
+      aria-label={showVerseNumbers ? 'Hide verse numbers' : 'Show verse numbers'}
+      aria-pressed={showVerseNumbers}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

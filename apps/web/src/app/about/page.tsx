@@ -239,7 +239,7 @@ function DataSource({
           <h3 className="font-semibold">{name}</h3>
           <p className="text-sm text-[var(--muted-foreground)] mt-1">{description}</p>
         </div>
-        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">{license}</span>
+        <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-2 py-1 rounded">{license}</span>
       </div>
     </div>
   );

@@ -81,6 +81,8 @@ export function ReadingThemeSelector({ theme, onThemeChange }: ReadingThemeSelec
               : 'hover:bg-[var(--muted)] text-[var(--muted-foreground)]'
           }`}
           title={t.label}
+          aria-label={`${t.label} reading theme`}
+          aria-pressed={theme === t.value}
         >
           {t.icon}
         </button>
