@@ -23,15 +23,18 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-[var(--muted-foreground)]">
               <li><Link href="/about/" className="hover:text-[var(--foreground)]">About</Link></li>
               <li><Link href="/licenses/" className="hover:text-[var(--foreground)]">Licenses</Link></li>
+              <li><Link href="/privacy/" className="hover:text-[var(--foreground)]">Privacy Policy</Link></li>
             </ul>
           </div>
 
           {/* Sample Data */}
           <div>
-            <h3 className="font-semibold mb-3">Sample Data</h3>
+            <h3 className="font-semibold mb-3">Popular Chapters</h3>
             <ul className="space-y-2 text-sm text-[var(--muted-foreground)]">
               <li><Link href="/read/Gen/1/" className="hover:text-[var(--foreground)]">Genesis 1 (Hebrew)</Link></li>
+              <li><Link href="/read/Psa/23/" className="hover:text-[var(--foreground)]">Psalm 23 (Hebrew)</Link></li>
               <li><Link href="/read/John/1/" className="hover:text-[var(--foreground)]">John 1 (Greek)</Link></li>
+              <li><Link href="/read/Rom/8/" className="hover:text-[var(--foreground)]">Romans 8 (Greek)</Link></li>
             </ul>
           </div>
 
