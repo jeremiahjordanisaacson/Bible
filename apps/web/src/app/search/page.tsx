@@ -160,7 +160,7 @@ export default function SearchPage() {
       <h1 className="text-4xl font-bold mb-8">Search</h1>
 
       {/* Search Form */}
-      <div className="mb-8">
+      <div className="mb-8" role="search">
         <div className="flex gap-4 mb-4">
           <input
             type="text"
@@ -168,6 +168,7 @@ export default function SearchPage() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search translations, glosses, lemmas..."
             className="flex-1 px-4 py-3 border border-[var(--border)] rounded-lg bg-[var(--background)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            aria-label="Search morphological data"
           />
         </div>
 
@@ -202,7 +203,7 @@ export default function SearchPage() {
 
       {/* Results */}
       {query && (
-        <div className="mb-4 text-[var(--muted-foreground)]">
+        <div className="mb-4 text-[var(--muted-foreground)]" aria-live="polite">
           {isSearching ? (
             'Searching...'
           ) : (

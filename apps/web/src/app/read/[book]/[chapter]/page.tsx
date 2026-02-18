@@ -1,5 +1,6 @@
 import { ChapterContent } from './chapter-content';
-import { allBooks } from '@/data/books-metadata';
+import { allBooks, getBook } from '@/data/books-metadata';
+import type { Metadata } from 'next';
 
 // Generate static params for all 1,189 chapters in the Bible
 export function generateStaticParams() {
@@ -21,6 +22,22 @@ interface PageProps {
   params: {
     book: string;
     chapter: string;
+  };
+}
+
+export function generateMetadata({ params }: PageProps): Metadata {
+  const book = getBook(params.book);
+  const bookName = book ? book.name : params.book;
+  const chapter = params.chapter;
+
+  return {
+    title: `${bookName} ${chapter} — Open Bible Translation`,
+    description: `Read ${bookName} chapter ${chapter} with original Hebrew/Greek text, morphological analysis, and multiple translation layers.`,
+    openGraph: {
+      title: `${bookName} ${chapter} — Open Bible Translation`,
+      description: `${bookName} ${chapter} with source text transparency, interlinear data, and study notes.`,
+      type: 'article',
+    },
   };
 }
 
