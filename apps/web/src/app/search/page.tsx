@@ -296,10 +296,10 @@ function SearchResultCard({ result }: { result: SearchResult }) {
   const [book, chapter] = result.verseRef.split('.');
 
   const matchTypeLabels: Record<string, { label: string; color: string }> = {
-    translation: { label: 'Translation', color: 'bg-blue-100 text-blue-800' },
-    gloss: { label: 'Gloss', color: 'bg-green-100 text-green-800' },
-    lemma: { label: 'Lemma', color: 'bg-purple-100 text-purple-800' },
-    source: { label: 'Source', color: 'bg-amber-100 text-amber-800' },
+    translation: { label: 'Translation', color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300' },
+    gloss: { label: 'Gloss', color: 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' },
+    lemma: { label: 'Lemma', color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300' },
+    source: { label: 'Source', color: 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300' },
   };
 
   const typeInfo = matchTypeLabels[result.matchType] || {

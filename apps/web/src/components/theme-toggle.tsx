@@ -22,10 +22,15 @@ export function ThemeToggle() {
     const root = document.documentElement;
 
     if (newTheme === 'system') {
+      root.classList.remove('light', 'dark');
       const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       root.classList.toggle('dark', systemDark);
+    } else if (newTheme === 'dark') {
+      root.classList.remove('light');
+      root.classList.add('dark');
     } else {
-      root.classList.toggle('dark', newTheme === 'dark');
+      root.classList.remove('dark');
+      root.classList.add('light');
     }
   };
 

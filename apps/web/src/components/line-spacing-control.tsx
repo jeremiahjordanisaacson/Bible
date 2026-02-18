@@ -63,6 +63,8 @@ export function LineSpacingControl({ spacing, onSpacingChange }: LineSpacingCont
                 : 'hover:bg-[var(--muted)] text-[var(--muted-foreground)]'
             }`}
             title={option.label}
+            aria-label={`Line spacing: ${option.label}`}
+            aria-pressed={spacing === option.value}
           >
             {option.value === 'compact' ? (
               <svg viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3">

@@ -14,9 +14,9 @@ export function Header() {
   };
 
   return (
-    <header className="border-b border-[var(--border)] sticky top-0 bg-[var(--background)] z-50">
+    <header className="border-b border-[var(--border)] sticky top-0 bg-[var(--background)] z-50" role="banner">
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="font-semibold text-lg flex items-center gap-2">
+        <Link href="/" className="font-semibold text-lg flex items-center gap-2" aria-label="Open Bible — Home">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -31,7 +31,7 @@ export function Header() {
           </svg>
           Open Bible
         </Link>
-        <nav className="flex items-center gap-4">
+        <nav className="flex items-center gap-4" aria-label="Main navigation">
           <BookNav />
           <Link href="/books/" className="text-sm hover:text-[var(--accent)]">
             All Books

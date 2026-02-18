@@ -50,6 +50,8 @@ export function FontSizeControl({ fontSize, onFontSizeChange }: FontSizeControlP
             }
           `}
           title={size.description}
+          aria-label={`Font size: ${size.description}`}
+          aria-pressed={fontSize === size.value}
         >
           {size.label}
         </button>

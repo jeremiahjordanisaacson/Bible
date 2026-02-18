@@ -81,6 +81,8 @@ export function ReadingThemeSelector({ theme, onThemeChange }: ReadingThemeSelec
               : 'hover:bg-[var(--muted)] text-[var(--muted-foreground)]'
           }`}
           title={t.label}
+          aria-label={`${t.label} reading theme`}
+          aria-pressed={theme === t.value}
         >
           {t.icon}
         </button>
@@ -95,14 +97,39 @@ interface ReadingThemeWrapperProps {
 }
 
 export function ReadingThemeWrapper({ theme, children }: ReadingThemeWrapperProps) {
-  const themeStyles: Record<ReadingTheme, string> = {
+  const themeStyles: Record<ReadingTheme, React.CSSProperties> = {
+    default: {},
+    sepia: {
+      '--foreground': '#5c4b37',
+      '--background': '#f4ecd8',
+      '--muted': '#e8dcc6',
+      '--muted-foreground': '#7a6b58',
+      '--border': '#d4c4a8',
+      '--accent': '#8b5e3c',
+      '--accent-foreground': '#ffffff',
+    } as React.CSSProperties,
+    night: {
+      '--foreground': '#e0e0e0',
+      '--background': '#1a1a2e',
+      '--muted': '#2a2a42',
+      '--muted-foreground': '#9898b0',
+      '--border': '#3a3a55',
+      '--accent': '#6c8aec',
+      '--accent-foreground': '#ffffff',
+    } as React.CSSProperties,
+  };
+
+  const bgClasses: Record<ReadingTheme, string> = {
     default: '',
     sepia: 'bg-[#f4ecd8] text-[#5c4b37]',
     night: 'bg-[#1a1a2e] text-[#e0e0e0]',
   };
 
   return (
-    <div className={`min-h-full rounded-lg transition-colors ${themeStyles[theme]}`}>
+    <div
+      className={`min-h-full rounded-lg transition-colors ${bgClasses[theme]}`}
+      style={themeStyles[theme]}
+    >
       {children}
     </div>
   );
