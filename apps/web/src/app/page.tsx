@@ -323,6 +323,24 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Open Bible Translation',
+            url: 'https://jeremiahjordanisaacson.github.io/Bible/',
+            description: 'An open source, AI-assisted Bible translation platform with radical transparency',
+            publisher: {
+              '@type': 'Organization',
+              name: 'Open Bible Translation Project',
+            },
+          }),
+        }}
+      />
     </div>
   );
 }
