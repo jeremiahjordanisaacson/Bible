@@ -8,7 +8,7 @@
     "dev": "pnpm --filter @open-bible/web dev",
     "build": "pnpm --filter @open-bible/web build",
     "start": "pnpm --filter @open-bible/web start",
-    "test": "vitest run",
+    "test": "vitest run && pnpm --filter @open-bible/web test",
     "lint": "pnpm --filter @open-bible/web lint",
     "typecheck": "pnpm -r run typecheck",
     "clean": "rm -rf node_modules apps/web/.next apps/web/out"
