@@ -44,6 +44,9 @@ export function Header() {
           <Link href="/search/" className="text-sm hover:text-[var(--accent)]">
             Search
           </Link>
+          <Link href="/study/" className="text-sm hover:text-[var(--accent)]">
+            Word Study
+          </Link>
           <Link href="/stats/" className="text-sm hover:text-[var(--accent)]">
             Stats
           </Link>
@@ -90,6 +93,9 @@ export function Header() {
             </Link>
             <Link href="/search/" className="block py-2 text-sm hover:text-[var(--accent)]" onClick={() => setMobileMenuOpen(false)}>
               🔍 Search
+            </Link>
+            <Link href="/study/" className="block py-2 text-sm hover:text-[var(--accent)]" onClick={() => setMobileMenuOpen(false)}>
+              📖 Word Study
             </Link>
             <Link href="/stats/" className="block py-2 text-sm hover:text-[var(--accent)]" onClick={() => setMobileMenuOpen(false)}>
               📊 Statistics

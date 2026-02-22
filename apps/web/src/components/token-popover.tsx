@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import * as Popover from '@radix-ui/react-popover';
+import Link from 'next/link';
 import type { SourceToken, TranslatedSpan } from '@open-bible/schemas';
 
 interface TokenPopoverProps {
@@ -117,14 +118,22 @@ export function TokenPopover({ token, span, children, onOpenChange }: TokenPopov
               <div className="text-xs text-[var(--muted-foreground)] uppercase tracking-wide mb-1">
                 Strong&apos;s
               </div>
-              <a
-                href={`https://www.blueletterbible.org/lexicon/${token.strongs.toLowerCase()}/kjv/wlc/0-1/`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--accent)] hover:underline font-mono"
-              >
-                {token.strongs}
-              </a>
+              <div className="flex items-center gap-3">
+                <Link
+                  href={`/study/${token.strongs}/`}
+                  className="text-[var(--accent)] hover:underline font-mono"
+                >
+                  {token.strongs}
+                </Link>
+                <a
+                  href={`https://www.blueletterbible.org/lexicon/${token.strongs.toLowerCase()}/kjv/wlc/0-1/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[var(--muted-foreground)] hover:text-[var(--accent)]"
+                >
+                  BLB ↗
+                </a>
+              </div>
             </div>
           )}
 
