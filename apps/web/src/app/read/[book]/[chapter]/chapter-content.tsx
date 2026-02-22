@@ -258,7 +258,7 @@ export function ChapterContent({ bookCode, chapterNum }: ChapterContentProps) {
                 </>
               )}
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <FontSizeControl fontSize={fontSize} onFontSizeChange={setFontSize} />
               <LineSpacingControl spacing={spacing} onSpacingChange={setSpacing} />
               <VerseNumberToggle showVerseNumbers={showVerseNumbers} onToggle={toggleVerseNumbers} />

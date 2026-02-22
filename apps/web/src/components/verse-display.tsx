@@ -221,14 +221,15 @@ export function VerseDisplay({
           {currentLayer && (
             <div className="mt-2 flex items-center gap-2 text-xs text-[var(--muted-foreground)]">
               <span
-                className={`w-2 h-2 rounded-full ${
+                className={`w-2 h-2 ${
                   {
-                    high: 'bg-confidence-high',
-                    medium: 'bg-confidence-medium',
-                    low: 'bg-confidence-low',
+                    high: 'bg-confidence-high rounded-full',
+                    medium: 'bg-confidence-medium rounded-sm',
+                    low: 'bg-confidence-low rotate-45',
                     uncertain: 'bg-confidence-uncertain',
                   }[currentLayer.overallConfidence]
                 }`}
+                aria-hidden="true"
               />
               <span>{currentLayer.overallConfidence} confidence</span>
               {!currentLayer.humanReviewed && (

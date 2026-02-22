@@ -43,7 +43,7 @@ export function FontSizeControl({ fontSize, onFontSizeChange }: FontSizeControlP
           key={size.value}
           onClick={() => onFontSizeChange(size.value)}
           className={`
-            px-2 py-1 text-xs rounded transition-colors
+            px-2 py-1 text-xs rounded transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center
             ${fontSize === size.value
               ? 'bg-[var(--accent)] text-[var(--accent-foreground)]'
               : 'bg-[var(--muted)] hover:bg-[var(--border)] text-[var(--muted-foreground)]'

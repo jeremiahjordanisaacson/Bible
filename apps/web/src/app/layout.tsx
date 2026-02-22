@@ -11,10 +11,20 @@ export const metadata: Metadata = {
   description: 'An open source, AI-assisted Bible translation platform with radical transparency',
   keywords: ['Bible', 'translation', 'Hebrew', 'Greek', 'open source', 'interlinear'],
   authors: [{ name: 'Open Bible Translation Project' }],
+  metadataBase: new URL('https://jeremiahjordanisaacson.github.io/Bible'),
   openGraph: {
     title: 'Open Bible Translation',
     description: 'Transparent, AI-assisted Bible translation with source text verification',
     type: 'website',
+    siteName: 'Open Bible Translation',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Open Bible Translation',
+    description: 'Transparent, AI-assisted Bible translation with source text verification',
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 

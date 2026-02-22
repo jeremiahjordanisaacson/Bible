@@ -75,7 +75,7 @@ export function ReadingThemeSelector({ theme, onThemeChange }: ReadingThemeSelec
         <button
           key={t.value}
           onClick={() => onThemeChange(t.value)}
-          className={`p-1.5 rounded transition-colors ${
+          className={`p-2 rounded transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
             theme === t.value
               ? 'bg-[var(--accent)] text-[var(--accent-foreground)]'
               : 'hover:bg-[var(--muted)] text-[var(--muted-foreground)]'

@@ -83,13 +83,14 @@ export function VerseNoteButton({ bookCode, chapter, verse }: VerseNoteButtonPro
             className="bg-[var(--background)] border border-[var(--border)] rounded-lg shadow-lg p-4 w-full max-w-md m-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="font-semibold mb-2">
+            <label htmlFor={`verse-note-${verse}`} className="font-semibold mb-2 block">
               {hasExistingNote ? 'Edit Note' : 'Add Note'}
-            </h3>
+            </label>
             <p className="text-sm text-[var(--muted-foreground)] mb-3">
               Verse {verse}
             </p>
             <textarea
+              id={`verse-note-${verse}`}
               ref={textareaRef}
               value={note}
               onChange={(e) => setNote(e.target.value)}

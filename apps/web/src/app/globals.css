@@ -279,4 +279,34 @@ body {
   .max-w-3xl {
     max-width: 100%;
   }
+
+  /* Print header with page title */
+  main::before {
+    content: "Open Bible Translation — " attr(data-print-title);
+    display: block;
+    font-size: 10pt;
+    color: #666;
+    border-bottom: 1pt solid #ccc;
+    padding-bottom: 6pt;
+    margin-bottom: 12pt;
+  }
+
+  /* Show URLs after links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Better verse numbers in print */
+  .verse-number {
+    font-weight: bold;
+    font-size: 9pt;
+    vertical-align: super;
+    margin-right: 2pt;
+  }
+
+  footer {
+    display: none !important;
+  }
 }

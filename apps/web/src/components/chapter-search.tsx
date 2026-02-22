@@ -91,6 +91,7 @@ export function ChapterSearch({ onSearch, resultCount }: ChapterSearchProps) {
         onChange={handleChange}
         placeholder="Search..."
         className="bg-transparent border-none outline-none text-sm w-32 placeholder:text-[var(--muted-foreground)]"
+        aria-label="Search in chapter"
       />
       {query && resultCount !== undefined && (
         <span className="text-xs text-[var(--muted-foreground)]">
