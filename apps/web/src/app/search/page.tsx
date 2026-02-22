@@ -215,9 +215,9 @@ export default function SearchPage() {
       )}
 
       <div className="space-y-4">
-        {results.map((result, index) => (
-          <SearchResultCard key={`${result.verseRef}-${result.matchType}-${index}`} result={result} />
-        ))}
+        {results.length > 0 && (
+          <GroupedResults results={results} query={query} />
+        )}
       </div>
 
       {/* Sample Data Notice */}
@@ -282,18 +282,56 @@ function SearchTypeButton({
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-lg text-sm transition ${
+      className={`px-4 py-2 rounded-lg text-sm transition min-h-[44px] ${
         isActive
           ? 'bg-[var(--accent)] text-[var(--accent-foreground)]'
           : 'bg-[var(--muted)] text-[var(--foreground)] hover:bg-[var(--border)]'
       }`}
+      aria-pressed={isActive}
     >
       {label}
     </button>
   );
 }
 
-function SearchResultCard({ result }: { result: SearchResult }) {
+function GroupedResults({ results, query }: { results: SearchResult[]; query: string }) {
+  // Group results by book
+  const groups = React.useMemo(() => {
+    const map = new Map<string, SearchResult[]>();
+    for (const r of results) {
+      const book = r.verseRef.split('.')[0];
+      if (!map.has(book)) map.set(book, []);
+      map.get(book)!.push(r);
+    }
+    return Array.from(map.entries());
+  }, [results]);
+
+  return (
+    <div className="space-y-6">
+      {groups.map(([bookCode, bookResults]) => (
+        <div key={bookCode}>
+          <h2 className="text-lg font-semibold mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">
+            {bookResults[0].bookName}
+            <span className="ml-2 text-sm font-normal text-[var(--muted-foreground)]">
+              ({bookResults.length} result{bookResults.length !== 1 ? 's' : ''})
+            </span>
+          </h2>
+          <div className="space-y-3">
+            {bookResults.map((result, index) => (
+              <SearchResultCard
+                key={`${result.verseRef}-${result.matchType}-${index}`}
+                result={result}
+                query={query}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SearchResultCard({ result, query }: { result: SearchResult; query: string }) {
   const [book, chapter] = result.verseRef.split('.');
 
   const matchTypeLabels: Record<string, { label: string; color: string }> = {
@@ -319,7 +357,30 @@ function SearchResultCard({ result }: { result: SearchResult }) {
         </span>
         <span className={`text-xs px-2 py-0.5 rounded ${typeInfo.color}`}>{typeInfo.label}</span>
       </div>
-      <p className="text-[var(--muted-foreground)]">{result.text}</p>
+      <p className="text-[var(--muted-foreground)]">
+        <HighlightMatch text={result.text} query={query} />
+      </p>
     </Link>
+  );
+}
+
+function HighlightMatch({ text, query }: { text: string; query: string }) {
+  if (!query.trim()) return <>{text}</>;
+
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'));
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase() ? (
+          <mark key={i} className="bg-yellow-200 dark:bg-yellow-800/50 text-inherit rounded px-0.5">
+            {part}
+          </mark>
+        ) : (
+          <React.Fragment key={i}>{part}</React.Fragment>
+        )
+      )}
+    </>
   );
 }
