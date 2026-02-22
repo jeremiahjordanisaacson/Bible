@@ -57,7 +57,7 @@ export function LineSpacingControl({ spacing, onSpacingChange }: LineSpacingCont
           <button
             key={option.value}
             onClick={() => onSpacingChange(option.value)}
-            className={`px-2 py-1 text-xs transition-colors ${
+            className={`px-3 py-2 text-xs transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
               spacing === option.value
                 ? 'bg-[var(--accent)] text-[var(--accent-foreground)]'
                 : 'hover:bg-[var(--muted)] text-[var(--muted-foreground)]'

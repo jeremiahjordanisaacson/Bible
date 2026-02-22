@@ -111,10 +111,11 @@ export function QuickJump({ onNavigate }: QuickJumpProps) {
           sideOffset={8}
         >
           <form onSubmit={handleSubmit}>
-            <label className="block text-sm font-medium mb-2">
+            <label htmlFor="quick-jump-input" className="block text-sm font-medium mb-2">
               Go to reference
             </label>
             <input
+              id="quick-jump-input"
               ref={inputRef}
               type="text"
               value={input}
@@ -125,9 +126,11 @@ export function QuickJump({ onNavigate }: QuickJumpProps) {
               onKeyDown={handleKeyDown}
               placeholder="e.g., John 3, Genesis 1"
               className="w-full px-3 py-2 border border-[var(--border)] rounded bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted-foreground)]"
+              aria-describedby={error ? 'quick-jump-error' : undefined}
+              aria-invalid={error ? true : undefined}
             />
             {error && (
-              <p className="mt-2 text-sm text-red-500">{error}</p>
+              <p id="quick-jump-error" className="mt-2 text-sm text-red-500" role="alert">{error}</p>
             )}
             <div className="mt-3 flex justify-between items-center">
               <span className="text-xs text-[var(--muted-foreground)]">

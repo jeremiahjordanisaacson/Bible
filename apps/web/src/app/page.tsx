@@ -5,6 +5,17 @@ import { ReadingHistoryList } from '@/components/reading-history';
 import { RandomChapterButton } from '@/components/random-chapter-button';
 import { VerseOfDay } from '@/components/verse-of-day';
 import { allBooks, categories, getBooksByCategory, bibleStats } from '@/data/books-metadata';
+import { getRegisteredChapters } from '@/data/chapter-registry';
+
+// Build set of books with rich morphological data from the registry
+const richBooks = new Set<string>();
+for (const key of getRegisteredChapters()) {
+  richBooks.add(key.split('.')[0]);
+}
+
+function hasRichData(code: string): boolean {
+  return richBooks.has(code);
+}
 
 export default function HomePage() {
   return (
@@ -201,14 +212,14 @@ export default function HomePage() {
                       key={book.code}
                       href={`/read/${book.code}/1/`}
                       className={`px-3 py-1.5 rounded text-sm transition-colors ${
-                        book.code === 'Gen'
+                        hasRichData(book.code)
                           ? 'bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 text-green-800 dark:text-green-200'
                           : 'bg-[var(--muted)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]'
                       }`}
                       title={`${book.name} (${book.chapters} chapters)`}
                     >
                       {book.name}
-                      {book.code === 'Gen' && <span className="ml-1 text-xs">✦</span>}
+                      {hasRichData(book.code) && <span className="ml-1 text-xs">✦</span>}
                     </Link>
                   ))}
                 </div>
@@ -240,14 +251,14 @@ export default function HomePage() {
                       key={book.code}
                       href={`/read/${book.code}/1/`}
                       className={`px-3 py-1.5 rounded text-sm transition-colors ${
-                        book.code === 'John'
+                        hasRichData(book.code)
                           ? 'bg-green-100 dark:bg-green-900/30 hover:bg-green-200 dark:hover:bg-green-900/50 text-green-800 dark:text-green-200'
                           : 'bg-[var(--muted)] hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)]'
                       }`}
                       title={`${book.name} (${book.chapters} chapters)`}
                     >
                       {book.name}
-                      {book.code === 'John' && <span className="ml-1 text-xs">✦</span>}
+                      {hasRichData(book.code) && <span className="ml-1 text-xs">✦</span>}
                     </Link>
                   ))}
                 </div>

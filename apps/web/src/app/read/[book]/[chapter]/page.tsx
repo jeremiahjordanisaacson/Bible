@@ -38,6 +38,14 @@ export function generateMetadata({ params }: PageProps): Metadata {
       description: `${bookName} ${chapter} with source text transparency, interlinear data, and study notes.`,
       type: 'article',
     },
+    twitter: {
+      card: 'summary',
+      title: `${bookName} ${chapter} — Open Bible Translation`,
+      description: `${bookName} ${chapter} with source text transparency and study notes.`,
+    },
+    alternates: {
+      canonical: `/read/${params.book}/${chapter}/`,
+    },
   };
 }
 

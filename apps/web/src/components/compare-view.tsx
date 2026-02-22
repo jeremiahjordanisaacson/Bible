@@ -65,6 +65,7 @@ export function CompareView({ verseRef, verseNumber, translation, sourceTokens }
                     confidence === 'medium' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' :
                     'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
                   }`}>
+                    <span aria-hidden="true">{confidence === 'high' ? '● ' : confidence === 'medium' ? '■ ' : '▲ '}</span>
                     {confidence}
                   </span>
                 )}

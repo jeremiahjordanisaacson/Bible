@@ -27,12 +27,35 @@ export function useKeyboardNavigation() {
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
+      // Escape always works — close modals/popovers
+      if (event.key === 'Escape') {
+        setShowKeyboardShortcuts(false);
+        // Blur active element to close Radix popovers
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+        return;
+      }
+
       // Don't trigger shortcuts when typing in inputs
       if (
         event.target instanceof HTMLInputElement ||
         event.target instanceof HTMLTextAreaElement ||
         event.target instanceof HTMLSelectElement
       ) {
+        return;
+      }
+
+      // / or Ctrl+K to focus search
+      if (event.key === '/' || (event.key === 'k' && (event.metaKey || event.ctrlKey))) {
+        event.preventDefault();
+        const searchInput = document.querySelector('input[aria-label="Search morphological data"]') as HTMLInputElement
+          || document.querySelector('input[aria-label="Search in chapter"]') as HTMLInputElement;
+        if (searchInput) {
+          searchInput.focus();
+        } else {
+          router.push('/search');
+        }
         return;
       }
 

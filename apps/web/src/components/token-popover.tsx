@@ -173,16 +173,17 @@ function MorphBadge({ label, value }: { label: string; value: string }) {
 }
 
 function ConfidenceBadge({ level }: { level: string }) {
-  const colors = {
-    high: 'bg-confidence-high/20 text-green-700 dark:text-green-400',
-    medium: 'bg-confidence-medium/20 text-yellow-700 dark:text-yellow-400',
-    low: 'bg-confidence-low/20 text-orange-700 dark:text-orange-400',
-    uncertain: 'bg-confidence-uncertain/20 text-red-700 dark:text-red-400',
-  }[level] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
+  const styles: Record<string, { color: string; icon: string }> = {
+    high: { color: 'bg-confidence-high/20 text-green-700 dark:text-green-400', icon: '●' },
+    medium: { color: 'bg-confidence-medium/20 text-yellow-700 dark:text-yellow-400', icon: '■' },
+    low: { color: 'bg-confidence-low/20 text-orange-700 dark:text-orange-400', icon: '◆' },
+    uncertain: { color: 'bg-confidence-uncertain/20 text-red-700 dark:text-red-400', icon: '▲' },
+  };
+  const style = styles[level] || { color: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300', icon: '○' };
 
   return (
-    <span className={`text-xs px-2 py-0.5 rounded ${colors}`}>
-      {level} confidence
+    <span className={`text-xs px-2 py-0.5 rounded ${style.color}`}>
+      <span aria-hidden="true">{style.icon} </span>{level} confidence
     </span>
   );
 }

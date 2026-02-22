@@ -35,7 +35,7 @@ export function VerseNumberToggle({ showVerseNumbers, onToggle }: VerseNumberTog
     <button
       onClick={onToggle}
       className={`
-        flex items-center gap-2 px-3 py-1.5 rounded text-sm transition-colors
+        flex items-center gap-2 px-3 py-1.5 rounded text-sm transition-colors min-h-[44px]
         ${showVerseNumbers
           ? 'bg-[var(--accent)] text-[var(--accent-foreground)]'
           : 'bg-[var(--muted)] text-[var(--muted-foreground)] hover:bg-[var(--border)]'

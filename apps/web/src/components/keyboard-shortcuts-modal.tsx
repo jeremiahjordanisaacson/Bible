@@ -18,7 +18,11 @@ const shortcuts: ShortcutItem[] = [
   { key: 'N', description: 'Toggle Notes' },
   { key: 'C', description: 'Toggle Compare View' },
   { key: 'V', description: 'Toggle Variants' },
+  { key: 'P', description: 'Toggle Provenance' },
   { key: 'G', description: 'Quick jump to reference' },
+  { key: '/', description: 'Focus search' },
+  { key: '⌘K', description: 'Focus search (alternative)' },
+  { key: 'Esc', description: 'Close popover / modal' },
   { key: '?', description: 'Show this help' },
 ];
 
