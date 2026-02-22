@@ -48,10 +48,10 @@ interface LineSpacingControlProps {
 
 export function LineSpacingControl({ spacing, onSpacingChange }: LineSpacingControlProps) {
   return (
-    <div className="flex items-center gap-2">
-      <label className="text-xs text-[var(--muted-foreground)] whitespace-nowrap">
+    <div className="flex items-center gap-2" role="group" aria-label="Line spacing">
+      <span className="text-xs text-[var(--muted-foreground)] whitespace-nowrap">
         Spacing:
-      </label>
+      </span>
       <div className="flex bg-[var(--background)] border border-[var(--border)] rounded-lg overflow-hidden">
         {spacingOptions.map((option) => (
           <button

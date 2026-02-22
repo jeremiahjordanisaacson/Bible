@@ -75,13 +75,20 @@ export function VerseNoteButton({ bookCode, chapter, verse }: VerseNoteButtonPro
       </button>
 
       {isOpen && (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
           onClick={() => setIsOpen(false)}
+          onKeyDown={(e) => { if (e.key === 'Escape') setIsOpen(false); }}
+          role="dialog"
+          aria-modal="true"
+          aria-label={hasExistingNote ? 'Edit verse note' : 'Add verse note'}
         >
+          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
           <div
             className="bg-[var(--background)] border border-[var(--border)] rounded-lg shadow-lg p-4 w-full max-w-md m-4"
             onClick={(e) => e.stopPropagation()}
+            role="document"
           >
             <label htmlFor={`verse-note-${verse}`} className="font-semibold mb-2 block">
               {hasExistingNote ? 'Edit Note' : 'Add Note'}
